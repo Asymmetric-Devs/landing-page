@@ -1,26 +1,131 @@
 @import "tailwindcss";
 
+@variant dark (.dark &);
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafaf9; /* Stone 50 - Blanco roto cálido y muy refinado */
+  --foreground: #1c1917; /* Stone 900 - Slate/piedra oscuro para máxima legibilidad */
+  
+  /* Colores del sistema de diseño premium */
+  --color-brand-primary: #1e293b;   /* Slate 800 - Corporativo oscuro moderno */
+  --color-brand-secondary: #475569; /* Slate 600 */
+  
+  /* Acentos en tonos pastel de alta gama */
+  --color-accent-sage: #e2e8f0;      /* Salvia/gris suave neutro */
+  --color-accent-mint: #e2ece9;      /* Menta pastel exquisito */
+  --color-accent-clay: #f5efe6;      /* Arena/arcilla muy suave */
+  --color-accent-sky: #e0f2fe;       /* Azul cielo pastel sofisticado */
+  --color-accent-indigo: #e0e7ff;    /* Indigo pastel */
+  
+  /* Elementos interactivos */
+  --color-cta-warm: #d97706;         /* Ámbar para micro-detalles cálidos */
+  --color-border-subtle: rgba(28, 25, 23, 0.05);
+  
+  --grid-color: rgba(28, 25, 23, 0.025);
+  --glass-nav-bg: rgba(250, 250, 249, 0.75);
+  --glass-card-bg: rgba(255, 255, 255, 0.5);
+  --scrollbar-track: #fafaf9;
+  --scrollbar-thumb: #e7e5e4;
+  --scrollbar-thumb-hover: #d6d3d1;
 }
 
-@theme inline {
+.dark {
+  --background: #09090b; /* Zinc 950 - Negro oscuro y moderno */
+  --foreground: #f4f4f5; /* Zinc 100 - Texto claro suave */
+  
+  --color-brand-primary: #f4f4f5;
+  --color-brand-secondary: #a1a1aa;
+  
+  /* Acentos pastel con menor luminosidad ajustados para excelente contraste y balance */
+  --color-accent-sage: #27272a;      /* Zinc 800 */
+  --color-accent-mint: #10211a;      /* Menta profundo */
+  --color-accent-clay: #241d14;      /* Arena profundo */
+  --color-accent-sky: #0e2333;       /* Cielo profundo */
+  --color-accent-indigo: #16192d;    /* Indigo profundo */
+  
+  --color-cta-warm: #f59e0b;         /* Ámbar brillante */
+  --color-border-subtle: rgba(244, 244, 245, 0.06);
+  
+  --grid-color: rgba(244, 244, 245, 0.02);
+  --glass-nav-bg: rgba(9, 9, 11, 0.75);
+  --glass-card-bg: rgba(20, 20, 23, 0.4);
+  --scrollbar-track: #09090b;
+  --scrollbar-thumb: #27272a;
+  --scrollbar-thumb-hover: #3f3f46;
+}
+
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-outfit), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-mono), monospace;
+  
+  /* Exponer paleta a Tailwind */
+  --color-brand-dark: var(--color-brand-primary);
+  --color-brand-muted: var(--color-brand-secondary);
+  --color-pastel-mint: var(--color-accent-mint);
+  --color-pastel-clay: var(--color-accent-clay);
+  --color-pastel-sky: var(--color-accent-sky);
+  --color-pastel-indigo: var(--color-accent-indigo);
+  --color-pastel-sage: var(--color-accent-sage);
+  --color-accent-orange: var(--color-cta-warm);
+  --color-border-subtle: var(--color-border-subtle);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Efectos UI Premium Personalizados */
+@utility glass-nav {
+  background-color: var(--glass-nav-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+@utility glass-card {
+  background-color: var(--glass-card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.01);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+@utility bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+}
+
+/* Scrollbar refinado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
 }
