@@ -1,36 +1,57 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Code, Brain, Cloud, ArrowRight, Zap, Check } from "lucide-react";
+import { Code, Brain, Cloud, ArrowRight, Zap, Check, Briefcase } from "lucide-react";
+
+function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      {...props}
+    >
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+    </svg>
+  );
+}
 
 export default function About() {
   const team = [
     {
-      name: "Mateo Silvestre",
-      role: "Co-Founder & Lead Full-Stack Engineer",
-      techTag: "[ROLE // FULL-STACK-ARCHITECT]",
+      name: "Aldo Omar Andres",
+      title: "Ing. en Sistemas & Desarrollador Full Stack especializado en Mobile",
+      icon: <Briefcase className="w-5 h-5 text-foreground" />,
+      description:
+        "Ingeniero enfocado en soluciones escalables y seguras, con amplia experiencia en todo el ciclo de vida del software, flujos DevSecOps e integración de inteligencia artificial para potenciar la experiencia de usuario.",
+      bgPastel: "bg-pastel-mint border border-neutral-900/5 dark:border-white/5",
+      linkedin: "https://www.linkedin.com/in/aldo-omar-andres-a0b54b218/",
+    },
+    {
+      name: "Sixto Feliciano Arrejin",
+      title: "Ing. en Sistemas & Desarrollador Full Stack",
       icon: <Code className="w-5 h-5 text-foreground" />,
       description:
-        "Especialista en estructurar interfaces web fluidas y arquitecturas front/back robustas. Domina el ecosistema React, Next.js y APIs de alta disponibilidad.",
-      bgPastel: "bg-pastel-mint border border-neutral-900/5 dark:border-white/5",
+        "Desarrollador con sólido foco en React, Node.js y TypeScript. Ha construido plataformas web completas y aplicaciones móviles publicadas en tiendas, con experiencia en Docker, CI/CD y nubes.",
+      bgPastel: "bg-pastel-indigo border border-neutral-900/5 dark:border-white/5",
+      linkedin: "https://www.linkedin.com/in/sixto-arrejin/",
     },
     {
-      name: "Julián Rossi",
-      role: "Co-Founder & AI Integration Lead",
-      techTag: "[ROLE // INTELLIGENCE-INTEGRATION]",
+      name: "André Leandro San Lorenzo",
+      title: "Ing. en Sistemas & Analista de Datos",
       icon: <Brain className="w-5 h-5 text-foreground" />,
       description:
-        "Experto en flujos de datos e inteligencia artificial aplicada. Diseña agentes de soporte, automatiza procesos repetitivos e integra modelos generativos en negocios.",
-      bgPastel: "bg-pastel-indigo border border-neutral-900/5 dark:border-white/5",
+        "Especialista en Ciencia de Datos e Ingeniería de Software. Trabaja aplicando tecnologías de inteligencia artificial generativa (GenAI) y ecosistemas Cloud para resolver problemas de negocio reales y complejos.",
+      bgPastel: "bg-pastel-sky border border-neutral-900/5 dark:border-white/5",
+      linkedin: "https://www.linkedin.com/in/andre-leandro-san-lorenzo/",
     },
     {
-      name: "Sofía Vignola",
-      role: "Co-Founder & Cloud Architect",
-      techTag: "[ROLE // CLOUD-AND-INFRASTRUCTURE]",
+      name: "Tobias Alejandro Maciel Meister",
+      title: "Ing. en Sistemas & Desarrollador Full Stack",
       icon: <Cloud className="w-5 h-5 text-foreground" />,
       description:
-        "Asegura la escalabilidad, seguridad e integridad de cada sistema. Especialista en AWS, despliegue continuo (CI/CD) y optimización de servidores.",
-      bgPastel: "bg-pastel-sky border border-neutral-900/5 dark:border-white/5",
+        "Desarrollador Full Stack enfocado en Python, Node.js y React. Cuenta con experiencia en automatización de despliegues, pipelines de CI/CD (Docker/GitHub Actions) y análisis de datos en proyectos complejos.",
+      bgPastel: "bg-pastel-clay border border-neutral-900/5 dark:border-white/5",
+      linkedin: "https://www.linkedin.com/in/tobias-alejandro-maciel-meister-41ba39218/",
     },
   ];
 
@@ -57,7 +78,7 @@ export default function About() {
                 Ingeniería de precisión. Ejecución ágil.
               </h2>
               <p className="mt-6 font-sans text-base text-neutral-600 dark:text-stone-400 font-light leading-relaxed">
-                Somos un equipo compacto de tres ingenieros que creemos en el desarrollo de software excelente y sin rodeos. En **Asymmetric Devs** eliminamos las capas administrativas innecesarias: hablas directamente con los creadores de tu producto.
+                Somos un equipo compacto de cuatro ingenieros que creemos en el desarrollo de software excelente y sin rodeos. En <strong className="font-semibold text-foreground">Asymmetric Devs</strong> eliminamos las capas administrativas innecesarias: hablas directamente con los creadores de tu producto.
               </p>
               <p className="mt-4 font-sans text-base text-neutral-600 dark:text-stone-400 font-light leading-relaxed">
                 Diseñamos cada solución con una visión a largo plazo, asegurando que aquello que empiece como una landing page pueda crecer orgánicamente hasta convertirse en una plataforma automatizada y robusta.
@@ -110,7 +131,7 @@ export default function About() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: idx * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 key={member.name}
-                className="group p-6 rounded-2xl bg-stone-50/60 dark:bg-zinc-900/40 backdrop-blur-xs border border-border-subtle hover:border-neutral-900/10 dark:hover:border-white/10 hover:bg-stone-50 dark:hover:bg-zinc-900 flex flex-col sm:flex-row gap-5 items-start hover:shadow-xs transition-all duration-300"
+                className="group p-6 rounded-2xl bg-stone-50/60 dark:bg-zinc-900/40 backdrop-blur-xs border border-border-subtle hover:border-neutral-900/10 dark:hover:border-white/10 hover:bg-stone-50 dark:hover:bg-zinc-900 flex flex-col sm:flex-row gap-5 items-start hover:shadow-xs transition-all duration-300 relative"
               >
                 {/* Icon box */}
                 <div className={`p-3.5 rounded-xl ${member.bgPastel} shrink-0`}>
@@ -118,22 +139,33 @@ export default function About() {
                 </div>
 
                 {/* Content */}
-                <div className="flex-1">
+                <div className="flex-1 pr-6 sm:pr-8">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                    <h3 className="font-sans text-lg font-bold text-foreground">
-                      {member.name}
-                    </h3>
-                    <span className="font-mono text-[9px] font-bold text-neutral-400 dark:text-stone-500 uppercase tracking-widest sm:text-right">
-                      {member.techTag}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-sans text-lg font-bold text-foreground">
+                        {member.name}
+                      </h3>
+                    </div>
                   </div>
                   <span className="block font-mono text-[10px] font-semibold text-neutral-500 dark:text-stone-400 uppercase tracking-wider mb-3">
-                    {member.role}
+                    {member.title}
                   </span>
                   <p className="font-sans text-sm text-neutral-600 dark:text-stone-400 leading-relaxed font-light">
                     {member.description}
                   </p>
                 </div>
+
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute bottom-6 right-6 inline-flex items-center justify-center w-8 h-8 rounded-full bg-stone-100 dark:bg-zinc-800 text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-neutral-200 dark:hover:bg-zinc-700 transition-all shadow-xs"
+                    aria-label={`LinkedIn de ${member.name}`}
+                  >
+                    <LinkedinIcon className="w-4 h-4" />
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>

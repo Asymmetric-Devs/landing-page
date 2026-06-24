@@ -17,6 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Asymmetric Devs | Software Premium, Web de Alto Impacto e IA",
   description: "Llevamos tu negocio o idea al siguiente paso. Diseño web de alta conversión, automatizaciones con IA y desarrollo de software escalable con la máxima excelencia de ingeniería.",
+  icons: {
+    icon: "/icon.png",
+  },
   keywords: [
     "Desarrollo Web",
     "Landing Pages",
