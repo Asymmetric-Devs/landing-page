@@ -26,7 +26,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="font-sans text-xs text-neutral-500 dark:text-stone-400 leading-relaxed font-light">
-              Desarrollamos soluciones de software premium, webs de alta conversión e integraciones de IA. Diseñado y construido con precisión milimétrica.
+              Desarrollamos sitios web, automatizaciones con IA y software a medida. Soluciones sencillas y escalables para problemas complejos.
             </p>
           </div>
 

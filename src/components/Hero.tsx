@@ -48,7 +48,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mt-8 font-sans text-base sm:text-lg md:text-xl text-neutral-600 dark:text-stone-400 max-w-2xl leading-relaxed font-light"
         >
-          Diseño web exquisito de alta conversión, automatizaciones con IA y desarrollos a medida. Llevamos tu negocio o idea al siguiente paso con absoluta precisión técnica.
+          Diseño web moderno enfocado en conversión, automatización de procesos con IA y desarrollo de software a medida con absoluta precisión técnica.
         </motion.p>
 
         {/* CTAs */}

@@ -11,7 +11,7 @@ export default function Services() {
       title: "Presencia Digital",
       techTag: "[01 // WEBS DE ALTA CONVERSIÓN]",
       description:
-        "Diseñamos y desarrollamos landing pages de alto impacto, sitios corporativos y embudos optimizados para captar clientes. Velocidad extrema, diseño único y enfoque comercial orientado a resultados.",
+        "Diseñamos y desarrollamos landing pages modernas, sitios corporativos y embudos optimizados para captar clientes. Velocidad extrema, diseño a medida y enfoque comercial orientado a resultados.",
       accentClass: "bg-pastel-mint border border-neutral-900/5 dark:border-white/5",
       bullets: ["Landing Pages persuasivas", "Optimización de velocidad (Core Web Vitals)", "SEO local y global integrado"],
     },

@@ -15,8 +15,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Asymmetric Devs | Software Premium, Web de Alto Impacto e IA",
-  description: "Llevamos tu negocio o idea al siguiente paso. Diseño web de alta conversión, automatizaciones con IA y desarrollo de software escalable con la máxima excelencia de ingeniería.",
+  title: "Asymmetric Devs | Software a Medida, Web & Automatizaciones Inteligentes",
+  description: "Diseño web moderno enfocado en conversión, automatización de procesos con IA y desarrollo de software a medida con absoluta precisión técnica.",
   icons: {
     icon: "/icon.png",
   },
@@ -26,16 +26,17 @@ export const metadata: Metadata = {
     "Automatizaciones con IA",
     "Software a Medida",
     "Next.js",
-    "Diseño UI/UX Premium",
+    "Diseño UI/UX Moderno",
     "Desarrollo de Software Argentina",
-    "Conversión Digital"
+    "Conversión Digital",
+    "Automatizaciones Inteligentes"
   ],
   authors: [{ name: "Asymmetric Devs", url: "https://asymmetricdevs.com" }],
   creator: "Asymmetric Devs",
   metadataBase: new URL("https://asymmetricdevs.com"),
   openGraph: {
-    title: "Asymmetric Devs | Software Premium y Desarrollo de Alto Impacto",
-    description: "Diseño web exquisito, automatizaciones a medida y código de alta ingeniería para potenciar tu negocio.",
+    title: "Asymmetric Devs | Software a Medida, Web & Automatizaciones Inteligentes",
+    description: "Diseño web moderno enfocado en conversión, automatización de procesos con IA y desarrollo de software a medida con absoluta precisión técnica.",
     url: "https://asymmetricdevs.com",
     siteName: "Asymmetric Devs",
     locale: "es_AR",
@@ -43,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asymmetric Devs | Software Premium y Desarrollo de Alto Impacto",
-    description: "Diseño web exquisito, automatizaciones a medida y código de alta ingeniería para potenciar tu negocio.",
+    title: "Asymmetric Devs | Software a Medida, Web & Automatizaciones Inteligentes",
+    description: "Diseño web moderno enfocado en conversión, automatización de procesos con IA y desarrollo de software a medida con absoluta precisión técnica.",
   }
 };
 
