@@ -15,38 +15,39 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Asymmetric Devs | Software a Medida, Web & Automatizaciones Inteligentes",
-  description: "Diseño web moderno enfocado en conversión, automatización de procesos con IA y desarrollo de software a medida con absoluta precisión técnica.",
+  title: "Asymmetric Devs | Ingeniería de Software, Apps Móviles, Web & IA",
+  description:
+    "Estudio de ingeniería de software en Argentina. Desarrollamos plataformas web comerciales, aplicaciones móviles (iOS/Android) y automatizaciones con Inteligencia Artificial.",
   icons: {
     icon: "/icon.png",
   },
   keywords: [
-    "Desarrollo Web",
-    "Landing Pages",
-    "Automatizaciones con IA",
-    "Software a Medida",
-    "Next.js",
-    "Diseño UI/UX Moderno",
+    "Asymmetric Devs",
     "Desarrollo de Software Argentina",
-    "Conversión Digital",
-    "Automatizaciones Inteligentes"
+    "Desarrollo Web Next.js",
+    "Aplicaciones Móviles React Native",
+    "Automatizaciones con IA",
+    "Software a Medida Corrientes Chaco",
+    "Diseño UI/UX Moderno",
   ],
-  authors: [{ name: "Asymmetric Devs", url: "https://asymmetricdevs.com" }],
+  authors: [{ name: "Asymmetric Devs", url: "https://asymmetric.com.ar" }],
   creator: "Asymmetric Devs",
-  metadataBase: new URL("https://asymmetricdevs.com"),
+  metadataBase: new URL("https://asymmetric.com.ar"),
   openGraph: {
-    title: "Asymmetric Devs | Software a Medida, Web & Automatizaciones Inteligentes",
-    description: "Diseño web moderno enfocado en conversión, automatización de procesos con IA y desarrollo de software a medida con absoluta precisión técnica.",
-    url: "https://asymmetricdevs.com",
+    title: "Asymmetric Devs | Ingeniería de Software, Apps Móviles, Web & IA",
+    description:
+      "Transformamos desafíos de negocio en productos digitales reales: plataformas web de alta conversión, aplicaciones móviles y sistemas con IA.",
+    url: "https://asymmetric.com.ar",
     siteName: "Asymmetric Devs",
     locale: "es_AR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asymmetric Devs | Software a Medida, Web & Automatizaciones Inteligentes",
-    description: "Diseño web moderno enfocado en conversión, automatización de procesos con IA y desarrollo de software a medida con absoluta precisión técnica.",
-  }
+    title: "Asymmetric Devs | Ingeniería de Software, Apps Móviles, Web & IA",
+    description:
+      "Estudio de ingeniería de software: plataformas web, apps móviles e Inteligencia Artificial aplicada.",
+  },
 };
 
 export default function RootLayout({
@@ -79,7 +80,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="selection:bg-neutral-200 dark:selection:bg-zinc-800 dark:selection:text-zinc-200 selection:text-neutral-900 min-h-full flex flex-col font-sans">
+      <body className="selection:bg-emerald-500/20 dark:selection:bg-emerald-400/20 selection:text-foreground min-h-full flex flex-col font-sans">
         {children}
       </body>
     </html>

@@ -1,148 +1,163 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
-import { Globe, Cpu, Layers, ArrowRight } from "lucide-react";
+import { Globe, Smartphone, Cpu, ArrowRight, Check } from "lucide-react";
 
 export default function Services() {
   const services = [
     {
       id: "01",
       icon: <Globe className="w-6 h-6 text-foreground" />,
-      title: "Presencia Digital",
-      techTag: "[01 // WEBS DE ALTA CONVERSIÓN]",
+      title: "Plataformas Web & Catálogos Comerciales",
+      techTag: "[01 // CONVERSIÓN & AUTOGESTIÓN]",
       description:
-        "Diseñamos y desarrollamos landing pages modernas, sitios corporativos y embudos optimizados para captar clientes. Velocidad extrema, diseño a medida y enfoque comercial orientado a resultados.",
+        "Diseñamos y desarrollamos sitios corporativos, catálogos interactivos y plataformas web pensadas para captar clientes y facilitar la operación diaria de tu empresa desde cualquier dispositivo.",
       accentClass: "bg-pastel-mint border border-neutral-900/5 dark:border-white/5",
-      bullets: ["Landing Pages persuasivas", "Optimización de velocidad (Core Web Vitals)", "SEO local y global integrado"],
+      bullets: [
+        "Landing pages y catálogos mobile-first optimizados para pauta (Meta / Google Ads)",
+        "Paneles de administración (CRUD) simples para que gestiones tu negocio sin depender de terceros",
+        "Velocidad de carga extrema, SEO técnico y arquitectura serverless sin costos fijos ociosos",
+      ],
+      proofProjects: [
+        { name: "DÚO Propiedades", slug: "duo-propiedades" },
+        { name: "Chess Study", slug: "chess-study" },
+      ],
     },
     {
       id: "02",
-      icon: <Cpu className="w-6 h-6 text-foreground" />,
-      title: "Automatización & IA",
-      techTag: "[02 // OPTIMIZACIÓN INTELIGENTE]",
+      icon: <Smartphone className="w-6 h-6 text-foreground" />,
+      title: "Apps Móviles (iOS & Android) y SaaS",
+      techTag: "[02 // PRODUCTOS DIGITALES NATIVOS]",
       description:
-        "Maximizamos la eficiencia de tu negocio. Diseñamos e integramos flujos de trabajo inteligentes, agentes de inteligencia artificial y conectamos tus herramientas preferidas para reducir procesos manuales.",
-      accentClass: "bg-pastel-indigo border border-neutral-900/5 dark:border-white/5",
-      bullets: ["Integración de APIs y CRMs", "Automatización de flujos de trabajo", "Agentes e IA para atención y soporte"],
+        "Construimos aplicaciones móviles multiplataforma fluidas y sistemas web a medida, acompañándote desde el diseño de la experiencia (UI/UX) hasta la publicación en Google Play y App Store.",
+      accentClass: "bg-pastel-sky border border-neutral-900/5 dark:border-white/5",
+      bullets: [
+        "Aplicaciones nativas en React Native & Expo para iOS y Android con una sola base de código",
+        "Sincronización en tiempo real, notificaciones push, geolocalización y pagos integrados",
+        "Portales web B2B y tableros de métricas conectados a la misma infraestructura en la nube",
+      ],
+      proofProjects: [
+        { name: "DateBox", slug: "datebox" },
+        { name: "Elepad (Google Play)", slug: "elepad" },
+      ],
     },
     {
       id: "03",
-      icon: <Layers className="w-6 h-6 text-foreground" />,
-      title: "Desarrollo a Medida",
-      techTag: "[03 // SISTEMAS ESCALABLES]",
+      icon: <Cpu className="w-6 h-6 text-foreground" />,
+      title: "Automatización, IA Aplicada & Datos",
+      techTag: "[03 // OPTIMIZACIÓN INTELIGENTE]",
       description:
-        "Construimos aplicaciones web robustas, arquitecturas en la nube y plataformas escalables diseñadas específicamente para resolver los retos particulares de tu negocio con máxima solidez.",
-      accentClass: "bg-pastel-sky border border-neutral-900/5 dark:border-white/5",
-      bullets: ["Aplicaciones web (SaaS)", "Bases de datos y APIs robustas", "Infraestructura Cloud (DevOps)"],
+        "Integramos Inteligencia Artificial donde realmente ahorra tiempo o genera ingresos: agentes de atención y ventas por WhatsApp, motores de recomendación, visión artificial y trazabilidad.",
+      accentClass: "bg-pastel-indigo border border-neutral-900/5 dark:border-white/5",
+      bullets: [
+        "Agentes de IA conversacionales conectados a WhatsApp, tu catálogo o tu sistema de turnos/CRM",
+        "Procesamiento inteligente de documentos, imágenes y flujos repetitivos de negocio",
+        "Integración de APIs, pasarelas de pago (Mercado Pago), facturación ARCA y contratos inteligentes",
+      ],
+      proofProjects: [
+        { name: "DOSEL (1° Puesto NEATECH)", slug: "dosel" },
+        { name: "PolliNode (Edge AI)", slug: "pollinode" },
+      ],
     },
   ];
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1] as const,
-      },
-    },
-  };
-
   return (
-    <section id="servicios" className="py-24 bg-background relative overflow-hidden transition-colors duration-300">
-      {/* Structural background lines (hidden on mobile, perfectly layered in z-0 at low opacity) */}
-      <div className="absolute inset-y-0 left-1/3 w-[1px] bg-neutral-200/40 dark:bg-neutral-800/30 z-0 pointer-events-none hidden md:block" />
-      <div className="absolute inset-y-0 right-1/3 w-[1px] bg-neutral-200/40 dark:bg-neutral-800/30 z-0 pointer-events-none hidden md:block" />
-
+    <section
+      id="servicios"
+      className="py-24 bg-background border-t border-border-subtle relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <span className="font-mono text-[10px] font-semibold text-neutral-500 dark:text-stone-400 uppercase tracking-widest block mb-4">
-            [02 // NUESTRO CATÁLOGO]
+        <div className="max-w-3xl mb-16">
+          <span className="font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest block mb-3">
+            [04 // NUESTROS SERVICIOS]
           </span>
           <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-tight">
-            Soluciones digitales con precisión de ingeniería.
+            Soluciones tecnológicas diseñadas para dar retorno real.
           </h2>
-          <p className="mt-4 font-sans text-base sm:text-lg text-neutral-600 dark:text-stone-400 font-light max-w-xl">
-            Desde el posicionamiento de tu marca con landings ultrarrápidas, hasta sistemas complejos a la medida de tu visión.
+          <p className="mt-4 font-sans text-base sm:text-lg text-neutral-600 dark:text-zinc-400 leading-relaxed">
+            Combinamos diseño de interfaz de alto nivel con arquitectura de software sólida para que tu inversión tecnológica funcione rápido hoy y escale mañana.
           </p>
         </div>
 
         {/* Services Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10"
-        >
-          {services.map((service) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {services.map((service, idx) => (
             <motion.div
               key={service.id}
-              variants={cardVariants}
-              whileHover={{ y: -6, transition: { duration: 0.3, ease: "easeOut" } }}
-              className="group p-8 rounded-2xl bg-stone-50/80 dark:bg-zinc-900/60 backdrop-blur-xs border border-border-subtle hover:border-neutral-900/10 dark:hover:border-white/10 hover:bg-stone-50 dark:hover:bg-zinc-900 flex flex-col justify-between transition-all duration-300 shadow-xs hover:shadow-md relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.45, delay: idx * 0.08, ease: [0.23, 1, 0.32, 1] }}
+              className="p-8 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-border-subtle hover:border-neutral-900/15 dark:hover:border-white/15 flex flex-col justify-between shadow-xs hover:shadow-lg transition-[border-color,box-shadow] duration-200"
             >
               <div>
-                {/* Icon & ID */}
-                <div className="flex items-center justify-between mb-8">
-                  <div className={`p-4 rounded-xl ${service.accentClass}`}>
+                <div className="flex items-center justify-between mb-7">
+                  <div className={`p-4 rounded-2xl ${service.accentClass}`}>
                     {service.icon}
                   </div>
-                  <span className="font-mono text-sm text-neutral-400 dark:text-stone-500 font-bold">
+                  <span className="font-mono text-sm text-neutral-400 dark:text-zinc-500 font-bold">
                     /{service.id}
                   </span>
                 </div>
 
-                {/* Tech tag */}
-                <span className="font-mono text-[9px] font-bold text-neutral-400 dark:text-stone-500 tracking-wider block mb-2">
+                <span className="font-mono text-[10px] font-bold text-neutral-500 dark:text-zinc-400 tracking-wider block mb-2">
                   {service.techTag}
                 </span>
 
-                {/* Title */}
-                <h3 className="font-sans text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-neutral-950 dark:group-hover:text-white transition-colors">
+                <h3 className="font-sans text-xl sm:text-2xl font-extrabold text-foreground mb-3">
                   {service.title}
                 </h3>
 
-                {/* Description */}
-                <p className="font-sans text-sm text-neutral-600 dark:text-stone-400 leading-relaxed font-light mb-6">
+                <p className="font-sans text-sm text-neutral-600 dark:text-zinc-400 leading-relaxed mb-6">
                   {service.description}
                 </p>
 
-                {/* Bullets */}
-                <ul className="flex flex-col gap-2.5 mb-8">
-                  {service.bullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-center gap-2 font-sans text-xs text-neutral-600 dark:text-stone-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-foreground/30" />
+                <ul className="flex flex-col gap-3 mb-8">
+                  {service.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="flex items-start gap-2.5 font-sans text-xs text-neutral-700 dark:text-zinc-300 leading-relaxed"
+                    >
+                      <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                       <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Action Indicator */}
-              <div className="border-t border-neutral-200/60 dark:border-neutral-800/60 pt-6">
-                <a
+              {/* Real Case Studies Proof + CTA */}
+              <div className="border-t border-border-subtle pt-5 flex flex-col gap-4">
+                <div>
+                  <span className="font-mono text-[10px] font-semibold text-neutral-400 dark:text-zinc-500 uppercase tracking-wider block mb-2">
+                    Casos reales desarrollados:
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {service.proofProjects.map((proj) => (
+                      <Link
+                        key={proj.slug}
+                        href={`/proyectos/${proj.slug}`}
+                        className="inline-flex items-center gap-1 px-3 py-1 rounded-full font-mono text-[11px] font-medium bg-stone-100 dark:bg-zinc-800 hover:bg-emerald-500/15 hover:text-emerald-700 dark:hover:text-emerald-300 text-foreground transition-colors duration-150"
+                      >
+                        {proj.name}
+                        <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                <Link
                   href="#contacto"
-                  className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-600 dark:text-stone-400 group-hover:text-foreground transition-colors"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs font-bold uppercase tracking-wider text-foreground hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors duration-150 pt-1"
                 >
-                  Me interesa
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                  Consultar por este servicio
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

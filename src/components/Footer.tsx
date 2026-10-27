@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
-import { ArrowUp } from "lucide-react";
+import Link from "next/link";
+import { ArrowUp, ArrowUpRight } from "lucide-react";
+import { projectsData } from "@/data/projects";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,93 +12,130 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-background border-t border-border-subtle py-16 relative overflow-hidden transition-colors duration-300">
+    <footer className="bg-background border-t border-border-subtle py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-10 md:gap-6 pb-12 border-b border-border-subtle">
-          
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-border-subtle">
           {/* Left Column: Brand & Bio */}
-          <div className="max-w-xs">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="md:col-span-5 max-w-sm">
+            <Link href="/" className="inline-flex items-center gap-2 mb-4">
               <span className="font-sans font-extrabold tracking-tight text-lg text-foreground">
                 ASYMMETRIC
               </span>
-              <span className="font-mono text-[9px] font-medium px-2 py-0.5 rounded-full bg-neutral-900/5 dark:bg-white/5 text-neutral-600 dark:text-stone-400">
+              <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/12 text-emerald-800 dark:text-emerald-300 border border-emerald-600/20">
                 [devs]
               </span>
-            </div>
-            <p className="font-sans text-xs text-neutral-500 dark:text-stone-400 leading-relaxed font-light">
-              Desarrollamos sitios web, automatizaciones con IA y software a medida. Soluciones sencillas y escalables para problemas complejos.
+            </Link>
+            <p className="font-sans text-xs text-neutral-500 dark:text-zinc-400 leading-relaxed">
+              Estudio de ingeniería de software formado por cuatro Ingenieros en Sistemas. Desarrollamos plataformas web comerciales, aplicaciones móviles (iOS/Android) y automatizaciones con IA desde Argentina hacia el mundo.
             </p>
+            <div className="mt-5 flex items-center gap-3">
+              <a
+                href="https://github.com/Asymmetric-Devs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 font-mono text-xs font-semibold text-neutral-600 dark:text-zinc-300 hover:text-foreground transition-colors duration-150"
+              >
+                GitHub Oficial
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+              <span className="text-neutral-300 dark:text-zinc-700">·</span>
+              <a
+                href="mailto:asymmetricdevs@gmail.com"
+                className="font-mono text-xs font-semibold text-neutral-600 dark:text-zinc-300 hover:text-foreground transition-colors duration-150"
+              >
+                asymmetricdevs@gmail.com
+              </a>
+            </div>
           </div>
 
-          {/* Right Column: Navigation and Quick Contact */}
-          <div className="flex flex-wrap gap-x-16 gap-y-8">
-            {/* Quick Links */}
-            <div>
-              <h4 className="font-mono text-[9px] font-bold text-neutral-400 dark:text-stone-500 uppercase tracking-widest mb-4">
-                Navegación
-              </h4>
-              <ul className="flex flex-col gap-2.5">
-                <li>
-                  <a href="#inicio" className="font-sans text-xs text-neutral-600 dark:text-stone-400 hover:text-foreground transition-colors">
-                    Inicio
-                  </a>
-                </li>
-                <li>
-                  <a href="#servicios" className="font-sans text-xs text-neutral-600 dark:text-stone-400 hover:text-foreground transition-colors">
-                    Servicios
-                  </a>
-                </li>
-                <li>
-                  <a href="#nosotros" className="font-sans text-xs text-neutral-600 dark:text-stone-400 hover:text-foreground transition-colors">
-                    Quiénes Somos
-                  </a>
-                </li>
-                <li>
-                  <a href="#contacto" className="font-sans text-xs text-neutral-600 dark:text-stone-400 hover:text-foreground transition-colors">
-                    Contacto
-                  </a>
-                </li>
-              </ul>
-            </div>
+          {/* Navigation Links */}
+          <div className="md:col-span-3">
+            <h4 className="font-mono text-[10px] font-bold text-neutral-400 dark:text-zinc-500 uppercase tracking-widest mb-4">
+              Secciones
+            </h4>
+            <ul className="flex flex-col gap-2.5">
+              <li>
+                <Link
+                  href="/#inicio"
+                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                >
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#proyectos"
+                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                >
+                  Casos de Éxito &amp; Proyectos
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#novedades"
+                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                >
+                  Premios, Hitos &amp; Prensa
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#servicios"
+                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                >
+                  Servicios
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#nosotros"
+                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                >
+                  Nuestro Equipo
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#contacto"
+                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                >
+                  Contacto Directo
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-            {/* Legal */}
-            <div>
-              <h4 className="font-mono text-[9px] font-bold text-neutral-400 dark:text-stone-500 uppercase tracking-widest mb-4">
-                Legal
-              </h4>
-              <ul className="flex flex-col gap-2.5">
-                <li>
-                  <span className="font-sans text-xs text-neutral-400 dark:text-stone-500 cursor-default">
-                    Privacidad
-                  </span>
+          {/* Direct Case Study Links */}
+          <div className="md:col-span-4">
+            <h4 className="font-mono text-[10px] font-bold text-neutral-400 dark:text-zinc-500 uppercase tracking-widest mb-4">
+              Desarrollos Destacados
+            </h4>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {projectsData.map((proj) => (
+                <li key={proj.slug}>
+                  <Link
+                    href={`/proyectos/${proj.slug}`}
+                    className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150 inline-flex items-center gap-1"
+                  >
+                    {proj.title}
+                  </Link>
                 </li>
-                <li>
-                  <span className="font-sans text-xs text-neutral-400 dark:text-stone-500 cursor-default">
-                    Términos
-                  </span>
-                </li>
-                <li>
-                  <span className="font-sans text-xs text-neutral-400 dark:text-stone-500 cursor-default">
-                    Cookies
-                  </span>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Bottom copyright and Scroll back to top */}
+        {/* Bottom Copyright & Back to Top */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-          <span className="font-mono text-[10px] text-neutral-400 dark:text-stone-500">
-            &copy; {currentYear} ASYMMETRIC DEVS. TODOS LOS DERECHOS RESERVADOS.
+          <span className="font-mono text-[10px] text-neutral-400 dark:text-zinc-500">
+            &copy; {currentYear} ASYMMETRIC DEVS · CORRIENTES &amp; CHACO, ARGENTINA.
           </span>
           <button
             onClick={scrollToTop}
-            className="group flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-stone-400 hover:text-foreground transition-colors focus:outline-hidden"
+            className="group flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-zinc-400 hover:text-foreground active:scale-[0.96] transition-[color,transform] duration-150 cursor-pointer"
           >
             Volver Arriba
-            <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform duration-150" />
           </button>
         </div>
       </div>
