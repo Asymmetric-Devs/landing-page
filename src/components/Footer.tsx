@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUp, ArrowUpRight } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { projectsData } from "@/data/projects";
 
 export default function Footer() {
@@ -28,15 +28,14 @@ export default function Footer() {
             <p className="font-sans text-xs text-neutral-500 dark:text-zinc-400 leading-relaxed">
               Estudio de ingeniería de software formado por cuatro Ingenieros en Sistemas. Desarrollamos plataformas web comerciales, aplicaciones móviles (iOS/Android) y automatizaciones con IA desde Argentina hacia el mundo.
             </p>
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-5 flex flex-wrap items-center gap-3">
               <a
-                href="https://github.com/Asymmetric-Devs"
+                href="https://wa.me/5493794797572"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-mono text-xs font-semibold text-neutral-600 dark:text-zinc-300 hover:text-foreground transition-colors duration-150"
+                className="font-mono text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:underline transition-colors duration-150"
               >
-                GitHub Oficial
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                WhatsApp: +54 9 379 479-7572
               </a>
               <span className="text-neutral-300 dark:text-zinc-700">·</span>
               <a
@@ -64,18 +63,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#proyectos"
+                  href="/proyectos"
                   className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
                 >
-                  Casos de Éxito &amp; Proyectos
+                  Todos los Proyectos
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#novedades"
+                  href="/noticias"
                   className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
                 >
-                  Premios, Hitos &amp; Prensa
+                  Noticias
                 </Link>
               </li>
               <li>

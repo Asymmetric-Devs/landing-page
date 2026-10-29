@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Check, Zap, Globe, ArrowUpRight } from "lucide-react";
+import { Check, Globe } from "lucide-react";
 import { teamMembers } from "@/data/projects";
 
 function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -22,9 +22,9 @@ function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function About() {
   const coreStrengths = [
-    "Trato directo con los 4 ingenieros que diseñan y programan tu sistema.",
-    "Entregas incrementales y demostrables cada semana.",
-    "Arquitecturas modernas, seguras y pensadas para no generar costos ociosos.",
+    "Hablás directo con los cuatro ingenieros que diseñan y programan el proyecto.",
+    "Avances semanales claros para que puedas probar el sistema mientras se construye.",
+    "Código bien estructurado y pensado para que sea simple de mantener y escalar.",
   ];
 
   return (
@@ -40,20 +40,20 @@ export default function About() {
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <span className="font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest block mb-3">
-                [05 // QUIÉNES SOMOS]
+                [05 // EQUIPO]
               </span>
               <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-tight">
-                Cuatro Ingenieros en Sistemas. Cero burocracia.
+                Cuatro Ingenieros en Sistemas trabajando en equipo.
               </h2>
               <p className="mt-6 font-sans text-base text-neutral-600 dark:text-zinc-400 leading-relaxed">
-                Somos un equipo formado en la{" "}
+                Nos formamos en la{" "}
                 <strong className="font-semibold text-foreground">
                   Universidad Tecnológica Nacional (UTN-FRRe)
                 </strong>{" "}
-                que lleva años construyendo software juntos: desde plataformas comerciales y aplicaciones publicadas en tiendas hasta soluciones premiadas en competencias internacionales de innovación.
+                y venimos desarrollando software juntos en distintos ámbitos: plataformas comerciales para clientes, aplicaciones móviles publicadas en tiendas y prototipos premiados en competencias de tecnología.
               </p>
               <p className="mt-4 font-sans text-base text-neutral-600 dark:text-zinc-400 leading-relaxed">
-                En <strong className="font-semibold text-foreground">Asymmetric Devs</strong> eliminamos los teléfonos descompuestos: hablás directamente con quienes toman las decisiones técnicas y construyen tu producto.
+                En <strong className="font-semibold text-foreground">Asymmetric Devs</strong> trabajamos sin intermediarios: desde la primera reunión tratás con quienes toman las decisiones técnicas y escriben el código de tu producto.
               </p>
 
               {/* Strengths list */}
@@ -68,35 +68,6 @@ export default function About() {
                     </span>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Official GitHub Org & Credentials Card */}
-            <div className="mt-10 p-6 rounded-3xl bg-stone-100/80 dark:bg-zinc-900/70 border border-border-subtle flex flex-col gap-4">
-              <div className="flex items-center gap-3.5">
-                <div className="p-3 rounded-2xl bg-pastel-mint border border-neutral-900/5 dark:border-white/5 text-foreground">
-                  <Zap className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-sans text-sm font-bold text-foreground">
-                    Ingeniería Abierta &amp; Verificable
-                  </h3>
-                  <p className="font-sans text-xs text-neutral-500 dark:text-zinc-400 mt-0.5">
-                    Conocé nuestros repositorios, prototipos de hackathones y perfiles profesionales.
-                  </p>
-                </div>
-              </div>
-              <div className="pt-2 flex flex-wrap gap-2.5">
-                <a
-                  href="https://github.com/Asymmetric-Devs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-mono text-xs font-bold bg-foreground text-background hover:opacity-90 active:scale-[0.96] transition-[opacity,transform] duration-150"
-                >
-                  <GithubIcon className="w-3.5 h-3.5" />
-                  github.com/Asymmetric-Devs
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </a>
               </div>
             </div>
           </div>

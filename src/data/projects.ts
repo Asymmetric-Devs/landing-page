@@ -87,61 +87,61 @@ export const projectsData: ProjectItem[] = [
   {
     slug: "duo-propiedades",
     title: "DÚO Propiedades",
-    subtitle: "Plataforma Inmobiliaria, Catálogo Interactivo & CRM Serverless",
+    subtitle: "Plataforma Inmobiliaria, Catálogo Interactivo & Panel de Gestión",
     category: "web",
     categoryLabel: "Plataforma Web & CRM",
     badge: "En Producción · Cliente Real",
     period: "2026 — Presente",
     clientOrContext: "DÚO Propiedades (Pirané, Formosa)",
     shortDescription:
-      "Plataforma comercial mobile-first para digitalizar el inventario inmobiliario, captar propietarios mediante solicitudes de tasación online y administrar propiedades en tiempo real con costo fijo de servidores $0.",
+      "Plataforma web pensada para digitalizar el catálogo de inmuebles, recibir solicitudes de tasación online y administrar propiedades de forma simple desde cualquier dispositivo.",
     challenge:
-      "La inmobiliaria necesitaba profesionalizar su canal digital para convertir tráfico de campañas en redes sociales, centralizar su catálogo de inmuebles (casas, terrenos y locales) y captar nuevos propietarios interesados en tasar o vender, sin incurrir en costos mensuales fijos elevados de infraestructura.",
+      "La inmobiliaria necesitaba un canal digital claro para recibir consultas de campañas publicitarias, mostrar su catálogo de inmuebles (casas, terrenos y locales) actualizado y captar propietarios interesados en tasar o vender, manteniendo costos operativos bajos.",
     solution:
-      "Diseñamos y desplegamos una plataforma integral mobile-first con tres frentes conectados: una portada comercial orientada a conversión rápida (Comprar, Alquilar, Tasar), un catálogo público con filtros multicriterio instantáneos y estados comerciales en vivo, y un panel administrativo privado desde donde la inmobiliaria carga fotos, edita fichas técnicas y gestiona solicitudes de tasación desde el celular o la PC.",
+      "Desarrollamos una plataforma mobile-first con tres módulos integrados: una portada comercial con accesos rápidos (Comprar, Alquilar, Tasar), un catálogo público con filtros dinámicos y estados en vivo, y un panel interno desde donde la inmobiliaria carga fotos, edita fichas técnicas y gestiona solicitudes de tasación.",
     highlights: [
       { metric: "3 Flujos", label: "Compra, Alquiler y Tasación Online" },
-      { metric: "Tiempo Real", label: "Estados: Disponible, Reservado o En Negociación" },
-      { metric: "$0 / mes", label: "Costo fijo de servidor gracias a arquitectura Serverless" },
-      { metric: "100% Mobile", label: "Optimizado para pauta en Meta Ads y WhatsApp" },
+      { metric: "En Vivo", label: "Estados: Disponible, Reservado o En Negociación" },
+      { metric: "Autogestión", label: "Panel interno para cargar y editar propiedades" },
+      { metric: "Mobile-First", label: "Adaptado para consultas desde celulares y redes" },
     ],
     features: [
       {
-        title: "Catálogo Interactivo con Filtros Inteligentes",
+        title: "Catálogo Interactivo con Filtros",
         description:
-          "Los interesados buscan y filtran propiedades al instante por operación, categoría (Casas, Terrenos, Locales), ubicación, rango de precio y superficie en metros cuadrados.",
+          "Los interesados buscan y filtran propiedades por operación, categoría (Casas, Terrenos, Locales), ubicación, rango de precio y superficie en metros cuadrados.",
       },
       {
-        title: "Fichas de Propiedad con Estado Comercial en Vivo",
+        title: "Fichas de Propiedad con Estado Actualizado",
         description:
-          "Cada inmueble muestra galería fotográfica optimizada, servicios disponibles, especificaciones técnicas, ubicación y etiquetas de estado (Disponible, En Negociación, Reservado) actualizadas al instante.",
+          "Cada inmueble muestra galería de fotos, servicios disponibles, especificaciones técnicas, ubicación y etiquetas de estado (Disponible, En Negociación, Reservado).",
       },
       {
-        title: "Embudo de Captación de Tasaciones",
+        title: "Recepción de Solicitudes de Tasación",
         description:
-          "Formulario guiado para propietarios que desean tasar o poner en venta su inmueble, capturando características clave y contacto directo de WhatsApp en una bandeja centralizada.",
+          "Formulario guiado para propietarios que desean tasar o poner en venta su inmueble, registrando las características principales y su contacto de WhatsApp.",
       },
       {
-        title: "Panel de Administración Autogestionable (CRUD)",
+        title: "Panel de Administración Interno",
         description:
-          "Acceso privado para el equipo de la inmobiliaria que permite dar de alta propiedades, subir múltiples fotografías a la nube y cambiar estados comerciales en segundos sin depender de soporte técnico.",
+          "Acceso privado para que el equipo de la inmobiliaria pueda dar de alta propiedades, subir fotos y actualizar estados comerciales sin depender de soporte técnico.",
       },
     ],
     coverImage: "/projects/duo-propiedades/1.png",
     gallery: [
-      { url: "/projects/duo-propiedades/1.png", caption: "Portada principal mobile-first y accesos directos de conversión" },
+      { url: "/projects/duo-propiedades/1.png", caption: "Portada principal y accesos directos" },
       { url: "/projects/duo-propiedades/2.png", caption: "Sección de acciones rápidas: Comprar, Alquilar y Tasar" },
       { url: "/projects/duo-propiedades/4.png", caption: "Catálogo interactivo con filtros por tipo de inmueble, zona y precio" },
       { url: "/projects/duo-propiedades/7.png", caption: "Vista detallada de propiedad con galería y especificaciones" },
       { url: "/projects/duo-propiedades/11.png", caption: "Formulario de solicitud de tasación online para propietarios" },
-      { url: "/projects/duo-propiedades/15.png", caption: "Panel administrativo interno para gestión de inventario inmobiliario" },
+      { url: "/projects/duo-propiedades/15.png", caption: "Panel administrativo interno para gestión de inventario" },
       { url: "/projects/duo-propiedades/18.png", caption: "Edición de estados comerciales (Disponible, Reservado, En Negociación)" },
       { url: "/projects/duo-propiedades/21.png", caption: "Gestión centralizada de consultas y solicitudes de tasación" },
     ],
     techSummary: {
-      frontend: "Next.js (App Router), React, TypeScript y Tailwind CSS con diseño responsivo mobile-first.",
-      backend: "Next.js Server Actions / API Routes e integración de autenticación segura con Supabase Auth.",
-      infraAndData: "Base de datos PostgreSQL y almacenamiento de imágenes en Supabase Storage; despliegue global en Vercel.",
+      frontend: "Next.js (App Router), React, TypeScript y Tailwind CSS.",
+      backend: "Next.js Server Actions / API Routes y autenticación con Supabase Auth.",
+      infraAndData: "Base de datos PostgreSQL, Supabase Storage para imágenes y despliegue en Vercel.",
     },
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Vercel"],
     links: {
@@ -153,61 +153,61 @@ export const projectsData: ProjectItem[] = [
   {
     slug: "datebox",
     title: "DateBox",
-    subtitle: "App Móvil de Coordinación Grupal con IA & Plataforma B2B Hiperlocal",
+    subtitle: "App Móvil para Coordinar Salidas Grupales & Plataforma para Comercios",
     category: "mobile",
-    categoryLabel: "App Móvil & Producto Propio",
-    badge: "Producto Asymmetric · iOS & Android",
+    categoryLabel: "App Móvil & Portal Web",
+    badge: "Google Play · Producto Propio",
     period: "2026 — Presente",
     clientOrContext: "Asymmetric Devs (Pre-incubado en Programa EBT Chaco)",
     shortDescription:
-      "Aplicación móvil multiplataforma y ecosistema comercial B2B que elimina la fricción de organizar salidas con amigos o pareja: cruza horarios automáticamente, recomienda planes locales con IA y conecta comercios gastronómicos con grupos listos para salir.",
+      "Aplicación móvil (Android e iOS) y portal para comercios que simplifica la organización de salidas con amigos o pareja: cruza horarios disponibles, sugiere planes locales con IA y conecta locales gastronómicos con grupos.",
     challenge:
-      "Organizar una salida grupal suele terminar en decenas de mensajes sin acuerdo sobre qué día pueden todos, qué hacer o adónde ir. En paralelo, los bares, restaurantes y centros de entretenimiento locales invierten en publicidad genérica sin poder llegar en el momento exacto a los grupos que están decidiendo su salida.",
+      "Coordinar una salida en grupo suele complicarse al intentar coincidir en horarios y decidir adónde ir. Al mismo tiempo, los comercios gastronómicos y culturales locales buscan llegar a grupos de personas que están planeando una salida en su zona.",
     solution:
-      "Creamos DateBox como producto insignia de Asymmetric: una app móvil (iOS y Android) donde los grupos sincronizan su disponibilidad horaria sin vueltas, reciben sugerencias personalizadas mediante agentes de Inteligencia Artificial según gustos y presupuesto, guardan álbumes de recuerdos compartidos y descubren promociones de comercios locales gestionadas desde un portal B2B exclusivo.",
+      "Desarrollamos DateBox: una aplicación móvil donde cada grupo carga sus horarios libres para encontrar coincidencias automáticamente, recibe sugerencias de actividades mediante agentes de IA según sus preferencias y presupuesto, guarda álbumes de fotos compartidos y descubre propuestas de comercios locales cargadas desde un panel web administrativo.",
     highlights: [
-      { metric: "iOS & Android", label: "App móvil nativa multiplataforma + Portal Web B2B" },
-      { metric: "Match Horario", label: "Cruce inteligente de agendas grupales sin chats eternos" },
-      { metric: "Agentes IA", label: "Recomendación contextual por gustos, clima y presupuesto" },
-      { metric: "Canal B2B", label: "Portal de autogestión para comercios y eventos locales" },
+      { metric: "Google Play", label: "App móvil publicada + Portal Web para comercios" },
+      { metric: "Agenda Grupal", label: "Detección automática de horarios en común" },
+      { metric: "Agentes IA", label: "Sugerencias según gustos, zona y presupuesto" },
+      { metric: "Canal B2B", label: "Panel web para bares, restaurantes y eventos" },
     ],
     features: [
       {
-        title: "Sincronización de Horarios y Votación Grupal",
+        title: "Cruce de Horarios y Votación Grupal",
         description:
-          "Cada integrante marca sus franjas libres en segundos y DateBox detecta automáticamente las coincidencias óptimas del grupo para confirmar fecha y hora sin discusiones interminables.",
+          "Cada integrante marca sus franjas libres y la app identifica automáticamente los días y horarios en que todos coinciden.",
       },
       {
-        title: "Recomendador Inteligente de Planes y Gastronomía",
+        title: "Sugerencias de Planes y Gastronomía con IA",
         description:
-          "Un motor impulsado por agentes de IA analiza las preferencias compartidas del grupo, zona geográfica y presupuesto para proponer bares, restaurantes, eventos culturales y actividades recreativas.",
+          "Un motor de recomendación analiza las preferencias del grupo, ubicación y presupuesto para proponer bares, restaurantes, eventos y actividades.",
       },
       {
-        title: "Álbumes Digitales y Recuerdos Compartidos",
+        title: "Álbumes y Recuerdos Compartidos",
         description:
-          "Durante y después de cada salida, el grupo puede subir fotos y construir una bitácora compartida de momentos con historial de lugares visitados.",
+          "Permite subir fotos de cada salida y armar un historial compartido con los lugares visitados por el grupo.",
       },
       {
-        title: "Portal B2B para Comercios y Eventos (admin.datebox.com.ar)",
+        title: "Portal Web para Comercios (admin.datebox.com.ar)",
         description:
-          "Plataforma web administrativa donde locales gastronómicos y productores de eventos del NEA publican beneficios, posicionan su marca y conectan con grupos con intención real de consumo.",
+          "Plataforma donde locales gastronómicos y organizadores de eventos publican promociones y destacan sus propuestas dentro de la aplicación.",
       },
     ],
     coverImage: "/projects/datebox/1.png",
     gallery: [
-      { url: "/projects/datebox/1.png", caption: "Identidad visual y propuesta de valor de DateBox" },
-      { url: "/projects/datebox/2.png", caption: "Experiencia móvil para creación y coordinación de grupos" },
+      { url: "/projects/datebox/1.png", caption: "Presentación general de DateBox" },
+      { url: "/projects/datebox/2.png", caption: "Creación y coordinación de grupos en la app" },
       { url: "/projects/datebox/3.png", caption: "Sincronización de disponibilidad horaria entre amigos" },
-      { url: "/projects/datebox/4.png", caption: "Recomendaciones personalizadas de planes y locales con IA" },
+      { url: "/projects/datebox/4.png", caption: "Recomendaciones personalizadas de planes y locales" },
       { url: "/projects/datebox/5.png", caption: "Exploración de comercios gastronómicos y eventos locales" },
       { url: "/projects/datebox/6.png", caption: "Álbum compartido de recuerdos y fotos de cada salida" },
-      { url: "/projects/datebox/7.png", caption: "Modelo de conexión B2B para comercios y marcas locales" },
-      { url: "/projects/datebox/8.png", caption: "Ecosistema completo DateBox: App Móvil + Portal de Comercios" },
+      { url: "/projects/datebox/7.png", caption: "Propuesta comercial para locales y marcas" },
+      { url: "/projects/datebox/8.png", caption: "Ecosistema DateBox: App Móvil y Portal de Comercios" },
     ],
     videoEmbed: "https://www.youtube.com/embed/Xh6E90fD3_k",
     techSummary: {
-      frontend: "React Native + Expo (iOS/Android), NativeWind, React + Vite para Landing y Portal Admin B2B.",
-      backend: "API Serverless de baja latencia con Hono sobre Cloudflare Workers + Agentes de IA en Python con LangGraph.",
+      frontend: "React Native + Expo (Android/iOS), NativeWind, y React + Vite para Landing y Portal de Comercios.",
+      backend: "API en Hono sobre Cloudflare Workers + Agentes de recomendación en Python con LangGraph.",
       infraAndData: "Supabase (PostgreSQL, Auth, Storage, Realtime), Monorepo con Turborepo y CI/CD en GitHub Actions.",
     },
     tags: ["React Native", "Expo", "Cloudflare Workers", "Hono", "LangGraph (IA)", "Supabase", "TypeScript"],
@@ -215,7 +215,8 @@ export const projectsData: ProjectItem[] = [
       live: "https://datebox.com.ar",
       liveLabel: "Ver Landing Oficial",
       secondaryLive: "https://admin.datebox.com.ar",
-      secondaryLiveLabel: "Portal B2B Comercios",
+      secondaryLiveLabel: "Portal Comercios",
+      playStore: "https://play.google.com/store/apps/details?id=datebox.com.ar",
       instagram: "https://www.instagram.com/datebox.app",
     },
     featured: true,
@@ -225,61 +226,61 @@ export const projectsData: ProjectItem[] = [
     title: "DOSEL",
     subtitle: "Verificación Satelital y Trazabilidad Blockchain de Créditos de Carbono",
     category: "ai-web3",
-    categoryLabel: "IA, Satélites & Blockchain",
-    badge: "🏆 1° Puesto Track Stellar · NEATECH 2026",
+    categoryLabel: "Satélites & Blockchain",
+    badge: "1° Puesto Track Stellar · NEATECH 2026",
     period: "Octubre 2026",
-    clientOrContext: "Ideatón NEA TECH 2026 (Museo de Arte Contemporáneo de Corrientes)",
+    clientOrContext: "Ideatón NEA TECH 2026 (Corrientes)",
     shortDescription:
-      "Plataforma que lleva transparencia al mercado de bonos de carbono del bosque nativo: combina imágenes satelitales multiespectrales de Sentinel-2 con contratos inteligentes en Stellar (Soroban) para verificar desde el espacio que el monte siga en pie antes de emitir o transferir cualquier certificado.",
+      "Plataforma para dar trazabilidad al mercado de bonos de carbono del bosque nativo: combina imágenes satelitales de Sentinel-2 con contratos inteligentes en Stellar (Soroban) para verificar que el monte siga en pie antes de emitir o transferir certificados.",
     challenge:
-      "El mercado tradicional de créditos de carbono sufre de intermediación opaca, auditorías manuales costosas que demoran años y falta de pruebas continuas de que el bosque que respalda un bono no haya sido desmontado después de su emisión.",
+      "En el mercado tradicional de créditos de carbono, las auditorías presenciales son costosas, demoran meses y dificultan comprobar de forma continua que el predio forestal que respalda un bono no haya sufrido desmontes posteriores.",
     solution:
-      "Desarrollamos DOSEL en 72 horas durante el Ideatón NEA TECH 2026, obteniendo el 1° Puesto en el Track de Stellar. Nuestro oráculo satelital consulta imágenes reales de la misión europea Sentinel-2 (10m de resolución) sobre predios del Gran Chaco, cruza el índice de vigor vegetal (NDVI) con mapas de cobertura de suelo y autoriza en blockchain la emisión de tokens GTON (1 GTON = 1 tCO2e) únicamente si el bosque sigue intacto. Si detecta desmonte, el contrato congela automáticamente el predio.",
+      "Desarrollamos DOSEL durante los 3 días del Ideatón NEA TECH 2026 (1° Puesto en el Track de Stellar). El sistema consulta imágenes satelitales de Sentinel-2 (10m de resolución) sobre lotes registrados del Gran Chaco, calcula el índice de vegetación (NDVI) cruzado con mapas de cobertura de suelo y habilita en el contrato inteligente la emisión de tokens GTON (1 GTON = 1 tCO2e) solo si el bosque se mantiene conservado. Si detecta una caída abrupta del índice vegetal, congela preventivamente el lote.",
     highlights: [
-      { metric: "1° Puesto", label: "Ganadores del Track Stellar en Ideatón NEA TECH 2026" },
-      { metric: "10 metros", label: "Resolución espacial con imágenes satelitales Sentinel-2 L2A" },
-      { metric: "Freeze Auto", label: "Bloqueo automático on-chain ante caída de índice vegetal" },
-      { metric: "100% Trazable", label: "Compra y retiro atómico con certificado verificable sin intermediarios" },
+      { metric: "1° Puesto", label: "Track Stellar en Ideatón NEA TECH 2026" },
+      { metric: "Sentinel-2", label: "Verificación con imágenes satelitales a 10m de resolución" },
+      { metric: "Bloqueo Auto", label: "Pausa preventiva del lote ante caída del índice vegetal" },
+      { metric: "Trazable", label: "Compra y retiro directo con certificado en blockchain" },
     ],
     features: [
       {
-        title: "Oráculo Satelital de Doble Señal (Sentinel-2 + Cobertura)",
+        title: "Oráculo Satelital (Sentinel-2 + Cobertura de Suelo)",
         description:
-          "Procesa pasadas satelitales reales sobre polígonos GPS registrados (El Impenetrable, Parque Nacional Chaco, Taco Pozo) midiendo el vigor fotosintético del dosel forestal y descartando falsos positivos de cultivos estacionales.",
+          "Procesa pasadas satelitales sobre polígonos GPS registrados (El Impenetrable, Parque Nacional Chaco, Taco Pozo) midiendo el vigor del monte y contrastándolo con mapas de cobertura para evitar falsos positivos.",
       },
       {
-        title: "Congelamiento Automático ante Desmonte (Smart Contract Freeze)",
+        title: "Congelamiento Preventivo ante Desmonte",
         description:
-          "Si el índice NDVI de un lote cae por debajo del umbral de seguridad, el contrato inteligente bloquea de forma autónoma toda nueva emisión de créditos hasta que se realice una auditoría.",
+          "Si el índice NDVI de una parcela cae por debajo del umbral establecido, el contrato inteligente detiene automáticamente nuevas emisiones de créditos hasta su revisión.",
       },
       {
         title: "Trazabilidad por Lote y Período",
         description:
-          "A diferencia de los mercados donde los bonos se mezclan en un fondo anónimo, cada token conserva la identidad exacta del predio forestal y la evidencia satelital que le dio origen.",
+          "Cada crédito conserva la referencia exacta de la parcela forestal y el período de verificación satelital que le dio origen.",
       },
       {
-        title: "Compra y Compensación Atómica (Buy & Retire)",
+        title: "Compra y Compensación en un Paso (Buy & Retire)",
         description:
-          "Las empresas que compensan su huella de carbono pagan al productor forestal y queman (retiran) los créditos en una sola transacción atómica, obteniendo un certificado público e irrepetible que impide la doble venta.",
+          "Las empresas compran y retiran los créditos en una misma transacción sobre Stellar Soroban, generando un certificado verificable que evita la reventa del mismo bono.",
       },
     ],
     coverImage: "/projects/dosel/app-portada.png",
     gallery: [
-      { url: "/projects/dosel/app-portada.png", caption: "Plataforma web DOSEL: verificación satelital desde el espacio" },
-      { url: "/projects/dosel/app-predios.png", caption: "Monitoreo de predios forestales del Gran Chaco e índice NDVI en vivo" },
-      { url: "/projects/dosel/app-cobertura.png", caption: "Cruce de señal satelital Sentinel-2 contra mapa de cobertura de suelo" },
-      { url: "/projects/dosel/sat-impen.png", caption: "Captura satelital real procesada sobre lote en El Impenetrable" },
-      { url: "/projects/dosel/app-mercado.png", caption: "Mercado directo de lotes verificados sin intermediarios" },
-      { url: "/projects/dosel/app-modal.png", caption: "Flujo de compra y retiro atómico (Buy & Retire) en Stellar Soroban" },
-      { url: "/projects/dosel/certificado-pdf.png", caption: "Certificado de compensación de carbono con trazabilidad on-chain" },
+      { url: "/projects/dosel/app-portada.png", caption: "Pantalla principal de DOSEL" },
+      { url: "/projects/dosel/app-predios.png", caption: "Monitoreo de predios forestales del Gran Chaco e índice NDVI" },
+      { url: "/projects/dosel/app-cobertura.png", caption: "Cruce de señal satelital Sentinel-2 con mapa de cobertura de suelo" },
+      { url: "/projects/dosel/sat-impen.png", caption: "Imagen satelital procesada sobre lote en El Impenetrable" },
+      { url: "/projects/dosel/app-mercado.png", caption: "Mercado de lotes verificados" },
+      { url: "/projects/dosel/app-modal.png", caption: "Flujo de compra y retiro (Buy & Retire) con billetera Stellar" },
+      { url: "/projects/dosel/certificado-pdf.png", caption: "Certificado de compensación con trazabilidad en blockchain" },
     ],
     videoEmbed: "https://www.youtube.com/embed/Uxa_8bNBiZ4",
     techSummary: {
-      frontend: "Aplicación web interactiva en React, TypeScript y Vite con integración de billetera Freighter y visualización geoespacial.",
+      frontend: "React, TypeScript y Vite con integración de billetera Freighter.",
       backend: "Oráculo satelital en Python (Planetary Computer STAC API, Sentinel-2 L2A, Rasterio, NumPy).",
-      infraAndData: "Contratos inteligentes en Rust sobre Stellar (Soroban SDK) + réplica interoperable en Hedera (Solidity HSCS + HCS).",
+      infraAndData: "Contratos inteligentes en Rust sobre Stellar (Soroban SDK) + versión en Hedera (Solidity HSCS + HCS).",
     },
-    tags: ["Stellar (Soroban)", "Rust", "Python", "Sentinel-2 Satélites", "React", "TypeScript", "Web3"],
+    tags: ["Stellar (Soroban)", "Rust", "Python", "Sentinel-2", "React", "TypeScript"],
     links: {
       live: "https://ideathon-henna.vercel.app/",
       liveLabel: "Probar Demo Interactiva",
@@ -292,211 +293,209 @@ export const projectsData: ProjectItem[] = [
     featured: true,
   },
   {
-    slug: "pollinode",
-    title: "PolliNode",
-    subtitle: "Sensores Solares con Visión Artificial y Bioacústica para Polinización Agrícola",
-    category: "ai-web3",
-    categoryLabel: "IoT, Edge AI & Agrotech",
-    badge: "🥉 3° Puesto Innovación · Rally Latam 2026",
-    period: "Octubre 2026",
-    clientOrContext: "Rally Latinoamericano de Innovación 2026 (Sede UTN FRRe / INTECNOR)",
-    shortDescription:
-      "Solución agroecológica premiada tras 28 horas de innovación continua: combina estaciones solares inteligentes (visión artificial + bioacústica en el borde) con islas rotativas de flora nativa para detectar zonas muertas de polinización y regenerar suelos en cultivos orgánicos.",
-    challenge:
-      "Los cultivos agroecológicos dependientes de polinizadores en nuestra región (algodón orgánico, girasol, cucurbitáceas) sufren caídas de hasta un 40% en su rinde por la pérdida de nitrógeno del suelo y las 'zonas muertas de polinización' en el centro de los lotes, ya que los polinizadores nativos solo vuelan entre 150 y 300 metros desde el monte.",
-    solution:
-      "Diseñamos PolliNode junto a un sistema de Islas Biodinámicas Rotativas. Nodos solares autónomos de bajo costo ubicados en el lote escuchan el zumbido de vuelo (bioacústica) y observan mediante cámara macro e IA embebida (TinyML) la actividad de abejas nativas, abejorros y sírfidos sin requerir señal 4G rural (vía LoRaWAN). El sistema genera un mapa de calor del campo y le indica al productor exactamente en qué coordenadas sembrar islas de flora nativa y leguminosas fijadoras de nitrógeno.",
-    highlights: [
-      { metric: "3° Puesto", label: "Categoría Innovación en Rally Latinoamericano 2026 (UTN FRRe)" },
-      { metric: "28 Horas", label: "Prototipado intensivo en simultáneo al fin de semana de NEATECH" },
-      { metric: "Edge AI", label: "Clasificación por visión artificial y frecuencia de aleteo (Hz)" },
-      { metric: "100% Autónomo", label: "Nodos solares con conectividad rural de largo alcance LoRaWAN" },
-    ],
-    features: [
-      {
-        title: "Monitoreo Dual: Bioacústica + Visión Artificial en el Borde",
-        description:
-          "Cada estación identifica especies polinizadoras por la frecuencia acústica de su aleteo (200–250 Hz en abejas, 120–160 Hz en abejorros Bombus, >300 Hz en sírfidos) combinada con detección visual mediante modelos ligeros de IA.",
-      },
-      {
-        title: "Mapas de Calor y Detección de Zonas Muertas",
-        description:
-          "El software procesa las lecturas de los nodos del campo para visualizar dónde decae el radio de vuelo de los polinizadores y qué sectores del cultivo están quedando sin fecundación óptima.",
-      },
-      {
-        title: "Planificación de Islas Biodinámicas Rotativas",
-        description:
-          "Recomienda al productor la ubicación exacta de corredores de vegetación nativa y leguminosas que actúan como puentes biológicos, refugio post-cosecha y fijadores naturales de nitrógeno para la campaña siguiente.",
-      },
-      {
-        title: "Operación Rural Sin Dependencia de Internet Móvil",
-        description:
-          "Arquitectura pensada para la realidad productiva del norte argentino: alimentación por panel solar de 5W y transmisión por radiofrecuencia LoRaWAN hasta el casco de la chacra.",
-      },
-    ],
-    coverImage: "/projects/pollinode/guia-pizarron.png",
-    gallery: [
-      {
-        url: "/projects/pollinode/guia-pizarron.png",
-        caption: "Arquitectura integral de PolliNode: Islas Biodinámicas Rotativas + Nodos Solares IoT + Mapa de Polinización",
-      },
-    ],
-    videoEmbed: "https://www.youtube.com/embed/qxmAHWDdtBQ",
-    techSummary: {
-      frontend: "Tablero de visualización de mapas de calor de polinización y alertas directas para el productor agropecuario.",
-      backend: "Inferencia en el borde con TinyML (espectrogramas de audio CNN + YOLO ligero) y algoritmos de triangulación espacial.",
-      infraAndData: "Estaciones basadas en microcontroladores ESP32-S3, energía solar fotovoltaica y red inalámbrica LoRaWAN.",
-    },
-    tags: ["Edge AI (TinyML)", "Visión Artificial", "Bioacústica", "IoT / LoRaWAN", "Agrotech", "ESP32-S3"],
-    links: {
-      github: "https://github.com/Asymmetric-Devs/rally-innovacion-2026",
-      linkedinPost:
-        "https://www.linkedin.com/posts/sixto-arrejin_rallylatam2026-utnfrre-pollinode-activity-7519412922008150017-VkdQ/",
-      pressUrl: "https://www.frre.utn.edu.ar/noticias/utn-frre-reconocio-a-estudiantes-destacados-en-el/",
-    },
-    featured: true,
-  },
-  {
     slug: "chess-study",
     title: "Chess Study",
-    subtitle: "Estudio de Ajedrez en Pantalla Dividida con Lector PDF y Escáner IA Local",
+    subtitle: "Lector PDF de Libros de Ajedrez y Tablero de Análisis con Escáner IA",
     category: "web",
-    categoryLabel: "Web App & IA en Navegador",
-    badge: "Web App · IA 100% Local",
+    categoryLabel: "Aplicación Web & IA Local",
+    badge: "Web App · IA en Navegador",
     period: "Mayo 2026",
-    clientOrContext: "Producto Web Open Source (Asymmetric Lab)",
+    clientOrContext: "Desarrollo Web Open Source",
     shortDescription:
-      "Aplicación web de alto rendimiento que unifica en una sola pantalla dividida un lector de libros digitales de ajedrez (PDF a 60 FPS) con un tablero de análisis interactivo y un escáner con Inteligencia Artificial que digitaliza cualquier diagrama impreso con un clic.",
+      "Aplicación web que unifica en una pantalla dividida un lector de libros de ajedrez en PDF con un tablero interactivo y un escáner con visión artificial que carga en el tablero cualquier diagrama del libro con un clic.",
     challenge:
-      "Quienes estudian ajedrez con libros en PDF sufren una fricción constante: alternar entre la ventana del libro y otra aplicación de tablero, y perder minutos armando manualmente pieza por pieza cada diagrama del libro para poder analizar las variantes.",
+      "Estudiar ajedrez con libros digitales suele implicar cambiar constantemente entre el lector de PDF y un tablero en otra ventana, además de perder tiempo armando a mano pieza por pieza cada posición del libro para analizar jugadas.",
     solution:
-      "Construimos una Single-Page Application (SPA) ultrarrápida con pantalla dividida redimensionable. A la izquierda, el usuario lee libros de más de 300 páginas con fluidez total y persistencia offline; a la derecha, analiza jugadas en un tablero interactivo. Lo más disruptivo: al hacer un solo clic sobre cualquier diagrama del PDF, una red neuronal que corre 100% en el navegador reconoce las piezas y carga la posición instantáneamente en el tablero.",
+      "Construimos una aplicación web de pantalla dividida redimensionable: de un lado se lee el libro PDF con fluidez y guardado local en el navegador; del otro se analizan las variantes en el tablero. Además, haciendo clic sobre cualquier diagrama impreso del PDF, una red neuronal que se ejecuta directamente en el navegador reconoce las piezas y arma la posición en el tablero al instante.",
     highlights: [
-      { metric: "1 Clic", label: "Escaneo automático de diagramas del PDF al tablero con IA" },
-      { metric: "60 FPS", label: "Lectura fluida de libros pesados mediante Web Workers" },
-      { metric: "100% Offline", label: "Guarda tus libros y la última página leída en el navegador" },
-      { metric: "5 Temas", label: "Personalización visual completa + Modo Claro/Oscuro" },
+      { metric: "1 Clic", label: "Reconocimiento de diagramas del PDF al tablero" },
+      { metric: "Fluido", label: "Lectura de PDFs extensos mediante Web Workers" },
+      { metric: "Guardado Local", label: "Recuerda tus libros y la última página leída" },
+      { metric: "5 Temas", label: "Personalización del tablero + Modo Claro/Oscuro" },
     ],
     features: [
       {
-        title: "Escáner de Diagramas con IA en el Navegador (OCR de Ajedrez)",
+        title: "Escáner de Diagramas en el Navegador",
         description:
-          "Haciendo clic sobre cualquier diagrama impreso en el PDF (o pegando una captura de pantalla), una red neuronal convolucional detecta la grilla y las 64 casillas en milisegundos sin enviar datos a ningún servidor externo.",
+          "Al hacer clic sobre un diagrama del PDF (o pegar una captura de pantalla), un modelo liviano de visión artificial detecta el tablero y ubica las piezas sin necesidad de servidores externos.",
       },
       {
-        title: "Pantalla Dividida Fluida y Adaptable (Split-Screen)",
+        title: "Pantalla Dividida Ajustable (Split-Screen)",
         description:
-          "Divisor arrastrable para ajustar el tamaño del libro y del tablero en escritorio, con inversión de paneles, rotación de perspectiva y adaptación automática en dispositivos móviles.",
+          "Divisor arrastrable para ajustar el ancho del libro y del tablero en escritorio, opción de invertir paneles y diseño apilable en celulares.",
       },
       {
-        title: "Tablero Inteligente Dual: Modo Análisis y Editor Libre",
+        title: "Modo Análisis y Editor Libre",
         description:
-          "Permite alternar entre un editor libre (arrastrar piezas para armar posiciones) y un modo de análisis con validación estricta de jugadas legales e historial navegable en notación algebraica.",
+          "Permite alternar entre un editor libre para acomodar piezas y un modo de análisis que valida jugadas legales y registra el historial en notación algebraica.",
       },
       {
-        title: "Biblioteca Clásica Integrada y Memoria Automática",
+        title: "Biblioteca Clásica Incluida y Memoria de Lectura",
         description:
-          "Incluye los 4 tomos del clásico 'Tratado General de Ajedrez' de Roberto Grau listos para abrir con un clic, y almacena cualquier PDF propio localmente recordando siempre la página exacta donde dejaste de leer.",
+          "Incluye los 4 tomos del 'Tratado General de Ajedrez' de Roberto Grau listos para usar, y guarda en el navegador cualquier PDF propio junto con el número de página actual.",
       },
     ],
     coverImage: "/projects/chess-study/1-modo-claro-esmeralda.png",
     gallery: [
       {
         url: "/projects/chess-study/1-modo-claro-esmeralda.png",
-        caption: "Vista principal en pantalla dividida: lectura del libro PDF + tablero interactivo (Modo Claro Esmeralda)",
+        caption: "Vista en pantalla dividida: lectura del libro PDF + tablero interactivo (Modo Claro)",
       },
       {
         url: "/projects/chess-study/2-modo-oscuro-oceano.png",
-        caption: "Estudio nocturno sin fatiga visual con el tema Oscuro Océano e historial de jugadas",
+        caption: "Interfaz en modo oscuro con historial de jugadas navegable",
       },
       {
         url: "/projects/chess-study/3-configuracion-claro.png",
-        caption: "Panel de personalización de temas de tablero, orientación y modo de edición libre",
+        caption: "Panel de selección de temas de tablero, orientación y editor libre",
       },
       {
         url: "/projects/chess-study/4-configuracion-oscuro.png",
-        caption: "Biblioteca integrada y controles de persistencia local en modo oscuro",
+        caption: "Biblioteca de libros integrada y controles en modo oscuro",
       },
     ],
     videoEmbed: "https://www.youtube.com/embed/o91drm59cmY",
     techSummary: {
-      frontend: "React 19, Vite, Tailwind CSS v4 y componentes de tablero reactivos con múltiples paletas temáticas.",
-      backend: "Inferencia de visión artificial 100% client-side con ONNX Runtime Web (WebAssembly) y motor de reglas chess.js.",
-      infraAndData: "Renderizado PDF aislado en Web Workers (Mozilla PDF.js) y persistencia offline en IndexedDB + Service Workers.",
+      frontend: "React 19, Vite y Tailwind CSS v4.",
+      backend: "Reconocimiento de imágenes en el navegador con ONNX Runtime Web (WebAssembly) y motor chess.js.",
+      infraAndData: "Renderizado PDF en segundo plano (Mozilla PDF.js) y almacenamiento local en IndexedDB.",
     },
-    tags: ["React 19", "ONNX WebAssembly (IA)", "PDF.js", "chess.js", "IndexedDB", "Tailwind CSS"],
+    tags: ["React 19", "ONNX WebAssembly", "PDF.js", "chess.js", "IndexedDB", "Tailwind CSS"],
     links: {
       live: "https://chess-study.asymmetric.com.ar",
       liveLabel: "Abrir Aplicación Web",
-      secondaryLive: "https://my-chess-study.vercel.app/",
-      secondaryLiveLabel: "Mirror en Vercel",
       github: "https://github.com/SixtoArrejin/chess-study",
     },
     featured: true,
   },
   {
-    slug: "elepad",
-    title: "Elepad",
-    subtitle: "Plataforma Móvil Accesible, Estimulación Cognitiva & Álbumes con IA",
-    category: "mobile",
-    categoryLabel: "App Móvil & Salud Digital",
-    badge: "Google Play · 🥉 3° Puesto Rally Latam 2024",
-    period: "2025 — 2026",
-    clientOrContext: "Proyecto Final de Ingeniería & Google Play Store",
+    slug: "pollinode",
+    title: "PolliNode",
+    subtitle: "Sensores Solares con Visión Artificial y Bioacústica para Polinización Agrícola",
+    category: "ai-web3",
+    categoryLabel: "IoT, Edge AI & Agrotech",
+    badge: "3° Puesto Innovación · Rally Latam 2026",
+    period: "Octubre 2026",
+    clientOrContext: "Rally Latinoamericano de Innovación 2026 (Sede UTN FRRe / INTECNOR)",
     shortDescription:
-      "Aplicación móvil multiplataforma publicada en Google Play que conecta a adultos mayores con sus familias mediante una interfaz ultra accesible, juegos de estimulación cognitiva y un generador de álbumes narrativos asistido por Inteligencia Artificial.",
+      "Propuesta agroecológica desarrollada en 28 horas para el Rally Latinoamericano de Innovación: combina estaciones solares (visión artificial y bioacústica) con islas rotativas de flora nativa para mapear la actividad de polinizadores en cultivos.",
     challenge:
-      "Las aplicaciones sociales tradicionales están sobrecargadas de menús pequeños y flujos complejos que excluyen a los adultos mayores, aumentando su aislamiento digital y dificultando el seguimiento cotidiano de su bienestar cognitivo y emocional por parte de su familia.",
+      "Los cultivos dependientes de polinizadores en la región sufren mermas de rendimiento por el agotamiento de nitrógeno del suelo y las zonas centrales del lote a las que las abejas nativas no llegan por su radio limitado de vuelo desde el monte.",
     solution:
-      "Desarrollada por los miembros fundadores de Asymmetric (inicialmente premiada con el 3° puesto en el Rally Latinoamericano de Innovación 2024 y luego llevada a producción como Proyecto Final de Ingeniería en Sistemas), Elepad ofrece una experiencia adaptada con alto contraste, juegos diarios de memoria y lógica, rachas de actividad familiar y un módulo impulsado por Google Gemini que transforma fotos y anécdotas en álbumes narrativos familiares.",
+      "Propusimos PolliNode junto a un esquema de Islas Biodinámicas Rotativas. Nodos solares ubicados en el cultivo registran el zumbido de vuelo (bioacústica) y capturan imágenes procesadas en el dispositivo (TinyML) para medir la presencia de polinizadores y transmitir datos vía LoRaWAN. Con esa información, el sistema genera un mapa de calor e indica dónde ubicar islas de vegetación nativa y leguminosas.",
     highlights: [
-      { metric: "Google Play", label: "Aplicación publicada y disponible en tienda oficial" },
-      { metric: "3° Puesto", label: "Premiada en Rally Latinoamericano de Innovación 2024" },
-      { metric: "IA Generativa", label: "Síntesis de recuerdos y álbumes familiares con Google Gemini" },
-      { metric: "7 Releases", label: "Ciclo completo de ingeniería bajo metodología ágil Scrum" },
+      { metric: "3° Puesto", label: "Categoría Innovación en Rally Latinoamericano 2026 (UTN FRRe)" },
+      { metric: "28 Horas", label: "Prototipado en equipo durante el Rally de Innovación" },
+      { metric: "Edge AI", label: "Detección por visión artificial y frecuencia de aleteo" },
+      { metric: "LoRaWAN", label: "Diseño autónomo con panel solar para zonas sin señal móvil" },
     ],
     features: [
       {
-        title: "Interfaz Accesible Pensada para el Adulto Mayor",
+        title: "Detección por Bioacústica y Visión Artificial",
         description:
-          "Tipografía clara, botones de gran tamaño, navegación sin laberintos y retroalimentación visual inmediata para que cualquier persona mayor pueda usarla con autonomía.",
+          "Identifica actividad de insectos polinizadores combinando el análisis de frecuencia de su aleteo con modelos livianos de visión por computadora ejecutados en el nodo.",
       },
       {
-        title: "Entrenamiento Cognitivo Diario y Seguimiento Familiar",
+        title: "Mapa de Actividad y Zonas sin Polinización",
         description:
-          "Incluye minijuegos diseñados para ejercitar la memoria, atención y lógica (Memoria, Sudoku, Lights Out) con sistema de rachas y estadísticas compartidas con el grupo familiar.",
+          "Consolida las lecturas de las estaciones del lote para mostrar en qué sectores decae la presencia de polinizadores.",
       },
       {
-        title: "El Álbum: Síntesis de Recuerdos con Inteligencia Artificial",
+        title: "Planificación de Islas de Flora Nativa",
         description:
-          "Integra Google Gemini para ayudar a las familias y adultos mayores a redactar, organizar y preservar historias de vida y fotografías en álbumes narrativos interactivos.",
+          "Sugiere al productor puntos estratégicos para implantar corredores de flora nativa y leguminosas que actúan como refugio y fijan nitrógeno en el suelo.",
       },
       {
-        title: "Arquitectura Cloud Serverless de Alta Disponibilidad",
+        title: "Conectividad Rural de Bajo Costo",
         description:
-          "Sincronización en tiempo real entre los teléfonos de los familiares y el adulto mayor, con notificaciones push, autenticación con Google en un toque y respaldo seguro en la nube.",
+          "Pensado sobre microcontroladores ESP32-S3 con alimentación solar de 5W y comunicación por radiofrecuencia LoRaWAN.",
+      },
+    ],
+    coverImage: "/projects/pollinode/guia-pizarron.png",
+    gallery: [
+      {
+        url: "/projects/pollinode/guia-pizarron.png",
+        caption: "Esquema general de PolliNode: Islas Rotativas, Nodos Solares IoT y Mapa de Polinización",
+      },
+    ],
+    videoEmbed: "https://www.youtube.com/embed/qxmAHWDdtBQ",
+    techSummary: {
+      frontend: "Visualización de mapas de calor de polinización y alertas para el productor.",
+      backend: "Modelos TinyML (espectrogramas de audio + visión artificial) y triangulación espacial.",
+      infraAndData: "Arquitectura sobre nodos ESP32-S3, energía solar y red LoRaWAN.",
+    },
+    tags: ["Edge AI (TinyML)", "Visión Artificial", "Bioacústica", "IoT / LoRaWAN", "Agrotech"],
+    links: {
+      github: "https://github.com/Asymmetric-Devs/rally-innovacion-2026",
+      linkedinPost:
+        "https://www.linkedin.com/posts/sixto-arrejin_rallylatam2026-utnfrre-pollinode-activity-7519412922008150017-VkdQ/",
+      pressUrl: "https://www.frre.utn.edu.ar/noticias/utn-frre-reconocio-a-estudiantes-destacados-en-el/",
+    },
+    featured: false,
+  },
+  {
+    slug: "elepad",
+    title: "Elepad",
+    subtitle: "App Móvil para Adultos Mayores, Juegos Cognitivos & Álbum Familiar con IA",
+    category: "mobile",
+    categoryLabel: "App Móvil & Impacto Social",
+    badge: "Google Play · 3° Puesto Rally Latam 2024",
+    period: "2025 — 2026",
+    clientOrContext: "Proyecto Final de Ingeniería & Google Play Store",
+    shortDescription:
+      "Aplicación móvil publicada en Google Play que conecta a adultos mayores con sus familias mediante una interfaz clara y accesible, juegos diarios de memoria y un álbum familiar asistido por IA.",
+    challenge:
+      "Muchas aplicaciones actuales tienen menús complejos y textos pequeños que dificultan su uso por parte de adultos mayores, complicando su integración digital y el contacto cotidiano con su grupo familiar.",
+    solution:
+      "Nacida en el Rally Latinoamericano de Innovación 2024 (3° puesto en Impacto Social) y luego desarrollada por el equipo como Proyecto Final de Ingeniería en Sistemas, Elepad ofrece una interfaz adaptada, minijuegos diarios de estimulación cognitiva, seguimiento de actividad y un módulo con Google Gemini que ayuda a redactar y organizar recuerdos familiares.",
+    highlights: [
+      { metric: "Google Play", label: "Aplicación publicada en la tienda oficial de Android" },
+      { metric: "3° Puesto", label: "Categoría Impacto Social en Rally Latam 2024" },
+      { metric: "Álbum con IA", label: "Redacción y síntesis de recuerdos con Google Gemini" },
+      { metric: "Proyecto Final", label: "Tesis de Ingeniería en Sistemas (UTN-FRRe)" },
+    ],
+    features: [
+      {
+        title: "Interfaz Adaptada y Accesible",
+        description:
+          "Tipografía legible, botones amplios y navegación directa pensada para que las personas mayores la utilicen con comodidad.",
+      },
+      {
+        title: "Juegos Cognitivos y Seguimiento Familiar",
+        description:
+          "Incluye juegos para ejercitar memoria, atención y lógica (Memoria, Sudoku, Lights Out) con estadísticas compartidas con la familia.",
+      },
+      {
+        title: "El Álbum: Recuerdos Familiares con IA",
+        description:
+          "Utiliza Google Gemini para transformar fotos y anécdotas cotidianas en relatos organizados dentro de un álbum familiar compartido.",
+      },
+      {
+        title: "Sincronización en Tiempo Real con la Familia",
+        description:
+          "Conecta las cuentas de los familiares y del adulto mayor mediante notificaciones push, inicio de sesión con Google y almacenamiento en la nube.",
       },
     ],
     coverImage: "/projects/elepad/1.jpg",
     gallery: [
-      { url: "/projects/elepad/1.jpg", caption: "Presentación general de la experiencia móvil de Elepad" },
-      { url: "/projects/elepad/2.jpg", caption: "Pantalla de inicio accesible y conexión con el grupo familiar" },
+      { url: "/projects/elepad/1.jpg", caption: "Presentación general de la app móvil Elepad" },
+      { url: "/projects/elepad/2.jpg", caption: "Pantalla de inicio accesible y vínculo con el grupo familiar" },
       { url: "/projects/elepad/3.jpg", caption: "Módulo de estimulación cognitiva y juegos diarios" },
-      { url: "/projects/elepad/4.jpg", caption: "El Álbum: recuerdos familiares asistidos por Inteligencia Artificial" },
+      { url: "/projects/elepad/4.jpg", caption: "El Álbum: recuerdos familiares asistidos por IA" },
       { url: "/projects/elepad/5.jpg", caption: "Seguimiento de rachas y actividad compartida" },
-      { url: "/projects/elepad/system-architecture.png", caption: "Arquitectura cloud serverless con Cloudflare Workers, Hono y Supabase" },
+      { url: "/projects/elepad/system-architecture.png", caption: "Diagrama de arquitectura con Cloudflare Workers, Hono y Supabase" },
     ],
     techSummary: {
-      frontend: "Aplicación móvil multiplataforma en React Native, Expo y TypeScript.",
-      backend: "API Serverless stateless con Hono sobre Cloudflare Workers, validada con OpenAPI + IA con Google Gemini.",
-      infraAndData: "Supabase (PostgreSQL, Google OAuth, Storage, Realtime), Monorepo en Turborepo y deploys con Expo EAS.",
+      frontend: "React Native, Expo y TypeScript.",
+      backend: "API en Hono sobre Cloudflare Workers con validación OpenAPI + integración con Google Gemini.",
+      infraAndData: "Supabase (PostgreSQL, Google OAuth, Storage, Realtime), Turborepo y builds con Expo EAS.",
     },
     tags: ["React Native", "Expo", "Google Gemini (IA)", "Cloudflare Workers", "Supabase", "Google Play"],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.elepadorg.elepad",
       github: "https://github.com/elepad-org/Elepad",
     },
-    featured: true,
+    featured: false,
   },
 ];
 
@@ -505,11 +504,11 @@ export const milestonesData: MilestoneItem[] = [
     id: "neatech-2026-stellar",
     date: "Octubre 2026",
     type: "premio",
-    typeLabel: "🏆 1° Puesto · Hackathon & Web3",
+    typeLabel: "1° Puesto · Ideatón NEA TECH",
     title: "1° Puesto en el Track de Stellar — Ideatón NEA TECH 2026",
     subtitle: "Proyecto DOSEL · Museo de Arte Contemporáneo de Corrientes (MACC)",
     description:
-      "Tras tres días intensos de desarrollo en Corrientes, el equipo completo de Asymmetric obtuvo el primer lugar en la vertical de Stellar con DOSEL: un sistema que combina imágenes satelitales de Sentinel-2 con contratos inteligentes en Soroban para auditar desde el espacio los bosques nativos del Gran Chaco antes de emitir créditos de carbono.",
+      "Luego de tres días de trabajo en Corrientes, obtuvimos el primer lugar en el track de Stellar con DOSEL: una solución que combina imágenes satelitales de Sentinel-2 con contratos inteligentes en Soroban para verificar que el bosque nativo siga en pie antes de emitir créditos de carbono.",
     location: "Corrientes, Argentina",
     image: "/projects/dosel/app-portada.png",
     relatedProjectSlug: "dosel",
@@ -520,12 +519,12 @@ export const milestonesData: MilestoneItem[] = [
         external: true,
       },
       {
-        label: "Ver caso de estudio DOSEL",
+        label: "Ver proyecto DOSEL",
         url: "/proyectos/dosel",
         external: false,
       },
       {
-        label: "Probar Demo en vivo",
+        label: "Probar Demo",
         url: "https://ideathon-henna.vercel.app/",
         external: true,
       },
@@ -535,21 +534,21 @@ export const milestonesData: MilestoneItem[] = [
     id: "radio-neatech-2026",
     date: "Octubre 2026",
     type: "prensa",
-    typeLabel: "🎙️ Prensa & Difusión Radial",
-    title: "Entrevista en Radio tras consagrarnos ganadores en NEA TECH 2026",
-    subtitle: "Difusión regional sobre innovación tecnológica, satélites y blockchain en el NEA",
+    typeLabel: "Nota en Radio",
+    title: "Participación en radio tras el Ideatón NEA TECH 2026",
+    subtitle: "Difusión del proyecto DOSEL y el trabajo del equipo en Corrientes y Chaco",
     description:
-      "Fuimos invitados a conversar en vivo en radio sobre cómo desde el nordeste argentino desarrollamos tecnología satelital y contratos inteligentes para proteger el monte nativo, el detrás de escena de un fin de semana donde competimos en dos hackathones en simultáneo y la visión de Asymmetric Devs para llevar ingeniería de software de primer nivel a empresas de la región.",
-    location: "Corrientes / Chaco, Argentina",
+      "Fuimos invitados a conversar en radio para contar cómo funciona la verificación satelital de bosques nativos que armamos con DOSEL, cómo nos organizamos para participar el mismo fin de semana en el NEA TECH y en el Rally de Innovación, y los desarrollos que venimos trabajando en Asymmetric.",
+    location: "Corrientes / Chaco",
     relatedProjectSlug: "dosel",
     links: [
       {
-        label: "Conocer el proyecto ganador (DOSEL)",
+        label: "Conocer el proyecto DOSEL",
         url: "/proyectos/dosel",
         external: false,
       },
       {
-        label: "Cobertura NEA TECH en El Litoral",
+        label: "Nota sobre NEA TECH en El Litoral",
         url: "https://www.ellitoral.com.ar/sociedad/2026-10-18-15-53-0-corrientes-reunio-a-empresas-y-emprendedores-en-la-primera-edicion-de-nea-tech",
         external: true,
       },
@@ -559,11 +558,11 @@ export const milestonesData: MilestoneItem[] = [
     id: "rally-latam-2026",
     date: "Octubre 2026",
     type: "premio",
-    typeLabel: "🥉 3° Puesto · Innovación",
-    title: "Podio en el Rally Latinoamericano de Innovación 2026 (Categoría Innovación)",
-    subtitle: "Proyecto PolliNode · Sede UTN Facultad Regional Resistencia / Fundación INTECNOR",
+    typeLabel: "3° Puesto · Rally Latam 2026",
+    title: "3° Puesto en Innovación — Rally Latinoamericano de Innovación 2026",
+    subtitle: "Proyecto PolliNode · Sede UTN Facultad Regional Resistencia / INTECNOR",
     description:
-      "En el mismo fin de semana del NEA TECH, participamos en paralelo durante 28 horas corridas en el Rally Latinoamericano de Innovación. Obtuvimos el 3° puesto en la categoría Innovación de nuestra sede con PolliNode: estaciones solares inteligentes con visión artificial y bioacústica para proteger polinizadores nativos y guiar la rotación de suelos.",
+      "En paralelo al fin de semana del NEA TECH, participamos durante 28 horas en el Rally Latinoamericano de Innovación y logramos el 3° puesto en la categoría Innovación de nuestra sede con PolliNode: sensores solares con visión artificial y bioacústica para proteger polinizadores nativos.",
     location: "Resistencia, Chaco",
     image: "/projects/pollinode/guia-pizarron.png",
     relatedProjectSlug: "pollinode",
@@ -579,7 +578,7 @@ export const milestonesData: MilestoneItem[] = [
         external: true,
       },
       {
-        label: "Ver caso de estudio PolliNode",
+        label: "Ver proyecto PolliNode",
         url: "/proyectos/pollinode",
         external: false,
       },
@@ -589,17 +588,17 @@ export const milestonesData: MilestoneItem[] = [
     id: "rally-latam-2024-elepad",
     date: "2024 — 2026",
     type: "lanzamiento",
-    typeLabel: "🚀 De Hackathon a Google Play",
-    title: "De ganar el Rally de Innovación 2024 a publicar Elepad en Google Play Store",
-    subtitle: "3° Puesto en Impacto Social (UTN-FRRe) y graduación como Ingenieros en Sistemas",
+    typeLabel: "Proyecto Final & Google Play",
+    title: "Del Rally de Innovación 2024 a publicar Elepad en Google Play Store",
+    subtitle: "3° Puesto en Impacto Social (UTN-FRRe) y Proyecto Final de Ingeniería",
     description:
-      "Nuestro recorrido como equipo comenzó ganando el 3° lugar en Impacto Social en el Rally Latinoamericano 2024 con Elepad. Lejos de dejarlo como un prototipo, lo convertimos en nuestro Proyecto Final de Ingeniería en Sistemas y lo publicamos en Google Play Store con soporte de IA generativa para adultos mayores y sus familias.",
+      "Elepad nació obteniendo el 3° lugar en Impacto Social en el Rally Latinoamericano de Innovación 2024. Durante 2025 y 2026 lo desarrollamos de punta a punta como nuestro Proyecto Final de Ingeniería en Sistemas y lo publicamos en Google Play Store.",
     location: "Resistencia / Corrientes",
     image: "/projects/elepad/1.jpg",
     relatedProjectSlug: "elepad",
     links: [
       {
-        label: "Ver caso de estudio Elepad",
+        label: "Ver proyecto Elepad",
         url: "/proyectos/elepad",
         external: false,
       },
@@ -616,10 +615,10 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Sixto Feliciano Arrejin",
     shortName: "Sixto Arrejin",
-    role: "Ingeniero en Sistemas · Full Stack & Mobile Developer",
-    specialtyTag: "Web, Mobile & Cloud Architecture",
+    role: "Ingeniero en Sistemas · Desarrollador Full Stack & Mobile",
+    specialtyTag: "Web, Mobile & Cloud",
     photo: "/team/sixto-arrejin.jpg",
-    bio: "Especializado en arquitectura de productos web y móviles de punta a punta con React, Next.js, React Native y Node.js. Ha liderado el desarrollo y puesta en producción de plataformas comerciales (DÚO Propiedades), sistemas institucionales (SCyT UTN) y aplicaciones publicadas en tiendas.",
+    bio: "Desarrollador Full Stack y Mobile con foco en React, Next.js, React Native y Node.js. Desarrolló plataformas comerciales en producción (DÚO Propiedades), sistemas institucionales (SCyT UTN) y aplicaciones móviles publicadas en Google Play.",
     skills: ["Next.js", "React Native", "TypeScript", "Node.js", "Supabase", "Docker & CI/CD"],
     linkedin: "https://www.linkedin.com/in/sixto-arrejin/",
     github: "https://github.com/SixtoArrejin",
@@ -628,10 +627,10 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Aldo Omar Andres",
     shortName: "Aldo Andres",
-    role: "Ingeniero en Sistemas · Full Stack & Mobile Specialist",
-    specialtyTag: "Mobile, DevSecOps & Producto",
+    role: "Ingeniero en Sistemas · Desarrollador Full Stack & Mobile",
+    specialtyTag: "Mobile & DevSecOps",
     photo: "/team/aldo-andres.jpg",
-    bio: "Ingeniero enfocado en el desarrollo de aplicaciones móviles multiplataforma, arquitecturas escalables y seguridad en el ciclo de vida del software (DevSecOps). Combina diseño centrado en la experiencia de usuario con integraciones de IA y visión artificial.",
+    bio: "Ingeniero enfocado en aplicaciones móviles multiplataforma, arquitecturas escalables y prácticas DevSecOps. Trabaja en el diseño de experiencias de usuario ágiles e integración de modelos de visión artificial e IA.",
     skills: ["React Native", "Expo", "TypeScript", "Python", "DevSecOps", "Cloudflare Workers"],
     linkedin: "https://www.linkedin.com/in/aldo-omar-andres-a0b54b218/",
     github: "https://github.com/AldoOmarAndres",
@@ -639,11 +638,11 @@ export const teamMembers: TeamMember[] = [
   {
     name: "André Leandro San Lorenzo",
     shortName: "André San Lorenzo",
-    role: "Ingeniero en Sistemas · Especialista en Datos, IA & Web3",
-    specialtyTag: "AI Agents, Data Science & Smart Contracts",
+    role: "Ingeniero en Sistemas · Datos, IA & Backend",
+    specialtyTag: "Ciencia de Datos & IA",
     photo: "/team/andre-san-lorenzo.jpg",
-    bio: "Especialista en Ciencia de Datos, Inteligencia Artificial Generativa (Agentes con LangGraph/LLMs) y arquitecturas distribuidas. Diseña motores de recomendación, oráculos satelitales y contratos inteligentes orientados a resolver problemas de negocio complejos.",
-    skills: ["Python", "LangGraph & GenAI", "Data Science", "FastAPI", "Smart Contracts", "Kubernetes"],
+    bio: "Enfocado en Ciencia de Datos, integración de modelos de Inteligencia Artificial (LangGraph / LLMs) y desarrollo backend en Python. Participó en el desarrollo de motores de recomendación, análisis satelital y contratos inteligentes.",
+    skills: ["Python", "LangGraph & IA", "Ciencia de Datos", "FastAPI", "Smart Contracts", "Kubernetes"],
     linkedin: "https://www.linkedin.com/in/andre-leandro-san-lorenzo/",
     github: "https://github.com/Andre-Leandro",
   },
@@ -651,9 +650,9 @@ export const teamMembers: TeamMember[] = [
     name: "Tobias Alejandro Maciel Meister",
     shortName: "Tobías Maciel Meister",
     role: "Ingeniero en Sistemas · Full Stack, IA & DevOps",
-    specialtyTag: "Automatización IA, Full Stack & Cloud",
+    specialtyTag: "Automatización IA & Full Stack",
     photo: "/team/tobias-maciel.jpg",
-    bio: "Desarrollador Full Stack e ingeniero de automatización con IA (agentes conversacionales para WhatsApp/CRM, facturación electrónica ARCA y sistemas empresariales). Distinguido en el Programa AWS Desarrolla y en múltiples competencias de innovación.",
+    bio: "Desarrollador Full Stack con experiencia en automatización de procesos mediante agentes de IA para WhatsApp y CRM, integración de facturación electrónica ARCA y despliegues automatizados en la nube (AWS y Docker).",
     skills: ["React & Next.js", "Python & Node.js", "Agentes IA / MCP", "AWS & Docker", "CI/CD", "PostgreSQL"],
     linkedin: "https://www.linkedin.com/in/tobias-alejandro-maciel-meister-41ba39218/",
     github: "https://github.com/TobiasMaciel",

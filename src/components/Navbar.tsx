@@ -46,7 +46,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Proyectos", href: "/#proyectos" },
-    { name: "Hitos & Prensa", href: "/#novedades" },
+    { name: "Noticias", href: "/#noticias" },
     { name: "Servicios", href: "/#servicios" },
     { name: "Equipo", href: "/#nosotros" },
     { name: "Contacto", href: "/#contacto" },

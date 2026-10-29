@@ -9,15 +9,14 @@ export default function Services() {
     {
       id: "01",
       icon: <Globe className="w-6 h-6 text-foreground" />,
-      title: "Plataformas Web & Catálogos Comerciales",
-      techTag: "[01 // CONVERSIÓN & AUTOGESTIÓN]",
+      title: "Sitios Web, Catálogos y Sistemas de Gestión",
       description:
-        "Diseñamos y desarrollamos sitios corporativos, catálogos interactivos y plataformas web pensadas para captar clientes y facilitar la operación diaria de tu empresa desde cualquier dispositivo.",
+        "Diseñamos y desarrollamos sitios web comerciales, catálogos interactivos y plataformas internas para mostrar tus servicios y organizar la operación diaria de tu negocio.",
       accentClass: "bg-pastel-mint border border-neutral-900/5 dark:border-white/5",
       bullets: [
-        "Landing pages y catálogos mobile-first optimizados para pauta (Meta / Google Ads)",
-        "Paneles de administración (CRUD) simples para que gestiones tu negocio sin depender de terceros",
-        "Velocidad de carga extrema, SEO técnico y arquitectura serverless sin costos fijos ociosos",
+        "Sitios y catálogos adaptados a celulares y computadoras",
+        "Paneles de administración propios para cargar productos, inmuebles o clientes sin depender de terceros",
+        "Buena velocidad de carga, posicionamiento en buscadores (SEO) y despliegue en la nube",
       ],
       proofProjects: [
         { name: "DÚO Propiedades", slug: "duo-propiedades" },
@@ -27,37 +26,35 @@ export default function Services() {
     {
       id: "02",
       icon: <Smartphone className="w-6 h-6 text-foreground" />,
-      title: "Apps Móviles (iOS & Android) y SaaS",
-      techTag: "[02 // PRODUCTOS DIGITALES NATIVOS]",
+      title: "Aplicaciones Móviles (iOS y Android)",
       description:
-        "Construimos aplicaciones móviles multiplataforma fluidas y sistemas web a medida, acompañándote desde el diseño de la experiencia (UI/UX) hasta la publicación en Google Play y App Store.",
+        "Desarrollamos aplicaciones móviles para iOS y Android acompañándote desde el diseño de las pantallas hasta la publicación en Google Play y App Store.",
       accentClass: "bg-pastel-sky border border-neutral-900/5 dark:border-white/5",
       bullets: [
-        "Aplicaciones nativas en React Native & Expo para iOS y Android con una sola base de código",
-        "Sincronización en tiempo real, notificaciones push, geolocalización y pagos integrados",
-        "Portales web B2B y tableros de métricas conectados a la misma infraestructura en la nube",
+        "Desarrollo en React Native y Expo para publicar en Android e iOS desde una misma base de código",
+        "Notificaciones push, mapas, cámara, sincronización en tiempo real y cobros integrados",
+        "Paneles web de administración conectados a la misma base de datos de la app",
       ],
       proofProjects: [
-        { name: "DateBox", slug: "datebox" },
+        { name: "DateBox (Google Play)", slug: "datebox" },
         { name: "Elepad (Google Play)", slug: "elepad" },
       ],
     },
     {
       id: "03",
       icon: <Cpu className="w-6 h-6 text-foreground" />,
-      title: "Automatización, IA Aplicada & Datos",
-      techTag: "[03 // OPTIMIZACIÓN INTELIGENTE]",
+      title: "Automatización e Inteligencia Artificial",
       description:
-        "Integramos Inteligencia Artificial donde realmente ahorra tiempo o genera ingresos: agentes de atención y ventas por WhatsApp, motores de recomendación, visión artificial y trazabilidad.",
+        "Sumamos herramientas de Inteligencia Artificial e integraciones donde aportan valor práctico: asistentes de consulta, motores de recomendación, análisis de imágenes o trazabilidad.",
       accentClass: "bg-pastel-indigo border border-neutral-900/5 dark:border-white/5",
       bullets: [
-        "Agentes de IA conversacionales conectados a WhatsApp, tu catálogo o tu sistema de turnos/CRM",
-        "Procesamiento inteligente de documentos, imágenes y flujos repetitivos de negocio",
-        "Integración de APIs, pasarelas de pago (Mercado Pago), facturación ARCA y contratos inteligentes",
+        "Asistentes conversacionales conectados a WhatsApp, catálogos o sistemas de turnos",
+        "Procesamiento automático de documentos, imágenes y tareas operativas repetitivas",
+        "Integración de pasarelas de pago (Mercado Pago), APIs externas y contratos inteligentes",
       ],
       proofProjects: [
         { name: "DOSEL (1° Puesto NEATECH)", slug: "dosel" },
-        { name: "PolliNode (Edge AI)", slug: "pollinode" },
+        { name: "PolliNode", slug: "pollinode" },
       ],
     },
   ];
@@ -71,13 +68,13 @@ export default function Services() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span className="font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest block mb-3">
-            [04 // NUESTROS SERVICIOS]
+            [04 // SERVICIOS]
           </span>
           <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-tight">
-            Soluciones tecnológicas diseñadas para dar retorno real.
+            Qué podemos construir para tu empresa o proyecto.
           </h2>
           <p className="mt-4 font-sans text-base sm:text-lg text-neutral-600 dark:text-zinc-400 leading-relaxed">
-            Combinamos diseño de interfaz de alto nivel con arquitectura de software sólida para que tu inversión tecnológica funcione rápido hoy y escale mañana.
+            Nos encargamos del diseño de interfaz, el desarrollo completo y la puesta en producción para que tengas un sistema claro, rápido y fácil de mantener.
           </p>
         </div>
 
@@ -101,10 +98,6 @@ export default function Services() {
                     /{service.id}
                   </span>
                 </div>
-
-                <span className="font-mono text-[10px] font-bold text-neutral-500 dark:text-zinc-400 tracking-wider block mb-2">
-                  {service.techTag}
-                </span>
 
                 <h3 className="font-sans text-xl sm:text-2xl font-extrabold text-foreground mb-3">
                   {service.title}
@@ -131,7 +124,7 @@ export default function Services() {
               <div className="border-t border-border-subtle pt-5 flex flex-col gap-4">
                 <div>
                   <span className="font-mono text-[10px] font-semibold text-neutral-400 dark:text-zinc-500 uppercase tracking-wider block mb-2">
-                    Casos reales desarrollados:
+                    Proyectos relacionados:
                   </span>
                   <div className="flex flex-wrap gap-2">
                     {service.proofProjects.map((proj) => (
