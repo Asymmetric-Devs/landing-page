@@ -11,21 +11,35 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const marqueeText =
+    "ASYMMETRIC DEVS — INGENIERÍA DE SOFTWARE — PLATAFORMAS WEB · APPS MÓVILES · IA APLICADA — CORRIENTES & CHACO, ARGENTINA — ";
+
   return (
-    <footer className="bg-background border-t border-border-subtle py-16 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-border-subtle">
+    <footer className="bg-background border-t border-border-subtle relative overflow-hidden">
+      {/* Edge-to-Edge Swiss Architectural Marquee Strip */}
+      <div className="w-full bg-surface-contrast text-background border-b border-border-subtle py-3 overflow-hidden select-none">
+        <div className="animate-swiss-marquee font-mono text-xs font-bold uppercase tracking-[0.2em] whitespace-nowrap">
+          <span className="px-4">{marqueeText}</span>
+          <span className="px-4">{marqueeText}</span>
+          <span className="px-4">{marqueeText}</span>
+          <span className="px-4">{marqueeText}</span>
+        </div>
+      </div>
+
+      {/* Ruled Footer Grid */}
+      <div className="max-w-7xl mx-auto border-x border-border-subtle relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-border-subtle border-b border-border-subtle">
           {/* Left Column: Brand & Bio */}
-          <div className="md:col-span-5 max-w-sm">
+          <div className="md:col-span-5 p-8 sm:p-10 bg-surface">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <span className="font-sans font-extrabold tracking-tight text-lg text-foreground">
+              <span className="font-sans font-bold tracking-[-0.04em] text-lg text-foreground">
                 ASYMMETRIC
               </span>
-              <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/12 text-emerald-800 dark:text-emerald-300 border border-emerald-600/20">
-                [devs]
+              <span className="font-mono text-[10px] font-bold px-1.5 py-0.5 rounded-none bg-[#FF4D15] text-white uppercase">
+                [DEVS]
               </span>
             </Link>
-            <p className="font-sans text-xs text-neutral-500 dark:text-zinc-400 leading-relaxed">
+            <p className="font-sans text-xs text-brand-muted leading-relaxed max-w-sm">
               Estudio de ingeniería de software formado por cuatro Ingenieros en Sistemas. Desarrollamos plataformas web comerciales, aplicaciones móviles (iOS/Android) y automatizaciones con IA desde Argentina hacia el mundo.
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-3">
@@ -33,14 +47,14 @@ export default function Footer() {
                 href="https://wa.me/5493794797572"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:underline transition-colors duration-150"
+                className="font-mono text-xs font-bold text-[#FF4D15] hover:underline transition-colors duration-150"
               >
                 WhatsApp: +54 9 379 479-7572
               </a>
-              <span className="text-neutral-300 dark:text-zinc-700">·</span>
+              <span className="text-border-subtle">|</span>
               <a
                 href="mailto:asymmetricdevs@gmail.com"
-                className="font-mono text-xs font-semibold text-neutral-600 dark:text-zinc-300 hover:text-foreground transition-colors duration-150"
+                className="font-mono text-xs font-semibold text-foreground hover:text-[#FF4D15] transition-colors duration-150"
               >
                 asymmetricdevs@gmail.com
               </a>
@@ -48,15 +62,15 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div className="md:col-span-3">
-            <h4 className="font-mono text-[10px] font-bold text-neutral-400 dark:text-zinc-500 uppercase tracking-widest mb-4">
-              Secciones
+          <div className="md:col-span-3 p-8 sm:p-10 bg-background">
+            <h4 className="font-mono text-[10px] font-bold text-[#FF4D15] uppercase tracking-widest mb-4">
+              [SECCIONES]
             </h4>
             <ul className="flex flex-col gap-2.5">
               <li>
                 <Link
                   href="/#inicio"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150"
                 >
                   Inicio
                 </Link>
@@ -64,7 +78,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/proyectos"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150"
                 >
                   Todos los Proyectos
                 </Link>
@@ -72,7 +86,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/noticias"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150"
                 >
                   Noticias
                 </Link>
@@ -80,7 +94,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#servicios"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150"
                 >
                   Servicios
                 </Link>
@@ -88,7 +102,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#nosotros"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150"
                 >
                   Nuestro Equipo
                 </Link>
@@ -96,7 +110,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#contacto"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150"
                 >
                   Contacto Directo
                 </Link>
@@ -105,16 +119,16 @@ export default function Footer() {
           </div>
 
           {/* Direct Case Study Links */}
-          <div className="md:col-span-4">
-            <h4 className="font-mono text-[10px] font-bold text-neutral-400 dark:text-zinc-500 uppercase tracking-widest mb-4">
-              Desarrollos Destacados
+          <div className="md:col-span-4 p-8 sm:p-10 bg-background">
+            <h4 className="font-mono text-[10px] font-bold text-[#FF4D15] uppercase tracking-widest mb-4">
+              [DESARROLLOS DESTACADOS]
             </h4>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {projectsData.map((proj) => (
                 <li key={proj.slug}>
                   <Link
                     href={`/proyectos/${proj.slug}`}
-                    className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150 inline-flex items-center gap-1"
+                    className="font-mono text-xs text-brand-muted hover:text-[#FF4D15] transition-colors duration-150 inline-flex items-center gap-1"
                   >
                     {proj.title}
                   </Link>
@@ -125,13 +139,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Copyright & Back to Top */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-          <span className="font-mono text-[10px] text-neutral-400 dark:text-zinc-500">
+        <div className="px-8 sm:px-10 py-6 bg-surface flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span className="font-mono text-[10px] text-brand-muted uppercase tracking-wider">
             &copy; {currentYear} ASYMMETRIC DEVS · CORRIENTES &amp; CHACO, ARGENTINA.
           </span>
           <button
             onClick={scrollToTop}
-            className="group flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-zinc-400 hover:text-foreground active:scale-[0.96] transition-[color,transform] duration-150 cursor-pointer"
+            className="group flex items-center gap-1.5 px-3 py-1.5 border border-border-subtle bg-background hover:bg-foreground hover:text-background font-mono text-[10px] font-bold uppercase tracking-wider text-foreground transition-colors duration-150 cursor-pointer"
           >
             Volver Arriba
             <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform duration-150" />

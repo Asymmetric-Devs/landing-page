@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
-import { Outfit, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["500", "600", "700"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -58,7 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${outfit.variable} ${jetbrainsMono.variable} scroll-smooth h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} scroll-smooth h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -80,7 +87,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="selection:bg-emerald-500/20 dark:selection:bg-emerald-400/20 selection:text-foreground min-h-full flex flex-col font-sans">
+      <body className="selection:bg-[#FF4D15] selection:text-white min-h-full flex flex-col font-sans bg-background text-foreground">
         {children}
       </body>
     </html>
