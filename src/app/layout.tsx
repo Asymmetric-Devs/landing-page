@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Outfit, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${outfit.variable} ${jetbrainsMono.variable} scroll-smooth h-full antialiased`}
+      className={`dark ${plusJakartaSans.variable} ${geistMono.variable} scroll-smooth h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -68,19 +68,20 @@ export default function RootLayout({
               (function() {
                 try {
                   var theme = localStorage.getItem('theme');
-                  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-                  if (theme === 'dark' || (!theme && darkQuery.matches)) {
-                    document.documentElement.classList.add('dark');
-                  } else {
+                  if (theme === 'light') {
                     document.documentElement.classList.remove('dark');
+                  } else {
+                    document.documentElement.classList.add('dark');
                   }
-                } catch (e) {}
+                } catch (e) {
+                  document.documentElement.classList.add('dark');
+                }
               })();
             `,
           }}
         />
       </head>
-      <body className="selection:bg-emerald-500/20 dark:selection:bg-emerald-400/20 selection:text-foreground min-h-full flex flex-col font-sans">
+      <body className="selection:bg-indigo-500/25 dark:selection:bg-indigo-400/30 selection:text-foreground min-h-full flex flex-col font-sans bg-background text-foreground">
         {children}
       </body>
     </html>

@@ -32,38 +32,41 @@ export default function About() {
       id="nosotros"
       className="py-24 bg-background border-t border-border-subtle relative overflow-hidden"
     >
-      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] rounded-full bg-pastel-clay/35 dark:bg-pastel-clay/10 blur-[120px] pointer-events-none z-0" />
+      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] rounded-full bg-teal-500/8 dark:bg-teal-400/6 blur-[120px] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
           {/* Left Column: Agency Philosophy */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
-              <span className="font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest block mb-3">
+              <span className="font-mono text-[11px] font-semibold text-indigo-600 dark:text-teal-300 uppercase tracking-widest block mb-3">
                 [05 // EQUIPO]
               </span>
               <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-tight">
                 Cuatro Ingenieros en Sistemas trabajando en equipo.
               </h2>
-              <p className="mt-6 font-sans text-base text-neutral-600 dark:text-zinc-400 leading-relaxed">
+              <p className="mt-6 font-sans text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                 Nos formamos en la{" "}
                 <strong className="font-semibold text-foreground">
                   Universidad Tecnológica Nacional (UTN-FRRe)
                 </strong>{" "}
                 y venimos desarrollando software juntos en distintos ámbitos: plataformas comerciales para clientes, aplicaciones móviles publicadas en tiendas y prototipos premiados en competencias de tecnología.
               </p>
-              <p className="mt-4 font-sans text-base text-neutral-600 dark:text-zinc-400 leading-relaxed">
+              <p className="mt-4 font-sans text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                 En <strong className="font-semibold text-foreground">Asymmetric Devs</strong> trabajamos sin intermediarios: desde la primera reunión tratás con quienes toman las decisiones técnicas y escriben el código de tu producto.
               </p>
 
-              {/* Strengths list */}
-              <div className="mt-8 flex flex-col gap-3.5">
+              {/* Strengths list — Tactile Strength Pills */}
+              <div className="mt-8 flex flex-col gap-3">
                 {coreStrengths.map((strength) => (
-                  <div key={strength} className="flex items-start gap-3">
-                    <div className="mt-0.5 p-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 shrink-0">
+                  <div
+                    key={strength}
+                    className="flex items-start gap-3 p-3.5 rounded-2xl bg-white/80 dark:bg-[#0D111C]/90 border border-slate-900/8 dark:border-white/8 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                  >
+                    <div className="mt-0.5 p-1 rounded-full bg-teal-500/15 text-teal-600 dark:text-teal-300 border border-teal-500/25 shrink-0">
                       <Check className="w-3.5 h-3.5" />
                     </div>
-                    <span className="font-sans text-sm font-medium text-neutral-700 dark:text-zinc-300">
+                    <span className="font-sans text-sm font-medium text-slate-700 dark:text-slate-300 leading-snug">
                       {strength}
                     </span>
                   </div>
@@ -80,32 +83,34 @@ export default function About() {
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: idx * 0.08, duration: 0.45, ease: [0.23, 1, 0.32, 1] }}
-                className="p-6 rounded-3xl bg-white/85 dark:bg-zinc-900/65 border border-border-subtle hover:border-neutral-900/15 dark:hover:border-white/15 flex flex-col justify-between shadow-xs hover:shadow-md transition-[border-color,box-shadow] duration-200"
+                transition={{ type: "spring", delay: idx * 0.06, duration: 0.45, bounce: 0 }}
+                className="p-6 rounded-[28px] bg-white/90 dark:bg-[#0D111C]/90 border border-slate-900/8 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] hover:border-indigo-500/40 hover:shadow-xl hover:shadow-indigo-950/15 transition-[border-color,box-shadow] duration-200 flex flex-col justify-between"
               >
                 <div>
                   {/* Photo + Name Header */}
                   <div className="flex items-center gap-4 mb-4">
-                    <img
-                      src={member.photo}
-                      alt={member.name}
-                      className="w-14 h-14 rounded-2xl object-cover img-frame shrink-0"
-                    />
+                    <div className="p-0.5 rounded-[18px] bg-gradient-to-br from-indigo-500/40 to-teal-400/40 shrink-0">
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="w-14 h-14 rounded-[16px] object-cover img-frame shrink-0"
+                      />
+                    </div>
                     <div>
                       <h3 className="font-sans text-base font-extrabold text-foreground leading-snug">
                         {member.name}
                       </h3>
-                      <span className="block font-mono text-[10px] font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider mt-0.5">
+                      <span className="block font-mono text-[10px] font-semibold text-indigo-600 dark:text-teal-300 uppercase tracking-wider mt-0.5">
                         {member.specialtyTag}
                       </span>
                     </div>
                   </div>
 
-                  <p className="font-mono text-[11px] font-medium text-neutral-500 dark:text-zinc-400 mb-3">
+                  <p className="font-mono text-[11px] font-medium text-slate-500 dark:text-slate-400 mb-3">
                     {member.role}
                   </p>
 
-                  <p className="font-sans text-xs text-neutral-600 dark:text-zinc-400 leading-relaxed mb-5">
+                  <p className="font-sans text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
                     {member.bio}
                   </p>
 
@@ -114,7 +119,7 @@ export default function About() {
                     {member.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-2 py-0.5 rounded-md font-mono text-[10px] bg-stone-100 dark:bg-zinc-800 text-neutral-600 dark:text-zinc-300"
+                        className="px-2.5 py-0.5 rounded-md font-mono text-[10px] bg-slate-100 dark:bg-[#131929] text-slate-600 dark:text-slate-300 border border-slate-900/5 dark:border-white/5"
                       >
                         {skill}
                       </span>
@@ -129,7 +134,7 @@ export default function About() {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-100 dark:bg-zinc-800 hover:bg-blue-600 hover:text-white text-neutral-700 dark:text-zinc-300 font-mono text-[11px] font-semibold active:scale-[0.96] transition-[background-color,color,transform] duration-150"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-[#131929] hover:bg-indigo-600 hover:text-white text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold active:scale-[0.96] transition-[background-color,color,transform] duration-150 border border-slate-900/6 dark:border-white/8"
                       aria-label={`LinkedIn de ${member.name}`}
                     >
                       <LinkedinIcon className="w-3.5 h-3.5" />
@@ -139,7 +144,7 @@ export default function About() {
                       href={member.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-100 dark:bg-zinc-800 hover:bg-neutral-900 dark:hover:bg-white hover:text-white dark:hover:text-zinc-900 text-neutral-700 dark:text-zinc-300 font-mono text-[11px] font-semibold active:scale-[0.96] transition-[background-color,color,transform] duration-150"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-[#131929] hover:bg-slate-900 dark:hover:bg-white hover:text-white dark:hover:text-slate-950 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold active:scale-[0.96] transition-[background-color,color,transform] duration-150 border border-slate-900/6 dark:border-white/8"
                       aria-label={`GitHub de ${member.name}`}
                     >
                       <GithubIcon className="w-3.5 h-3.5" />
@@ -152,7 +157,7 @@ export default function About() {
                       href={member.portfolio}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-400 hover:underline"
+                      className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-indigo-600 dark:text-teal-300 hover:underline"
                     >
                       <Globe className="w-3.5 h-3.5" />
                       Portfolio

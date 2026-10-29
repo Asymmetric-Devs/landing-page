@@ -17,15 +17,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-border-subtle">
           {/* Left Column: Brand & Bio */}
           <div className="md:col-span-5 max-w-sm">
-            <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <span className="font-sans font-extrabold tracking-tight text-lg text-foreground">
+            <Link href="/" className="inline-flex items-center gap-2 mb-4 group">
+              <span className="font-sans font-extrabold tracking-tight text-lg text-foreground group-hover:opacity-85 transition-opacity duration-150">
                 ASYMMETRIC
               </span>
-              <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/12 text-emerald-800 dark:text-emerald-300 border border-emerald-600/20">
+              <span className="font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-500/12 dark:bg-indigo-500/15 text-indigo-700 dark:text-teal-300 border border-indigo-500/25 dark:border-teal-400/25 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)]">
                 [devs]
               </span>
             </Link>
-            <p className="font-sans text-xs text-neutral-500 dark:text-zinc-400 leading-relaxed">
+            <p className="font-sans text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
               Estudio de ingeniería de software formado por cuatro Ingenieros en Sistemas. Desarrollamos plataformas web comerciales, aplicaciones móviles (iOS/Android) y automatizaciones con IA desde Argentina hacia el mundo.
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-3">
@@ -33,14 +33,14 @@ export default function Footer() {
                 href="https://wa.me/5493794797572"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:underline transition-colors duration-150"
+                className="font-mono text-xs font-semibold text-teal-600 dark:text-teal-300 hover:underline transition-colors duration-150 tabular-nums"
               >
                 WhatsApp: +54 9 379 479-7572
               </a>
-              <span className="text-neutral-300 dark:text-zinc-700">·</span>
+              <span className="text-slate-300 dark:text-slate-700">·</span>
               <a
                 href="mailto:asymmetricdevs@gmail.com"
-                className="font-mono text-xs font-semibold text-neutral-600 dark:text-zinc-300 hover:text-foreground transition-colors duration-150"
+                className="font-mono text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-foreground transition-colors duration-150"
               >
                 asymmetricdevs@gmail.com
               </a>
@@ -49,14 +49,14 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className="md:col-span-3">
-            <h4 className="font-mono text-[10px] font-bold text-neutral-400 dark:text-zinc-500 uppercase tracking-widest mb-4">
+            <h4 className="font-mono text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">
               Secciones
             </h4>
             <ul className="flex flex-col gap-2.5">
               <li>
                 <Link
                   href="/#inicio"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-sans text-xs text-slate-600 dark:text-slate-400 hover:text-foreground transition-colors duration-150"
                 >
                   Inicio
                 </Link>
@@ -64,7 +64,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/proyectos"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-sans text-xs text-slate-600 dark:text-slate-400 hover:text-foreground transition-colors duration-150"
                 >
                   Todos los Proyectos
                 </Link>
@@ -72,7 +72,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/noticias"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-sans text-xs text-slate-600 dark:text-slate-400 hover:text-foreground transition-colors duration-150"
                 >
                   Noticias
                 </Link>
@@ -80,7 +80,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#servicios"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-sans text-xs text-slate-600 dark:text-slate-400 hover:text-foreground transition-colors duration-150"
                 >
                   Servicios
                 </Link>
@@ -88,7 +88,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#nosotros"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-sans text-xs text-slate-600 dark:text-slate-400 hover:text-foreground transition-colors duration-150"
                 >
                   Nuestro Equipo
                 </Link>
@@ -96,7 +96,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#contacto"
-                  className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150"
+                  className="font-sans text-xs text-slate-600 dark:text-slate-400 hover:text-foreground transition-colors duration-150"
                 >
                   Contacto Directo
                 </Link>
@@ -106,7 +106,7 @@ export default function Footer() {
 
           {/* Direct Case Study Links */}
           <div className="md:col-span-4">
-            <h4 className="font-mono text-[10px] font-bold text-neutral-400 dark:text-zinc-500 uppercase tracking-widest mb-4">
+            <h4 className="font-mono text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">
               Desarrollos Destacados
             </h4>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -114,7 +114,7 @@ export default function Footer() {
                 <li key={proj.slug}>
                   <Link
                     href={`/proyectos/${proj.slug}`}
-                    className="font-sans text-xs text-neutral-600 dark:text-zinc-400 hover:text-foreground transition-colors duration-150 inline-flex items-center gap-1"
+                    className="font-sans text-xs text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-teal-300 transition-colors duration-150 inline-flex items-center gap-1"
                   >
                     {proj.title}
                   </Link>
@@ -126,12 +126,12 @@ export default function Footer() {
 
         {/* Bottom Copyright & Back to Top */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-          <span className="font-mono text-[10px] text-neutral-400 dark:text-zinc-500">
+          <span className="font-mono text-[10px] text-slate-400 dark:text-slate-500 tabular-nums">
             &copy; {currentYear} ASYMMETRIC DEVS · CORRIENTES &amp; CHACO, ARGENTINA.
           </span>
           <button
             onClick={scrollToTop}
-            className="group flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-zinc-400 hover:text-foreground active:scale-[0.96] transition-[color,transform] duration-150 cursor-pointer"
+            className="group inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/80 dark:bg-[#0D111C]/90 border border-slate-900/8 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] font-mono text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 hover:text-foreground active:scale-[0.96] transition-[color,transform] duration-150 cursor-pointer"
           >
             Volver Arriba
             <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform duration-150" />

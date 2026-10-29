@@ -8,11 +8,10 @@ export default function Services() {
   const services = [
     {
       id: "01",
-      icon: <Globe className="w-6 h-6 text-foreground" />,
+      icon: <Globe className="w-6 h-6" />,
       title: "Sitios Web, Catálogos y Sistemas de Gestión",
       description:
         "Diseñamos y desarrollamos sitios web comerciales, catálogos interactivos y plataformas internas para mostrar tus servicios y organizar la operación diaria de tu negocio.",
-      accentClass: "bg-pastel-mint border border-neutral-900/5 dark:border-white/5",
       bullets: [
         "Sitios y catálogos adaptados a celulares y computadoras",
         "Paneles de administración propios para cargar productos, inmuebles o clientes sin depender de terceros",
@@ -25,11 +24,10 @@ export default function Services() {
     },
     {
       id: "02",
-      icon: <Smartphone className="w-6 h-6 text-foreground" />,
+      icon: <Smartphone className="w-6 h-6" />,
       title: "Aplicaciones Móviles (iOS y Android)",
       description:
         "Desarrollamos aplicaciones móviles para iOS y Android acompañándote desde el diseño de las pantallas hasta la publicación en Google Play y App Store.",
-      accentClass: "bg-pastel-sky border border-neutral-900/5 dark:border-white/5",
       bullets: [
         "Desarrollo en React Native y Expo para publicar en Android e iOS desde una misma base de código",
         "Notificaciones push, mapas, cámara, sincronización en tiempo real y cobros integrados",
@@ -42,11 +40,10 @@ export default function Services() {
     },
     {
       id: "03",
-      icon: <Cpu className="w-6 h-6 text-foreground" />,
+      icon: <Cpu className="w-6 h-6" />,
       title: "Automatización e Inteligencia Artificial",
       description:
         "Sumamos herramientas de Inteligencia Artificial e integraciones donde aportan valor práctico: asistentes de consulta, motores de recomendación, análisis de imágenes o trazabilidad.",
-      accentClass: "bg-pastel-indigo border border-neutral-900/5 dark:border-white/5",
       bullets: [
         "Asistentes conversacionales conectados a WhatsApp, catálogos o sistemas de turnos",
         "Procesamiento automático de documentos, imágenes y tareas operativas repetitivas",
@@ -67,13 +64,13 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <span className="font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest block mb-3">
+          <span className="font-mono text-[11px] font-semibold text-indigo-600 dark:text-teal-300 uppercase tracking-widest block mb-3">
             [04 // SERVICIOS]
           </span>
           <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-tight">
             Qué podemos construir para tu empresa o proyecto.
           </h2>
-          <p className="mt-4 font-sans text-base sm:text-lg text-neutral-600 dark:text-zinc-400 leading-relaxed">
+          <p className="mt-4 font-sans text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             Nos encargamos del diseño de interfaz, el desarrollo completo y la puesta en producción para que tengas un sistema claro, rápido y fácil de mantener.
           </p>
         </div>
@@ -86,15 +83,15 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.45, delay: idx * 0.08, ease: [0.23, 1, 0.32, 1] }}
-              className="p-8 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-border-subtle hover:border-neutral-900/15 dark:hover:border-white/15 flex flex-col justify-between shadow-xs hover:shadow-lg transition-[border-color,box-shadow] duration-200"
+              transition={{ type: "spring", duration: 0.45, delay: idx * 0.06, bounce: 0 }}
+              className="rounded-[28px] p-8 bg-white/90 dark:bg-[#0D111C]/90 border border-slate-900/8 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] hover:border-indigo-500/40 hover:shadow-xl hover:shadow-indigo-950/15 transition-[border-color,box-shadow] duration-200 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-7">
-                  <div className={`p-4 rounded-2xl ${service.accentClass}`}>
+                  <div className="p-4 rounded-2xl bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 border border-indigo-500/20 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)]">
                     {service.icon}
                   </div>
-                  <span className="font-mono text-sm text-neutral-400 dark:text-zinc-500 font-bold">
+                  <span className="font-mono text-sm text-slate-400 dark:text-slate-500 font-bold tabular-nums">
                     /{service.id}
                   </span>
                 </div>
@@ -103,7 +100,7 @@ export default function Services() {
                   {service.title}
                 </h3>
 
-                <p className="font-sans text-sm text-neutral-600 dark:text-zinc-400 leading-relaxed mb-6">
+                <p className="font-sans text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                   {service.description}
                 </p>
 
@@ -111,9 +108,9 @@ export default function Services() {
                   {service.bullets.map((bullet) => (
                     <li
                       key={bullet}
-                      className="flex items-start gap-2.5 font-sans text-xs text-neutral-700 dark:text-zinc-300 leading-relaxed"
+                      className="flex items-start gap-2.5 font-sans text-xs text-slate-700 dark:text-slate-300 leading-relaxed"
                     >
-                      <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -123,7 +120,7 @@ export default function Services() {
               {/* Real Case Studies Proof + CTA */}
               <div className="border-t border-border-subtle pt-5 flex flex-col gap-4">
                 <div>
-                  <span className="font-mono text-[10px] font-semibold text-neutral-400 dark:text-zinc-500 uppercase tracking-wider block mb-2">
+                  <span className="font-mono text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider block mb-2">
                     Proyectos relacionados:
                   </span>
                   <div className="flex flex-wrap gap-2">
@@ -131,7 +128,7 @@ export default function Services() {
                       <Link
                         key={proj.slug}
                         href={`/proyectos/${proj.slug}`}
-                        className="inline-flex items-center gap-1 px-3 py-1 rounded-full font-mono text-[11px] font-medium bg-stone-100 dark:bg-zinc-800 hover:bg-emerald-500/15 hover:text-emerald-700 dark:hover:text-emerald-300 text-foreground transition-colors duration-150"
+                        className="inline-flex items-center gap-1 px-3 py-1 rounded-full font-mono text-[11px] font-medium bg-slate-100 dark:bg-[#131929] hover:bg-indigo-500/15 hover:text-indigo-600 dark:hover:text-teal-300 text-foreground border border-slate-900/6 dark:border-white/8 active:scale-[0.96] transition-[background-color,color,transform] duration-150"
                       >
                         {proj.name}
                         <ArrowRight className="w-3 h-3" />
@@ -142,7 +139,7 @@ export default function Services() {
 
                 <Link
                   href="#contacto"
-                  className="inline-flex items-center gap-1.5 font-mono text-xs font-bold uppercase tracking-wider text-foreground hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors duration-150 pt-1"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-teal-300 hover:underline transition-colors duration-150 pt-1"
                 >
                   Consultar por este servicio
                   <ArrowRight className="w-3.5 h-3.5" />
