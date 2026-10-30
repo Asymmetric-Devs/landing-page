@@ -74,6 +74,46 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
+                  var blockedAttrs = { bis_skin_checked: 1, bis_register: 1 };
+                  var origSetAttribute = Element.prototype.setAttribute;
+                  Element.prototype.setAttribute = function(name, value) {
+                    if (name && blockedAttrs[String(name).toLowerCase()]) return;
+                    return origSetAttribute.apply(this, arguments);
+                  };
+                  var stripExtensionAttrs = function(root) {
+                    if (!root || !root.querySelectorAll) return;
+                    var nodes = root.querySelectorAll('[bis_skin_checked], [bis_register]');
+                    for (var i = 0; i < nodes.length; i++) {
+                      nodes[i].removeAttribute('bis_skin_checked');
+                      nodes[i].removeAttribute('bis_register');
+                    }
+                  };
+                  stripExtensionAttrs(document.documentElement);
+                  var obs = new MutationObserver(function(mutations) {
+                    for (var i = 0; i < mutations.length; i++) {
+                      var m = mutations[i];
+                      if (m.type === 'attributes' && m.attributeName && blockedAttrs[m.attributeName]) {
+                        m.target.removeAttribute(m.attributeName);
+                      } else if (m.type === 'childList' && m.addedNodes) {
+                        for (var j = 0; j < m.addedNodes.length; j++) {
+                          var node = m.addedNodes[j];
+                          if (node && node.nodeType === 1) {
+                            node.removeAttribute('bis_skin_checked');
+                            node.removeAttribute('bis_register');
+                            stripExtensionAttrs(node);
+                          }
+                        }
+                      }
+                    }
+                  });
+                  obs.observe(document.documentElement, {
+                    attributes: true,
+                    attributeFilter: ['bis_skin_checked', 'bis_register'],
+                    childList: true,
+                    subtree: true
+                  });
+                } catch (e) {}
+                try {
                   var theme = localStorage.getItem('theme');
                   var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
                   if (theme === 'dark' || (!theme && darkQuery.matches)) {
@@ -87,7 +127,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="selection:bg-[#FF4D15] selection:text-white min-h-full flex flex-col font-sans bg-background text-foreground">
+      <body
+        suppressHydrationWarning
+        className="selection:bg-[#FF4D15] selection:text-white min-h-full flex flex-col font-sans bg-background text-foreground"
+      >
         {children}
       </body>
     </html>
