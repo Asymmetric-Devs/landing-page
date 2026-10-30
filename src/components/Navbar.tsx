@@ -61,9 +61,9 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { name: "Proyectos", href: "/#proyectos", idx: "01" },
-    { name: "Noticias", href: "/#noticias", idx: "02" },
-    { name: "Servicios", href: "/#servicios", idx: "03" },
+    { name: "Servicios", href: "/#servicios", idx: "01" },
+    { name: "Proyectos", href: "/#proyectos", idx: "02" },
+    { name: "Noticias", href: "/#noticias", idx: "03" },
     { name: "Equipo", href: "/#nosotros", idx: "04" },
     { name: "Contacto", href: "/#contacto", idx: "05" },
   ];

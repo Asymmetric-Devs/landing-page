@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, ArrowUpRight, Play, CheckCircle2, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Play, ArrowLeft } from "lucide-react";
 import { projectsData, type ProjectCategory } from "@/data/projects";
 
 const categories: { id: "all" | ProjectCategory; label: string }[] = [
@@ -159,7 +159,7 @@ export default function Projects({ mode = "home" }: ProjectsProps) {
                   </div>
 
                   {/* Structured Body */}
-                  <div className="p-5 pb-0">
+                  <div className="p-5">
                     <div className="flex items-center justify-between gap-2 mb-2">
                       <span className="font-mono text-[11px] text-brand-muted">
                         {project.clientOrContext}
@@ -182,45 +182,17 @@ export default function Projects({ mode = "home" }: ProjectsProps) {
                       {project.shortDescription}
                     </p>
                   </div>
-
-                  {/* 2-Column Ruled Highlights */}
-                  <div className="mt-5 grid grid-cols-2 border-t border-b border-border-subtle divide-x divide-border-subtle bg-background">
-                    {project.highlights.slice(0, 2).map((item) => (
-                      <div key={item.label} className="p-3.5">
-                        <div className="flex items-center gap-1.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#FF4D15] shrink-0" />
-                          <span className="font-mono text-xs font-bold text-foreground">
-                            {item.metric}
-                          </span>
-                        </div>
-                        <span className="block font-sans text-[11px] text-brand-muted mt-1 leading-snug">
-                          {item.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
-                {/* Card Footer: Sharp Monospace Tech Tags + Action Buttons */}
-                <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-surface">
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tags.slice(0, 4).map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-0.5 rounded-none font-mono text-[10px] font-medium bg-background text-brand-muted border border-border-subtle"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center gap-2 shrink-0">
+                {/* Card Actions: Direct to Details & Web */}
+                <div className="px-5 py-4 border-t border-border-subtle bg-background flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2">
                     {project.links.live ? (
                       <a
                         href={project.links.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-3 py-2 rounded-none font-mono text-[11px] font-semibold text-foreground bg-background hover:bg-foreground hover:text-background border border-border-subtle transition-colors duration-150"
+                        className="inline-flex items-center gap-1.5 px-3 py-2 rounded-none font-mono text-[11px] font-semibold text-foreground bg-surface hover:bg-foreground hover:text-background border border-border-subtle transition-colors duration-150"
                       >
                         Web
                         <ArrowUpRight className="w-3.5 h-3.5" />
@@ -232,39 +204,26 @@ export default function Projects({ mode = "home" }: ProjectsProps) {
                         href={project.links.playStore}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-3 py-2 rounded-none font-mono text-[11px] font-semibold text-foreground bg-background hover:bg-foreground hover:text-background border border-border-subtle transition-colors duration-150"
+                        className="inline-flex items-center gap-1.5 px-3 py-2 rounded-none font-mono text-[11px] font-semibold text-foreground bg-surface hover:bg-foreground hover:text-background border border-border-subtle transition-colors duration-150"
                       >
                         Play Store
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </a>
                     ) : null}
-
-                    <Link
-                      href={`/proyectos/${project.slug}`}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-none font-mono text-[11px] font-bold uppercase tracking-wider bg-[#FF4D15] text-white hover:bg-[#E03E0B] transition-colors duration-150"
-                    >
-                      Ver Detalle
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
                   </div>
+
+                  <Link
+                    href={`/proyectos/${project.slug}`}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-none font-mono text-[11px] font-bold uppercase tracking-wider bg-[#FF4D15] text-white hover:bg-[#E03E0B] transition-colors duration-150"
+                  >
+                    Ver Detalle
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </motion.article>
             ))}
           </AnimatePresence>
         </motion.div>
-
-        {/* Bottom CTA on Home Mode */}
-        {mode === "home" ? (
-          <div className="mt-12 flex justify-center">
-            <Link
-              href="/proyectos"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-none font-mono text-xs font-bold uppercase tracking-wider bg-foreground text-background hover:bg-[#FF4D15] hover:text-white transition-colors duration-150"
-            >
-              Explorar todos los proyectos ({projectsData.length})
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        ) : null}
       </div>
     </section>
   );

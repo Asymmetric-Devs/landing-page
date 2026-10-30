@@ -9,17 +9,12 @@ export default function Services() {
     {
       id: "01",
       icon: <Globe className="w-5 h-5 text-white" />,
-      title: "Sitios Web, Catálogos y Sistemas de Gestión",
+      title: "Sitios Web & Sistemas de Gestión",
       description:
-        "Diseñamos y desarrollamos sitios web comerciales, catálogos interactivos y plataformas internas para mostrar tus servicios y organizar la operación diaria de tu negocio.",
+        "Plataformas web comerciales, catálogos interactivos y paneles autogestionables para operar tu negocio sin fricción.",
       bullets: [
-        "Sitios y catálogos adaptados a celulares y computadoras",
-        "Paneles de administración propios para cargar productos, inmuebles o clientes sin depender de terceros",
-        "Buena velocidad de carga, posicionamiento en buscadores (SEO) y despliegue en la nube",
-      ],
-      proofProjects: [
-        { name: "DÚO Propiedades", slug: "duo-propiedades" },
-        { name: "Chess Study", slug: "chess-study" },
+        "Diseño responsivo optimizado para alta velocidad, SEO y conversión",
+        "Paneles propios para administrar productos o clientes sin depender de terceros",
       ],
     },
     {
@@ -27,31 +22,21 @@ export default function Services() {
       icon: <Smartphone className="w-5 h-5 text-white" />,
       title: "Aplicaciones Móviles (iOS y Android)",
       description:
-        "Desarrollamos aplicaciones móviles para iOS y Android acompañándote desde el diseño de las pantallas hasta la publicación en Google Play y App Store.",
+        "Desarrollo integral en React Native y Expo, desde el diseño de interfaz hasta la publicación en App Store y Google Play.",
       bullets: [
-        "Desarrollo en React Native y Expo para publicar en Android e iOS desde una misma base de código",
-        "Notificaciones push, mapas, cámara, sincronización en tiempo real y cobros integrados",
-        "Paneles web de administración conectados a la misma base de datos de la app",
-      ],
-      proofProjects: [
-        { name: "DateBox (Google Play)", slug: "datebox" },
-        { name: "Elepad (Google Play)", slug: "elepad" },
+        "Una sola base de código nativa para ambas plataformas",
+        "Notificaciones push, pagos, mapas y sincronización en tiempo real",
       ],
     },
     {
       id: "03",
       icon: <Cpu className="w-5 h-5 text-white" />,
-      title: "Automatización e Inteligencia Artificial",
+      title: "Automatización & Inteligencia Artificial",
       description:
-        "Sumamos herramientas de Inteligencia Artificial e integraciones donde aportan valor práctico: asistentes de consulta, motores de recomendación, análisis de imágenes o trazabilidad.",
+        "Herramientas de IA e integraciones aplicadas donde generan impacto operativo real y medible para tu empresa.",
       bullets: [
-        "Asistentes conversacionales conectados a WhatsApp, catálogos o sistemas de turnos",
-        "Procesamiento automático de documentos, imágenes y tareas operativas repetitivas",
-        "Integración de pasarelas de pago (Mercado Pago), APIs externas y contratos inteligentes",
-      ],
-      proofProjects: [
-        { name: "DOSEL (1° Puesto NEATECH)", slug: "dosel" },
-        { name: "PolliNode", slug: "pollinode" },
+        "Asistentes inteligentes conectados a WhatsApp y sistemas de gestión",
+        "Procesamiento de documentos, visión satelital y automatización de procesos",
       ],
     },
   ];
@@ -65,7 +50,7 @@ export default function Services() {
         {/* Section Header */}
         <div className="max-w-3xl pb-12 border-b border-border-subtle mb-12">
           <span className="font-mono text-[11px] font-bold text-[#FF4D15] uppercase tracking-widest block mb-3">
-            [04 // SERVICIOS]
+            [01 // SERVICIOS]
           </span>
           <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.04em] text-foreground leading-[0.98]">
             Qué podemos construir para tu{" "}
@@ -110,7 +95,7 @@ export default function Services() {
                     {service.description}
                   </p>
 
-                  <ul className="flex flex-col gap-3.5">
+                  <ul className="flex flex-col gap-3">
                     {service.bullets.map((bullet) => (
                       <li
                         key={bullet}
@@ -124,32 +109,14 @@ export default function Services() {
                 </div>
               </div>
 
-              {/* Real Case Studies Proof + CTA */}
-              <div className="p-7 border-t border-border-subtle bg-background flex flex-col gap-4">
-                <div>
-                  <span className="font-mono text-[10px] font-bold text-brand-muted uppercase tracking-wider block mb-2.5">
-                    Proyectos relacionados:
-                  </span>
-                  <div className="flex flex-wrap gap-2">
-                    {service.proofProjects.map((proj) => (
-                      <Link
-                        key={proj.slug}
-                        href={`/proyectos/${proj.slug}`}
-                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-none font-mono text-[11px] font-semibold bg-surface hover:bg-foreground hover:text-background text-foreground border border-border-subtle transition-colors duration-150"
-                      >
-                        {proj.name}
-                        <ArrowRight className="w-3 h-3" />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
+              {/* Direct CTA */}
+              <div className="p-7 border-t border-border-subtle bg-background">
                 <Link
                   href="#contacto"
-                  className="inline-flex items-center gap-1.5 font-mono text-xs font-bold uppercase tracking-wider text-[#FF4D15] hover:underline pt-1"
+                  className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#FF4D15] hover:text-[#E03E0B] group transition-colors duration-150"
                 >
                   Consultar por este servicio
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-150" />
                 </Link>
               </div>
             </motion.div>

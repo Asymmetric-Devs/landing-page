@@ -52,7 +52,7 @@
   --color-border-subtle: var(--border-subtle);
 
   --font-sans: var(--font-space), system-ui, -apple-system, sans-serif;
-  --font-serif: var(--font-instrument), Georgia, serif;
+  --font-serif: var(--font-serif-accent), "Times New Roman", Georgia, serif;
   --font-mono: var(--font-mono), monospace;
 
   --color-brand-dark: var(--color-brand-primary);

@@ -69,7 +69,7 @@ export default function Contact() {
           <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between bg-background">
             <div>
               <span className="font-mono text-[11px] font-bold text-[#FF4D15] uppercase tracking-widest block mb-3">
-                [06 // CONTACTO]
+                [05 // CONTACTO]
               </span>
 
               <h2 className="font-sans text-3xl sm:text-4xl font-bold tracking-[-0.04em] text-foreground leading-[0.98]">

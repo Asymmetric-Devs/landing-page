@@ -38,7 +38,7 @@ export default function About() {
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <span className="font-mono text-[11px] font-bold text-[#FF4D15] uppercase tracking-widest block mb-3">
-                [05 // EQUIPO]
+                [04 // EQUIPO]
               </span>
               <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.04em] text-foreground leading-[0.98]">
                 Cuatro Ingenieros en Sistemas trabajando en{" "}

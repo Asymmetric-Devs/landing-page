@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Newsreader, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -8,10 +8,10 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["500", "600", "700"],
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument",
+const newsreader = Newsreader({
+  variable: "--font-serif-accent",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
 });
 
@@ -65,7 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${spaceGrotesk.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} scroll-smooth h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${newsreader.variable} ${jetbrainsMono.variable} scroll-smooth h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import Milestones from "@/components/Milestones";
-import Services from "@/components/Services";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -13,9 +13,9 @@ export default function Home() {
       <Navbar />
       <main className="flex-1 flex flex-col">
         <Hero />
+        <Services />
         <Projects />
         <Milestones />
-        <Services />
         <About />
         <Contact />
       </main>

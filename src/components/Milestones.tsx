@@ -220,18 +220,6 @@ export default function Milestones({ mode = "home" }: MilestonesProps) {
             </motion.article>
           ))}
         </div>
-
-        {mode === "home" && milestonesData.length > 3 ? (
-          <div className="mt-10 flex justify-center">
-            <Link
-              href="/noticias"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-none font-mono text-xs font-bold uppercase tracking-wider bg-surface hover:bg-foreground hover:text-background text-foreground transition-colors duration-150 border border-foreground"
-            >
-              Ver todas las noticias ({milestonesData.length})
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        ) : null}
       </div>
     </section>
   );
