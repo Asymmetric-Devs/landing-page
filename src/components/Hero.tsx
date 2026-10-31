@@ -358,45 +358,16 @@ export default function Hero() {
                   </span>
                 </div>
 
-                {/* Connector 2: Stem down into the branching tree */}
-                <div className="relative h-4 flex items-center">
-                  <svg
-                    className="absolute left-0 top-0 w-12 h-4 overflow-visible pointer-events-none"
-                    fill="none"
-                  >
-                    <line
-                      x1="26"
-                      y1="0"
-                      x2="26"
-                      y2="16"
-                      stroke="currentColor"
-                      className="text-border-subtle"
-                      strokeWidth="1.5"
-                    />
-                    <motion.line
-                      x1="26"
-                      y1="0"
-                      x2="26"
-                      y2="16"
-                      stroke="var(--accent)"
-                      strokeWidth="2.5"
-                      initial={{ pathLength: 0 }}
-                      animate={{ pathLength: [0, 1, 1] }}
-                      transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                  </svg>
-                </div>
-
                 {/* Branching Tree Container with 3 Output Destinations */}
-                <div className="relative pl-11 flex flex-col gap-2">
-                  {/* SVG Tree Spine on the left */}
+                <div className="relative pl-11 pt-4 flex flex-col gap-2">
+                  {/* SVG Tree Spine on the left: starts right at the bottom edge of ASYMMETRIC (y=0) */}
                   <svg
-                    className="absolute left-0 top-0 w-11 h-[160px] overflow-visible pointer-events-none"
+                    className="absolute left-0 top-0 w-11 h-[176px] overflow-visible pointer-events-none"
                     fill="none"
                   >
                     {/* Layer 1: All base inactive paths rendered first */}
                     {studioOutputs.map((item) => {
-                      const yTargets = [24, 80, 136];
+                      const yTargets = [40, 96, 152];
                       const yTarget = yTargets[item.id];
                       const curve = `M 26 0 L 26 ${yTarget - 12} C 26 ${yTarget - 4}, 34 ${yTarget}, 44 ${yTarget}`;
 
@@ -413,20 +384,22 @@ export default function Hero() {
 
                     {/* Layer 2: Active highlighted path and particle ALWAYS rendered on top */}
                     {(() => {
-                      const yTargets = [24, 80, 136];
+                      const yTargets = [40, 96, 152];
                       const yTarget = yTargets[activeIdx];
                       const activeCurve = `M 26 0 L 26 ${yTarget - 12} C 26 ${yTarget - 4}, 34 ${yTarget}, 44 ${yTarget}`;
 
                       return (
                         <g key={`mobile-active-${activeIdx}`}>
+                          {/* Entire path stays solidly painted in lime — identical to PC */}
                           <motion.path
                             d={activeCurve}
                             stroke="var(--accent)"
                             strokeWidth="2.5"
                             initial={{ pathLength: 0 }}
                             animate={{ pathLength: 1 }}
-                            transition={{ duration: 0.35, ease: "easeOut" }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
                           />
+                          {/* The only recurring animation is the green traveling photon/particle */}
                           <motion.circle
                             r="3.5"
                             fill="var(--accent)"
