@@ -35,7 +35,7 @@ const studioOutputs = [
   {
     id: 2,
     num: "03",
-    label: "Automatización con IA",
+    label: "Automatización & IA",
     sublabel: "Atención y tareas sin fricción",
     description:
       "Asistentes inteligentes conectados a tu WhatsApp o sistema que responden consultas, agendan turnos y ahorran horas de trabajo manual.",
@@ -234,7 +234,7 @@ export default function Hero() {
                       ASYMMETRIC
                     </span>
                     <span className="font-mono text-[9px] opacity-75 uppercase tracking-wider block">
-                      Diseño &amp; IA
+                      Diseño &amp; Desarrollo
                     </span>
                   </div>
 
