@@ -62,7 +62,7 @@ export default function Contact() {
       id="contacto"
       className="bg-background bg-grid-pattern relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto border-x border-border-subtle px-6 md:px-12 py-20 relative z-10">
+      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto border-x border-border-subtle px-6 md:px-12 py-20 relative z-10">
         {/* 2-Column Architectural Contact Board */}
         <div className="border border-border-subtle bg-surface grid grid-cols-1 lg:grid-cols-12 lg:divide-x divide-border-subtle">
           {/* Left Column: Direct Channels & Info */}

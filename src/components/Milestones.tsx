@@ -10,7 +10,6 @@ import {
   ArrowUpRight,
   ArrowRight,
   ArrowLeft,
-  MapPin,
   Calendar,
 } from "lucide-react";
 import { milestonesData, type MilestoneItem } from "@/data/projects";
@@ -56,7 +55,7 @@ export default function Milestones({ mode = "home" }: MilestonesProps) {
           : "pt-24 pb-20 bg-background"
       } relative overflow-hidden`}
     >
-      <div className="max-w-7xl mx-auto border-x border-border-subtle px-6 md:px-12 py-20 relative z-10">
+      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto border-x border-border-subtle px-6 md:px-12 py-20 relative z-10">
         {mode === "catalog" ? (
           <div className="mb-8">
             <Link
@@ -176,23 +175,14 @@ export default function Milestones({ mode = "home" }: MilestonesProps) {
                     {item.subtitle}
                   </p>
 
-                  <p
-                    className={`mt-4 font-sans text-sm text-brand-muted leading-relaxed ${
-                      mode === "home" ? "line-clamp-4" : ""
-                    }`}
-                  >
+                  <p className="mt-4 font-sans text-sm text-brand-muted leading-relaxed">
                     {item.description}
                   </p>
-
-                  <div className="mt-4 pt-3 border-t border-border-subtle/60 flex items-center gap-1.5 font-mono text-[11px] text-brand-muted">
-                    <MapPin className="w-3.5 h-3.5 text-accent-text dark:text-accent" />
-                    <span>{item.location}</span>
-                  </div>
                 </div>
               </div>
 
-              {/* Action Links */}
-              <div className="px-6 py-4 border-t border-border-subtle bg-background flex flex-wrap items-center gap-2">
+              {/* Action Links — máximo 2 botones ordenados */}
+              <div className="px-6 py-4 border-t border-border-subtle bg-background grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {item.links.map((link) =>
                   link.external ? (
                     <a
@@ -200,19 +190,19 @@ export default function Milestones({ mode = "home" }: MilestonesProps) {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-3.5 py-2 rounded-none font-mono text-[11px] font-semibold bg-surface hover:bg-foreground hover:text-background text-foreground border border-border-subtle transition-colors duration-150"
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-none font-mono text-[11px] font-semibold bg-surface hover:bg-foreground hover:text-background text-foreground border border-border-subtle transition-colors duration-150 text-center"
                     >
-                      {link.label}
-                      <ArrowUpRight className="w-3 h-3" />
+                      <span className="truncate">{link.label}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
                     </a>
                   ) : (
                     <Link
                       key={link.label}
                       href={link.url}
-                      className="inline-flex items-center gap-1 px-3.5 py-2 rounded-none font-mono text-[11px] font-bold uppercase tracking-wider bg-accent text-accent-foreground hover:bg-accent-hover transition-colors duration-150"
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-none font-mono text-[11px] font-bold uppercase tracking-wider bg-accent text-accent-foreground hover:bg-accent-hover transition-colors duration-150 text-center"
                     >
-                      {link.label}
-                      <ArrowRight className="w-3 h-3" />
+                      <span className="truncate">{link.label}</span>
+                      <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                     </Link>
                   )
                 )}

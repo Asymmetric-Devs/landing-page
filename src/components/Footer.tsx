@@ -11,23 +11,10 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const marqueeText =
-    "ASYMMETRIC DEVS — INGENIERÍA DE SOFTWARE — PLATAFORMAS WEB · APPS MÓVILES · IA APLICADA — CORRIENTES & CHACO, ARGENTINA — ";
-
   return (
     <footer className="bg-background border-t border-border-subtle relative overflow-hidden">
-      {/* Edge-to-Edge Swiss Architectural Marquee Strip */}
-      <div className="w-full bg-surface-contrast text-background border-b border-border-subtle py-3 overflow-hidden select-none">
-        <div className="animate-swiss-marquee font-mono text-xs font-bold uppercase tracking-[0.2em] whitespace-nowrap">
-          <span className="px-4">{marqueeText}</span>
-          <span className="px-4">{marqueeText}</span>
-          <span className="px-4">{marqueeText}</span>
-          <span className="px-4">{marqueeText}</span>
-        </div>
-      </div>
-
       {/* Ruled Footer Grid */}
-      <div className="max-w-7xl mx-auto border-x border-border-subtle relative z-10">
+      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto border-x border-border-subtle relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-border-subtle border-b border-border-subtle">
           {/* Left Column: Brand & Bio */}
           <div className="md:col-span-5 p-8 sm:p-10 bg-surface">

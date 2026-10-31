@@ -12,9 +12,6 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
-  Layers,
-  Cpu,
-  Database,
   Maximize2,
 } from "lucide-react";
 import type { ProjectItem } from "@/data/projects";
@@ -51,7 +48,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
 
   return (
     <article className="pt-16 bg-background min-h-screen">
-      <div className="max-w-7xl mx-auto border-x border-border-subtle px-6 md:px-12 py-12 sm:py-16">
+      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto border-x border-border-subtle px-6 md:px-12 py-12 sm:py-16">
         {/* Back Breadcrumb & Technical Spec Header */}
         <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-border-subtle mb-10">
           <Link
@@ -77,7 +74,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
         {/* Hero Title & Links */}
         <div className="max-w-4xl">
           <span className="font-mono text-xs font-bold text-accent-text dark:text-accent uppercase tracking-wider block mb-2">
-            [{project.clientOrContext} · {project.period}]
+            [{project.clientOrContext}]
           </span>
           <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.04em] text-foreground leading-[0.98]">
             {project.title}
@@ -370,68 +367,6 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
             </div>
           </div>
         ) : null}
-
-        {/* Clean Basic Technical Summary Table */}
-        <div className="mt-16 border border-border-subtle bg-surface">
-          <div className="p-6 sm:p-8 border-b border-border-subtle bg-background flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <span className="font-mono text-[11px] font-bold text-accent-text dark:text-accent uppercase tracking-widest block mb-1">
-                [FICHA TÉCNICA RESUMIDA]
-              </span>
-              <h2 className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-foreground">
-                Tecnologías que respaldan este proyecto
-              </h2>
-            </div>
-            <div className="flex flex-wrap gap-1.5">
-              {project.tags.map((t) => (
-                <span
-                  key={t}
-                  className="px-3 py-1 rounded-none font-mono text-[11px] font-semibold bg-surface text-foreground border border-border-subtle"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border-subtle">
-            <div className="p-6 sm:p-8 flex items-start gap-3">
-              <Layers className="w-5 h-5 text-accent-text dark:text-accent shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-mono text-xs font-bold uppercase text-foreground">
-                  Interfaz &amp; Experiencia
-                </h3>
-                <p className="mt-1.5 font-sans text-xs text-brand-muted leading-relaxed">
-                  {project.techSummary.frontend}
-                </p>
-              </div>
-            </div>
-
-            <div className="p-6 sm:p-8 flex items-start gap-3">
-              <Cpu className="w-5 h-5 text-accent-text dark:text-accent shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-mono text-xs font-bold uppercase text-foreground">
-                  Motor &amp; Lógica
-                </h3>
-                <p className="mt-1.5 font-sans text-xs text-brand-muted leading-relaxed">
-                  {project.techSummary.backend}
-                </p>
-              </div>
-            </div>
-
-            <div className="p-6 sm:p-8 flex items-start gap-3">
-              <Database className="w-5 h-5 text-accent-text dark:text-accent shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-mono text-xs font-bold uppercase text-foreground">
-                  Infraestructura &amp; Datos
-                </h3>
-                <p className="mt-1.5 font-sans text-xs text-brand-muted leading-relaxed">
-                  {project.techSummary.infraAndData}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Next / Prev Project Navigation + Conversion Banner */}
         <div className="mt-16 pt-10 border-t border-border-subtle flex flex-col gap-10">

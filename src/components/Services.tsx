@@ -46,21 +46,23 @@ export default function Services() {
       id="servicios"
       className="bg-background border-b border-border-subtle relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto border-x border-border-subtle px-6 md:px-12 py-20 relative z-10">
+      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto border-x border-border-subtle px-6 md:px-12 py-20 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl pb-12 border-b border-border-subtle mb-12">
-          <span className="font-mono text-[11px] font-bold text-accent-text dark:text-accent uppercase tracking-widest block mb-3">
-            [01 // SERVICIOS]
-          </span>
-          <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.04em] text-foreground leading-[1.08] sm:leading-[1.02]">
-            Qué podemos construir para tu{" "}
-            <span className="marker-highlight inline-block bg-accent text-accent-foreground px-3 py-0.5 font-bold">
-              empresa o proyecto.
+        <div className="pb-12 border-b border-border-subtle mb-12">
+          <div className="max-w-3xl">
+            <span className="font-mono text-[11px] font-bold text-accent-text dark:text-accent uppercase tracking-widest block mb-3">
+              [01 // SERVICIOS]
             </span>
-          </h2>
-          <p className="mt-4 font-sans text-base sm:text-lg text-brand-muted leading-relaxed">
-            Nos encargamos del diseño de interfaz, el desarrollo completo y la puesta en producción para que tengas un sistema claro, rápido y fácil de mantener.
-          </p>
+            <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.04em] text-foreground leading-[1.08] sm:leading-[1.02]">
+              Qué podemos construir para tu{" "}
+              <span className="marker-highlight inline-block bg-accent text-accent-foreground px-3 py-0.5 font-bold">
+                empresa o proyecto.
+              </span>
+            </h2>
+            <p className="mt-4 font-sans text-base sm:text-lg text-brand-muted leading-relaxed">
+              Nos encargamos del diseño de interfaz, el desarrollo completo y la puesta en producción para que tengas un sistema claro, rápido y fácil de mantener.
+            </p>
+          </div>
         </div>
 
         {/* 3-Column Architectural Board */}
@@ -76,21 +78,17 @@ export default function Services() {
             >
               <div>
                 {/* Top Index Cell Header */}
-                <div className="px-7 py-5 border-b border-border-subtle bg-background flex items-center justify-between">
-                  <span className="font-sans text-3xl sm:text-4xl font-bold tracking-tighter text-foreground">
-                    {service.id}
-                  </span>
-                  <div className="w-10 h-10 bg-accent text-accent-foreground flex items-center justify-center rounded-none font-bold">
+                <div className="px-7 py-5 border-b border-border-subtle bg-background flex items-center justify-between gap-4 min-h-[96px]">
+                  <h3 className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-foreground leading-tight">
+                    {service.title}
+                  </h3>
+                  <div className="w-10 h-10 bg-accent text-accent-foreground flex items-center justify-center rounded-none font-bold shrink-0">
                     {service.icon}
                   </div>
                 </div>
 
                 {/* Body Content */}
                 <div className="p-7">
-                  <h3 className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-foreground mb-3">
-                    {service.title}
-                  </h3>
-
                   <p className="font-sans text-sm text-brand-muted leading-relaxed mb-6">
                     {service.description}
                   </p>

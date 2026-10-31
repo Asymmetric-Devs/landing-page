@@ -7,7 +7,7 @@ import {
   ArrowRight,
   Globe,
   Smartphone,
-  Sparkles,
+  Settings,
   Lightbulb,
 } from "lucide-react";
 
@@ -20,8 +20,7 @@ const studioOutputs = [
     description:
       "Páginas comerciales rápidas, catálogos interactivos y paneles propios para administrar tus clientes, ventas o inventario desde cualquier dispositivo.",
     icon: Globe,
-    yPos: 56,
-    path: "M 272 160 C 302 160, 304 56, 334 56",
+    yPos: 44,
   },
   {
     id: 1,
@@ -31,8 +30,7 @@ const studioOutputs = [
     description:
       "Aplicaciones móviles pensadas para que tus clientes reserven, compren o interactúen con tu negocio desde su teléfono todos los días.",
     icon: Smartphone,
-    yPos: 160,
-    path: "M 272 160 L 334 160",
+    yPos: 135,
   },
   {
     id: 2,
@@ -41,9 +39,8 @@ const studioOutputs = [
     sublabel: "Atención y tareas sin fricción",
     description:
       "Asistentes inteligentes conectados a tu WhatsApp o sistema que responden consultas, agendan turnos y ahorran horas de trabajo manual.",
-    icon: Sparkles,
-    yPos: 264,
-    path: "M 272 160 C 302 160, 304 264, 334 264",
+    icon: Settings,
+    yPos: 226,
   },
 ] as const;
 
@@ -64,20 +61,20 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative pt-16 bg-background bg-grid-pattern"
+      className="relative pt-16 bg-background border-b border-border-subtle lg:min-h-[calc(100dvh-4rem)] lg:flex lg:flex-col overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto border-x border-b border-border-subtle bg-background">
+      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto w-full border-x border-border-subtle bg-background flex-1 flex flex-col justify-center">
         {/* Main 12-Col Swiss Architectural Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 lg:divide-x lg:divide-border-subtle items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:divide-x lg:divide-border-subtle items-stretch flex-1">
           {/* Left Column: Editorial Manifesto & CTAs */}
-          <div className="lg:col-span-6 p-6 sm:p-10 lg:p-12 flex flex-col justify-between">
+          <div className="lg:col-span-6 p-6 sm:p-8 lg:p-10 xl:p-14 flex flex-col justify-center">
             <div>
               {/* Headline with Dosel Signature Highlighter Block */}
               <motion.h1
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.06 }}
-                className="font-sans text-4xl sm:text-5xl xl:text-[3.5rem] font-bold tracking-[-0.04em] text-foreground leading-[1.06] sm:leading-[1.03]"
+                className="font-sans text-4xl sm:text-5xl xl:text-[3.25rem] font-bold tracking-[-0.04em] text-foreground leading-[1.06] sm:leading-[1.03]"
               >
                 Ingeniería de software que convierte ideas en{" "}
                 <span className="marker-highlight inline-block bg-accent text-accent-foreground px-3 py-0.5 font-bold">
@@ -120,44 +117,11 @@ export default function Hero() {
                 </Link>
               </motion.div>
             </div>
-
-            {/* Bottom Human-Friendly Pillars */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-              className="mt-10 pt-6 border-t border-border-subtle grid grid-cols-3 gap-3 text-left"
-            >
-              <div>
-                <span className="block font-mono text-[10px] text-accent-text dark:text-accent font-bold uppercase tracking-wider">
-                  01 &middot; Trato directo
-                </span>
-                <span className="font-sans font-bold text-xs sm:text-sm text-foreground mt-0.5 block">
-                  Sin intermediarios
-                </span>
-              </div>
-              <div className="border-l border-border-subtle pl-3">
-                <span className="block font-mono text-[10px] text-accent-text dark:text-accent font-bold uppercase tracking-wider">
-                  02 &middot; Paso a paso
-                </span>
-                <span className="font-sans font-bold text-xs sm:text-sm text-foreground mt-0.5 block">
-                  Avances cada semana
-                </span>
-              </div>
-              <div className="border-l border-border-subtle pl-3">
-                <span className="block font-mono text-[10px] text-accent-text dark:text-accent font-bold uppercase tracking-wider">
-                  03 &middot; Entrega
-                </span>
-                <span className="font-sans font-bold text-xs sm:text-sm text-foreground mt-0.5 block">
-                  Listo para usar
-                </span>
-              </div>
-            </motion.div>
           </div>
 
-          {/* Right Column: Minimalist Architectural Node Graph (Propuesta D + C) */}
+          {/* Right Column: Minimalist Architectural Node Graph */}
           <div
-            className="lg:col-span-6 p-6 sm:p-10 lg:p-12 flex flex-col justify-between bg-surface/40 border-t lg:border-t-0 border-border-subtle relative overflow-hidden select-none"
+            className="lg:col-span-6 p-6 sm:p-8 lg:p-8 xl:p-10 flex flex-col justify-between bg-surface/40 border-t lg:border-t-0 border-border-subtle relative overflow-hidden select-none"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
@@ -173,21 +137,21 @@ export default function Hero() {
             </div>
 
             {/* Interactive Node Architecture Diagram */}
-            <div className="relative my-6 py-4 flex items-center justify-center">
+            <div className="relative my-3 lg:my-4 py-2 flex items-center justify-center">
               {/* Desktop / Tablet Connected Graph */}
               <div className="w-full relative">
                 {/* SVG Connection Lines Behind Nodes (visible on sm+) */}
                 <svg
-                  viewBox="0 0 560 320"
-                  className="hidden sm:block w-full h-[300px] overflow-visible pointer-events-none"
+                  viewBox="0 0 560 270"
+                  className="hidden sm:block w-full h-[250px] overflow-visible pointer-events-none"
                   fill="none"
                 >
                   {/* Base line from Origin (Tu Idea) to Central Hub (Asymmetric) */}
                   <line
                     x1="108"
-                    y1="160"
+                    y1="135"
                     x2="164"
-                    y2="160"
+                    y2="135"
                     stroke="currentColor"
                     className="text-border-subtle"
                     strokeWidth="1.5"
@@ -195,9 +159,9 @@ export default function Hero() {
                   />
                   <motion.line
                     x1="108"
-                    y1="160"
+                    y1="135"
                     x2="164"
-                    y2="160"
+                    y2="135"
                     stroke="var(--accent)"
                     strokeWidth="2.5"
                     initial={{ pathLength: 0 }}
@@ -205,10 +169,10 @@ export default function Hero() {
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                   />
 
-                  {/* 3 Branch Curves from Central Hub (x=292) to Output Nodes (x=358) */}
+                  {/* 3 Branch Curves from Central Hub (x=272) to Output Nodes (x=334) */}
                   {studioOutputs.map((item) => {
                     const isActive = activeIdx === item.id;
-                    const curve = `M 272 160 C 302 160, 304 ${item.yPos}, 334 ${item.yPos}`;
+                    const curve = `M 272 135 C 302 135, 304 ${item.yPos}, 334 ${item.yPos}`;
                     return (
                       <g key={item.id}>
                         <path
@@ -270,12 +234,12 @@ export default function Hero() {
                       ASYMMETRIC
                     </span>
                     <span className="font-mono text-[9px] opacity-75 uppercase tracking-wider block">
-                      Diseño &amp; Código
+                      Diseño &amp; IA
                     </span>
                   </div>
 
                   {/* Node 3: 3 Interactive Output Destinations */}
-                  <div className="sm:w-[228px] shrink-0 flex flex-col justify-between sm:h-[268px] gap-2.5">
+                  <div className="sm:w-[228px] shrink-0 flex flex-col justify-between sm:h-[240px] gap-2">
                     {studioOutputs.map((item) => {
                       const Icon = item.icon;
                       const isActive = activeIdx === item.id;
@@ -285,20 +249,20 @@ export default function Hero() {
                           type="button"
                           onClick={() => setActiveIdx(item.id)}
                           onMouseEnter={() => setActiveIdx(item.id)}
-                          className={`w-full p-3 text-left border transition-all duration-150 cursor-pointer flex items-center gap-3 ${
+                          className={`w-full p-2.5 text-left border transition-all duration-150 cursor-pointer flex items-center gap-3 ${
                             isActive
                               ? "bg-accent text-accent-foreground border-foreground shadow-xs translate-x-0 sm:-translate-x-0.5"
                               : "bg-background text-foreground border-border-subtle hover:border-foreground"
                           }`}
                         >
                           <div
-                            className={`w-8 h-8 flex items-center justify-center shrink-0 border ${
+                            className={`w-7 h-7 flex items-center justify-center shrink-0 border ${
                               isActive
                                 ? "bg-foreground text-background border-foreground"
                                 : "bg-surface text-foreground border-border-subtle"
                             }`}
                           >
-                            <Icon className="w-4 h-4" />
+                            <Icon className="w-3.5 h-3.5" />
                           </div>
                           <div className="min-w-0 flex-1">
                             <span
@@ -307,15 +271,6 @@ export default function Hero() {
                               }`}
                             >
                               {item.label}
-                            </span>
-                            <span
-                              className={`font-sans text-[11px] leading-tight block mt-0.5 ${
-                                isActive
-                                  ? "text-accent-foreground/80 font-medium"
-                                  : "text-brand-muted"
-                              }`}
-                            >
-                              {item.sublabel}
                             </span>
                           </div>
                         </button>
@@ -326,8 +281,8 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Bottom Minimalist Editorial Caption (MetaLab / Instrument Style) */}
-            <div className="pt-5 border-t border-border-subtle">
+            {/* Bottom Minimalist Editorial Caption */}
+            <div className="pt-4 border-t border-border-subtle">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeItem.id}
@@ -343,7 +298,7 @@ export default function Hero() {
                         {activeItem.num} &middot; {activeItem.label}
                       </span>
                     </div>
-                    <p className="font-sans text-sm text-brand-muted leading-relaxed">
+                    <p className="font-sans text-xs sm:text-sm text-brand-muted leading-relaxed">
                       {activeItem.description}
                     </p>
                   </div>

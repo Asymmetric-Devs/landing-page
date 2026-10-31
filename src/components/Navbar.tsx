@@ -77,7 +77,7 @@ export default function Navbar() {
             : "bg-background"
         }`}
       >
-        <div className="max-w-7xl mx-auto h-full border-x border-border-subtle flex items-stretch justify-between">
+        <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto h-full border-x border-border-subtle flex items-stretch justify-between">
           {/* Left Cell: Brand Logo */}
           <Link
             href="/"

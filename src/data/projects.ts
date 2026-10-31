@@ -508,24 +508,19 @@ export const milestonesData: MilestoneItem[] = [
     title: "1° Puesto en el Track de Stellar — Ideatón NEA TECH 2026",
     subtitle: "Proyecto DOSEL · Museo de Arte Contemporáneo de Corrientes (MACC)",
     description:
-      "Luego de tres días de trabajo en Corrientes, obtuvimos el primer lugar en el track de Stellar con DOSEL: una solución que combina imágenes satelitales de Sentinel-2 con contratos inteligentes en Soroban para verificar que el bosque nativo siga en pie antes de emitir créditos de carbono.",
+      "Luego de tres días de trabajo en Corrientes, obtuvimos el primer lugar en el track de Stellar con DOSEL: una solución que combina imágenes satelitales Sentinel-2 con contratos inteligentes en Soroban para verificar bosque nativo.",
     location: "Corrientes, Argentina",
     image: "/projects/dosel/app-portada.png",
     relatedProjectSlug: "dosel",
     links: [
-      {
-        label: "Ver publicación en LinkedIn",
-        url: "https://www.linkedin.com/posts/sixto-arrejin_ideathon-neatech-stellar-ugcPost-7518038677902589952-W6t7/",
-        external: true,
-      },
       {
         label: "Ver proyecto DOSEL",
         url: "/proyectos/dosel",
         external: false,
       },
       {
-        label: "Probar Demo",
-        url: "https://ideathon-henna.vercel.app/",
+        label: "Publicación en LinkedIn",
+        url: "https://www.linkedin.com/posts/sixto-arrejin_ideathon-neatech-stellar-ugcPost-7518038677902589952-W6t7/",
         external: true,
       },
     ],
@@ -538,17 +533,17 @@ export const milestonesData: MilestoneItem[] = [
     title: "Participación en radio tras el Ideatón NEA TECH 2026",
     subtitle: "Difusión del proyecto DOSEL y el trabajo del equipo en Corrientes y Chaco",
     description:
-      "Fuimos invitados a conversar en radio para contar cómo funciona la verificación satelital de bosques nativos que armamos con DOSEL, cómo nos organizamos para participar el mismo fin de semana en el NEA TECH y en el Rally de Innovación, y los desarrollos que venimos trabajando en Asymmetric.",
+      "Fuimos invitados a conversar en radio sobre la verificación satelital de bosques nativos con DOSEL, nuestra participación simultánea en el Rally de Innovación y los desarrollos en marcha en Asymmetric.",
     location: "Corrientes / Chaco",
     relatedProjectSlug: "dosel",
     links: [
       {
-        label: "Conocer el proyecto DOSEL",
+        label: "Ver proyecto DOSEL",
         url: "/proyectos/dosel",
         external: false,
       },
       {
-        label: "Nota sobre NEA TECH en El Litoral",
+        label: "Nota en El Litoral",
         url: "https://www.ellitoral.com.ar/sociedad/2026-10-18-15-53-0-corrientes-reunio-a-empresas-y-emprendedores-en-la-primera-edicion-de-nea-tech",
         external: true,
       },
@@ -562,25 +557,20 @@ export const milestonesData: MilestoneItem[] = [
     title: "3° Puesto en Innovación — Rally Latinoamericano de Innovación 2026",
     subtitle: "Proyecto PolliNode · Sede UTN Facultad Regional Resistencia / INTECNOR",
     description:
-      "En paralelo al fin de semana del NEA TECH, participamos durante 28 horas en el Rally Latinoamericano de Innovación y logramos el 3° puesto en la categoría Innovación de nuestra sede con PolliNode: sensores solares con visión artificial y bioacústica para proteger polinizadores nativos.",
+      "Participamos durante 28 horas continuas en el Rally Latinoamericano y logramos el 3° puesto en Innovación con PolliNode: sensores solares con visión artificial y bioacústica para protección de polinizadores nativos.",
     location: "Resistencia, Chaco",
     image: "/projects/pollinode/guia-pizarron.png",
     relatedProjectSlug: "pollinode",
     links: [
       {
-        label: "Ver publicación en LinkedIn",
-        url: "https://www.linkedin.com/posts/sixto-arrejin_rallylatam2026-utnfrre-pollinode-activity-7519412922008150017-VkdQ/",
-        external: true,
-      },
-      {
-        label: "Nota oficial UTN-FRRe",
-        url: "https://www.frre.utn.edu.ar/noticias/utn-frre-reconocio-a-estudiantes-destacados-en-el/",
-        external: true,
-      },
-      {
         label: "Ver proyecto PolliNode",
         url: "/proyectos/pollinode",
         external: false,
+      },
+      {
+        label: "Publicación en LinkedIn",
+        url: "https://www.linkedin.com/posts/sixto-arrejin_rallylatam2026-utnfrre-pollinode-activity-7519412922008150017-VkdQ/",
+        external: true,
       },
     ],
   },
@@ -592,7 +582,7 @@ export const milestonesData: MilestoneItem[] = [
     title: "Del Rally de Innovación 2024 a publicar Elepad en Google Play Store",
     subtitle: "3° Puesto en Impacto Social (UTN-FRRe) y Proyecto Final de Ingeniería",
     description:
-      "Elepad nació obteniendo el 3° lugar en Impacto Social en el Rally Latinoamericano de Innovación 2024. Durante 2025 y 2026 lo desarrollamos de punta a punta como nuestro Proyecto Final de Ingeniería en Sistemas y lo publicamos en Google Play Store.",
+      "Elepad nació con el 3° puesto en Impacto Social en el Rally Latam 2024. Lo consolidamos como Proyecto Final de Ingeniería en Sistemas y ya se encuentra publicado y disponible en Google Play Store.",
     location: "Resistencia / Corrientes",
     image: "/projects/elepad/1.jpg",
     relatedProjectSlug: "elepad",
@@ -603,7 +593,7 @@ export const milestonesData: MilestoneItem[] = [
         external: false,
       },
       {
-        label: "Ver en Google Play Store",
+        label: "Ver en Google Play",
         url: "https://play.google.com/store/apps/details?id=com.elepadorg.elepad",
         external: true,
       },
@@ -615,10 +605,10 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Sixto Feliciano Arrejin",
     shortName: "Sixto Arrejin",
-    role: "Ingeniero en Sistemas · Desarrollador Full Stack & Mobile",
+    role: "Ingeniero en Sistemas · Full Stack & Mobile Developer",
     specialtyTag: "Web, Mobile & Cloud",
     photo: "/team/sixto-arrejin.jpg",
-    bio: "Desarrollador Full Stack y Mobile con foco en React, Next.js, React Native y Node.js. Desarrolló plataformas comerciales en producción (DÚO Propiedades), sistemas institucionales (SCyT UTN) y aplicaciones móviles publicadas en Google Play.",
+    bio: "Desarrollador Full Stack y Mobile con foco en React, Next.js, React Native y Node.js. Lideró el desarrollo de plataformas comerciales en producción (DÚO Propiedades), sistemas institucionales para UTN y aplicaciones publicadas en Google Play.",
     skills: ["Next.js", "React Native", "TypeScript", "Node.js", "Supabase", "Docker & CI/CD"],
     linkedin: "https://www.linkedin.com/in/sixto-arrejin/",
     github: "https://github.com/SixtoArrejin",
@@ -627,10 +617,10 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Aldo Omar Andres",
     shortName: "Aldo Andres",
-    role: "Ingeniero en Sistemas · Desarrollador Full Stack & Mobile",
+    role: "Ingeniero en Sistemas · Full Stack & Mobile Specialist",
     specialtyTag: "Mobile & DevSecOps",
     photo: "/team/aldo-andres.jpg",
-    bio: "Ingeniero enfocado en aplicaciones móviles multiplataforma, arquitecturas escalables y prácticas DevSecOps. Trabaja en el diseño de experiencias de usuario ágiles e integración de modelos de visión artificial e IA.",
+    bio: "Ingeniero enfocado en el desarrollo de aplicaciones móviles multiplataforma con React Native y Expo, diseño de arquitecturas escalables y prácticas DevSecOps para garantizar rendimiento y seguridad.",
     skills: ["React Native", "Expo", "TypeScript", "Python", "DevSecOps", "Cloudflare Workers"],
     linkedin: "https://www.linkedin.com/in/aldo-omar-andres-a0b54b218/",
     github: "https://github.com/AldoOmarAndres",
@@ -641,7 +631,7 @@ export const teamMembers: TeamMember[] = [
     role: "Ingeniero en Sistemas · Datos, IA & Backend",
     specialtyTag: "Ciencia de Datos & IA",
     photo: "/team/andre-san-lorenzo.jpg",
-    bio: "Enfocado en Ciencia de Datos, integración de modelos de Inteligencia Artificial (LangGraph / LLMs) y desarrollo backend en Python. Participó en el desarrollo de motores de recomendación, análisis satelital y contratos inteligentes.",
+    bio: "Especialista en Ciencia de Datos, agentes inteligentes con modelos de lenguaje (LLMs / LangGraph) y arquitecturas backend en Python. Diseña motores de recomendación, análisis satelital y contratos inteligentes.",
     skills: ["Python", "LangGraph & IA", "Ciencia de Datos", "FastAPI", "Smart Contracts", "Kubernetes"],
     linkedin: "https://www.linkedin.com/in/andre-leandro-san-lorenzo/",
     github: "https://github.com/Andre-Leandro",
@@ -649,10 +639,10 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Tobias Alejandro Maciel Meister",
     shortName: "Tobías Maciel Meister",
-    role: "Ingeniero en Sistemas · Full Stack, IA & DevOps",
-    specialtyTag: "Automatización IA & Full Stack",
+    role: "Ingeniero en Sistemas · Full Stack & Automatización con IA",
+    specialtyTag: "Automatización & Cloud",
     photo: "/team/tobias-maciel.jpg",
-    bio: "Desarrollador Full Stack con experiencia en automatización de procesos mediante agentes de IA para WhatsApp y CRM, integración de facturación electrónica ARCA y despliegues automatizados en la nube (AWS y Docker).",
+    bio: "Desarrollador Full Stack con experiencia en automatización de procesos mediante agentes de IA para WhatsApp y CRM, integración de facturación electrónica y despliegues en la nube (AWS y Docker).",
     skills: ["React & Next.js", "Python & Node.js", "Agentes IA / MCP", "AWS & Docker", "CI/CD", "PostgreSQL"],
     linkedin: "https://www.linkedin.com/in/tobias-alejandro-maciel-meister-41ba39218/",
     github: "https://github.com/TobiasMaciel",

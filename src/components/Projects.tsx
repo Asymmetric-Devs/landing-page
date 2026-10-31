@@ -34,7 +34,7 @@ export default function Projects({ mode = "home" }: ProjectsProps) {
         mode === "home" ? "border-b border-border-subtle" : "pt-24 pb-20"
       } bg-background relative overflow-hidden`}
     >
-      <div className="max-w-7xl mx-auto border-x border-border-subtle px-6 md:px-12 py-20 relative z-10">
+      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto border-x border-border-subtle px-6 md:px-12 py-20 relative z-10">
         {mode === "catalog" ? (
           <div className="mb-8">
             <Link
@@ -131,23 +131,23 @@ export default function Projects({ mode = "home" }: ProjectsProps) {
                       <span className="px-2.5 py-0.5 rounded-none text-[10px] font-mono font-bold bg-accent text-accent-foreground uppercase tracking-wider">
                         {project.badge}
                       </span>
-                    ) : (
-                      <span className="font-mono text-[10px] text-brand-muted uppercase">
-                        {project.period}
-                      </span>
-                    )}
+                    ) : null}
                   </div>
 
                   {/* Sharp Image Frame */}
                   <div className="p-4 pb-0">
                     <Link
                       href={`/proyectos/${project.slug}`}
-                      className="relative block aspect-16/10 w-full rounded-none overflow-hidden bg-neutral-950 border border-border-subtle"
+                      className="relative block aspect-16/10 w-full rounded-none overflow-hidden bg-neutral-950 border border-border-subtle flex items-center justify-center"
                     >
                       <img
                         src={project.coverImage}
                         alt={project.title}
-                        className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
+                        className={`w-full h-full ${
+                          project.slug === "elepad"
+                            ? "object-contain object-center py-2 px-6"
+                            : "object-cover object-top"
+                        } group-hover:scale-[1.02] transition-transform duration-300`}
                       />
                       {project.videoEmbed ? (
                         <div className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-none bg-black/85 text-white font-mono text-[10px] border border-white/20">
@@ -160,12 +160,9 @@ export default function Projects({ mode = "home" }: ProjectsProps) {
 
                   {/* Structured Body */}
                   <div className="p-5">
-                    <div className="flex items-center justify-between gap-2 mb-2">
-                      <span className="font-mono text-[11px] text-brand-muted">
+                    <div className="mb-2">
+                      <span className="font-mono text-[11px] text-brand-muted block">
                         {project.clientOrContext}
-                      </span>
-                      <span className="font-mono text-[11px] text-brand-muted shrink-0">
-                        {project.period}
                       </span>
                     </div>
 
