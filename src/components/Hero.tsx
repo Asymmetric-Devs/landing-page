@@ -138,12 +138,12 @@ export default function Hero() {
 
             {/* Interactive Node Architecture Diagram */}
             <div className="relative my-3 lg:my-4 py-2 flex items-center justify-center">
-              {/* Desktop / Tablet Connected Graph */}
-              <div className="w-full relative">
+              {/* Desktop / Tablet Connected Graph (untouched) */}
+              <div className="hidden sm:block w-full relative">
                 {/* SVG Connection Lines Behind Nodes (visible on sm+) */}
                 <svg
                   viewBox="0 0 560 270"
-                  className="hidden sm:block w-full h-[250px] overflow-visible pointer-events-none"
+                  className="w-full h-[250px] overflow-visible pointer-events-none"
                   fill="none"
                 >
                   {/* Base line from Origin (Tu Idea) to Central Hub (Asymmetric) */}
@@ -210,10 +210,10 @@ export default function Hero() {
                   })}
                 </svg>
 
-                {/* Positioned Nodes Overlay on sm+, Stacked cleanly on mobile */}
-                <div className="sm:absolute sm:inset-0 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                {/* Positioned Nodes Overlay on sm+ */}
+                <div className="absolute inset-0 flex flex-row items-center justify-between gap-4">
                   {/* Node 1: Tu Idea (Origin) */}
-                  <div className="sm:w-[108px] shrink-0 bg-background border border-border-subtle p-3 flex sm:flex-col items-center sm:items-start gap-2.5 shadow-2xs">
+                  <div className="w-[108px] shrink-0 bg-background border border-border-subtle p-3 flex flex-col items-start gap-2.5 shadow-2xs">
                     <div className="w-7 h-7 bg-accent/20 border border-accent flex items-center justify-center shrink-0">
                       <Lightbulb className="w-3.5 h-3.5 text-foreground" />
                     </div>
@@ -228,7 +228,7 @@ export default function Hero() {
                   </div>
 
                   {/* Node 2: ASYMMETRIC (Center Hub) */}
-                  <div className="sm:w-[110px] shrink-0 bg-surface-contrast text-background p-3.5 border border-foreground flex sm:flex-col items-center sm:items-center justify-center text-center gap-1.5 relative">
+                  <div className="w-[110px] shrink-0 bg-surface-contrast text-background p-3.5 border border-foreground flex flex-col items-center justify-center text-center gap-1.5 relative">
                     <span className="w-2 h-2 bg-accent inline-block" />
                     <span className="font-sans text-xs font-bold tracking-tight uppercase block">
                       ASYMMETRIC
@@ -239,7 +239,7 @@ export default function Hero() {
                   </div>
 
                   {/* Node 3: 3 Interactive Output Destinations */}
-                  <div className="sm:w-[228px] shrink-0 flex flex-col justify-between sm:h-[240px] gap-2">
+                  <div className="w-[228px] shrink-0 flex flex-col justify-between h-[240px] gap-2">
                     {studioOutputs.map((item) => {
                       const Icon = item.icon;
                       const isActive = activeIdx === item.id;
@@ -251,7 +251,7 @@ export default function Hero() {
                           onMouseEnter={() => setActiveIdx(item.id)}
                           className={`w-full p-2.5 text-left border transition-all duration-150 cursor-pointer flex items-center gap-3 ${
                             isActive
-                              ? "bg-accent text-accent-foreground border-foreground shadow-xs translate-x-0 sm:-translate-x-0.5"
+                              ? "bg-accent text-accent-foreground border-foreground shadow-xs -translate-x-0.5"
                               : "bg-background text-foreground border-border-subtle hover:border-foreground"
                           }`}
                         >
@@ -266,7 +266,7 @@ export default function Hero() {
                           </div>
                           <div className="min-w-0 flex-1">
                             <span
-                              className={`font-sans text-xs sm:text-[13px] font-bold leading-snug block ${
+                              className={`font-sans text-[13px] font-bold leading-snug block ${
                                 isActive ? "text-accent-foreground" : "text-foreground"
                               }`}
                             >
@@ -277,6 +277,206 @@ export default function Hero() {
                       );
                     })}
                   </div>
+                </div>
+              </div>
+
+              {/* Mobile Vertical Flowchart Diagram (< sm) */}
+              <div className="block sm:hidden w-full">
+                {/* Node 1: Tu Idea (Origin) */}
+                <div className="w-full bg-background border border-border-subtle p-3 flex items-center justify-between shadow-2xs">
+                  <div className="flex items-center gap-3">
+                    <div className="w-7 h-7 bg-accent/20 border border-accent flex items-center justify-center shrink-0">
+                      <Lightbulb className="w-3.5 h-3.5 text-foreground" />
+                    </div>
+                    <div>
+                      <span className="font-mono text-[9px] text-brand-muted uppercase tracking-wider block">
+                        INICIO
+                      </span>
+                      <span className="font-sans text-xs font-bold text-foreground leading-tight block">
+                        Tu Idea o Negocio
+                      </span>
+                    </div>
+                  </div>
+                  <span className="font-mono text-[9px] text-brand-muted px-2 py-0.5 border border-border-subtle uppercase">
+                    ENTRADA
+                  </span>
+                </div>
+
+                {/* Connector 1: Node 1 -> Node 2 */}
+                <div className="relative h-6 flex items-center">
+                  <svg
+                    className="absolute left-0 top-0 w-12 h-6 overflow-visible pointer-events-none"
+                    fill="none"
+                  >
+                    <line
+                      x1="26"
+                      y1="0"
+                      x2="26"
+                      y2="24"
+                      stroke="currentColor"
+                      className="text-border-subtle"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
+                    />
+                    <motion.line
+                      x1="26"
+                      y1="0"
+                      x2="26"
+                      y2="24"
+                      stroke="var(--accent)"
+                      strokeWidth="2.5"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: [0, 1, 1] }}
+                      transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    <polygon points="23,19 29,19 26,24" fill="var(--accent)" />
+                  </svg>
+                </div>
+
+                {/* Node 2: ASYMMETRIC Hub */}
+                <div className="w-full bg-surface-contrast text-background p-3 border border-foreground flex items-center justify-between shadow-xs">
+                  <div className="flex items-center gap-3">
+                    <div className="w-7 flex items-center justify-center shrink-0">
+                      <span className="w-2.5 h-2.5 bg-accent inline-block" />
+                    </div>
+                    <div>
+                      <span className="font-sans text-xs font-bold tracking-tight uppercase block leading-none">
+                        ASYMMETRIC
+                      </span>
+                      <span className="font-mono text-[9px] text-background/70 uppercase tracking-wider block mt-1">
+                        Diseño &amp; Desarrollo
+                      </span>
+                    </div>
+                  </div>
+                  <span className="font-mono text-[9px] bg-accent text-accent-foreground font-bold px-2 py-0.5 uppercase tracking-wider">
+                    HUB
+                  </span>
+                </div>
+
+                {/* Connector 2: Stem down into the branching tree */}
+                <div className="relative h-4 flex items-center">
+                  <svg
+                    className="absolute left-0 top-0 w-12 h-4 overflow-visible pointer-events-none"
+                    fill="none"
+                  >
+                    <line
+                      x1="26"
+                      y1="0"
+                      x2="26"
+                      y2="16"
+                      stroke="currentColor"
+                      className="text-border-subtle"
+                      strokeWidth="1.5"
+                    />
+                    <motion.line
+                      x1="26"
+                      y1="0"
+                      x2="26"
+                      y2="16"
+                      stroke="var(--accent)"
+                      strokeWidth="2.5"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: [0, 1, 1] }}
+                      transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                  </svg>
+                </div>
+
+                {/* Branching Tree Container with 3 Output Destinations */}
+                <div className="relative pl-11 flex flex-col gap-2">
+                  {/* SVG Tree Spine on the left */}
+                  <svg
+                    className="absolute left-0 top-0 w-11 h-[160px] overflow-visible pointer-events-none"
+                    fill="none"
+                  >
+                    {studioOutputs.map((item) => {
+                      const isActive = activeIdx === item.id;
+                      const yTargets = [24, 80, 136];
+                      const yTarget = yTargets[item.id];
+                      const curve = `M 26 0 L 26 ${yTarget - 12} C 26 ${yTarget - 4}, 34 ${yTarget}, 44 ${yTarget}`;
+
+                      return (
+                        <g key={item.id}>
+                          <path
+                            d={curve}
+                            stroke="currentColor"
+                            className="text-border-subtle"
+                            strokeWidth="1.5"
+                          />
+                          {isActive && (
+                            <>
+                              <motion.path
+                                d={curve}
+                                stroke="var(--accent)"
+                                strokeWidth="2.5"
+                                initial={{ pathLength: 0 }}
+                                animate={{ pathLength: 1 }}
+                                transition={{ duration: 0.35, ease: "easeOut" }}
+                              />
+                              <motion.circle
+                                r="3.5"
+                                fill="var(--accent)"
+                                initial={{ offsetDistance: "0%" }}
+                                animate={{ offsetDistance: "100%" }}
+                                transition={{
+                                  duration: 1.5,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
+                                }}
+                                style={{ offsetPath: `path('${curve}')` }}
+                              />
+                            </>
+                          )}
+                        </g>
+                      );
+                    })}
+                  </svg>
+
+                  {/* 3 Output Destination Buttons */}
+                  {studioOutputs.map((item) => {
+                    const Icon = item.icon;
+                    const isActive = activeIdx === item.id;
+
+                    return (
+                      <button
+                        key={item.id}
+                        type="button"
+                        onClick={() => setActiveIdx(item.id)}
+                        className={`w-full h-12 px-3 text-left border transition-all duration-150 cursor-pointer flex items-center gap-2.5 relative ${
+                          isActive
+                            ? "bg-accent text-accent-foreground border-foreground shadow-xs font-bold"
+                            : "bg-background text-foreground border-border-subtle hover:border-foreground"
+                        }`}
+                      >
+                        {/* Terminal connection node dot */}
+                        <span
+                          className={`absolute -left-[4px] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full border transition-colors duration-150 ${
+                            isActive
+                              ? "bg-accent border-foreground"
+                              : "bg-surface border-border-subtle"
+                          }`}
+                        />
+                        <div
+                          className={`w-6 h-6 flex items-center justify-center shrink-0 border ${
+                            isActive
+                              ? "bg-foreground text-background border-foreground"
+                              : "bg-surface text-foreground border-border-subtle"
+                          }`}
+                        >
+                          <Icon className="w-3.5 h-3.5" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <span
+                            className={`font-sans text-xs font-bold leading-snug truncate block ${
+                              isActive ? "text-accent-foreground" : "text-foreground"
+                            }`}
+                          >
+                            {item.label}
+                          </span>
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </div>

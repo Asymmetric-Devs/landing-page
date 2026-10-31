@@ -63,9 +63,9 @@
   --color-accent-secondary: var(--accent-secondary);
   --color-border-subtle: var(--border-subtle);
 
-  --font-sans: var(--font-space), system-ui, -apple-system, sans-serif;
-  --font-serif: var(--font-serif-accent), "Times New Roman", Georgia, serif;
-  --font-mono: var(--font-mono), monospace;
+  --font-sans: "Space Grotesk", var(--font-space, "Space Grotesk"), system-ui, -apple-system, sans-serif;
+  --font-serif: "Newsreader", var(--font-serif-accent, "Newsreader"), "Times New Roman", Georgia, serif;
+  --font-mono: "JetBrains Mono", var(--font-mono, "JetBrains Mono"), monospace;
 
   --color-brand-dark: var(--color-brand-primary);
   --color-brand-muted: var(--color-brand-secondary);
