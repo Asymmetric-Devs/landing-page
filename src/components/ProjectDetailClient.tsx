@@ -67,7 +67,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
               {project.categoryLabel}
             </span>
             {project.badge ? (
-              <span className="px-3 py-1 rounded-none font-mono text-[11px] font-bold uppercase tracking-wider bg-[#FF4D15] text-white">
+              <span className="px-3 py-1 rounded-none font-mono text-[11px] font-bold uppercase tracking-wider bg-accent text-accent-foreground">
                 {project.badge}
               </span>
             ) : null}
@@ -76,13 +76,13 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
 
         {/* Hero Title & Links */}
         <div className="max-w-4xl">
-          <span className="font-mono text-xs font-bold text-[#FF4D15] uppercase tracking-wider block mb-2">
+          <span className="font-mono text-xs font-bold text-accent-text dark:text-accent uppercase tracking-wider block mb-2">
             [{project.clientOrContext} · {project.period}]
           </span>
           <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.04em] text-foreground leading-[0.98]">
             {project.title}
           </h1>
-          <p className="mt-3 font-serif italic text-2xl sm:text-3xl text-[#FF4D15]">
+          <p className="mt-3 font-sans font-semibold text-xl sm:text-2xl text-accent-text dark:text-accent tracking-tight">
             {project.subtitle}
           </p>
           <p className="mt-5 font-sans text-base sm:text-lg text-brand-muted leading-relaxed">
@@ -96,7 +96,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-none font-mono text-xs font-bold uppercase tracking-wider bg-[#FF4D15] text-white hover:bg-[#E03E0B] transition-colors duration-150"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-none font-mono text-xs font-bold uppercase tracking-wider bg-accent text-accent-foreground hover:bg-accent-hover transition-colors duration-150"
               >
                 {project.links.liveLabel ?? "Visitar Sitio Web"}
                 <ArrowUpRight className="w-4 h-4" />
@@ -120,7 +120,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
                 href={project.links.playStore}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-none font-mono text-xs font-bold uppercase tracking-wider bg-[#FF4D15] text-white hover:bg-[#E03E0B] transition-colors duration-150"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-none font-mono text-xs font-bold uppercase tracking-wider bg-accent text-accent-foreground hover:bg-accent-hover transition-colors duration-150"
               >
                 Ver en Google Play Store
                 <ArrowUpRight className="w-4 h-4" />
@@ -169,7 +169,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
         <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 border border-border-subtle divide-y lg:divide-y-0 divide-x divide-border-subtle bg-surface">
           {project.highlights.map((h, idx) => (
             <div key={h.label} className="p-5 sm:p-6">
-              <span className="font-mono text-[10px] font-bold text-[#FF4D15] uppercase tracking-wider block mb-1">
+              <span className="font-mono text-[10px] font-bold text-accent-text dark:text-accent uppercase tracking-wider block mb-1">
                 [MÉTRICA 0{idx + 1}]
               </span>
               <span className="block font-sans text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
@@ -188,7 +188,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
             <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-foreground">
               [GALERÍA DE INTERFAZ // {project.title.toUpperCase()}]
             </span>
-            <span className="font-mono text-xs text-[#FF4D15] font-bold">
+            <span className="font-mono text-xs text-accent-text dark:text-accent font-bold">
               CAPTURA {activeImageIndex + 1} DE {project.gallery.length}
             </span>
           </div>
@@ -213,7 +213,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
               <button
                 type="button"
                 onClick={() => setLightboxOpen(true)}
-                className="absolute top-4 right-4 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-none bg-black/85 hover:bg-[#FF4D15] text-white font-mono text-[11px] font-bold uppercase tracking-wider border border-white/20 transition-colors duration-150 cursor-pointer"
+                className="absolute top-4 right-4 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-none bg-black/85 hover:bg-accent hover:text-accent-foreground text-white font-mono text-[11px] font-bold uppercase tracking-wider border border-white/20 transition-colors duration-150 cursor-pointer"
               >
                 <Maximize2 className="w-3.5 h-3.5" />
                 Ampliar imagen
@@ -229,7 +229,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
                         (prev) => (prev - 1 + project.gallery.length) % project.gallery.length
                       )
                     }
-                    className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-none bg-black/80 hover:bg-[#FF4D15] text-white border border-white/20 transition-colors duration-150 cursor-pointer"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-none bg-black/80 hover:bg-accent hover:text-accent-foreground text-white border border-white/20 transition-colors duration-150 cursor-pointer"
                     aria-label="Imagen anterior"
                   >
                     <ChevronLeft className="w-5 h-5" />
@@ -239,7 +239,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
                     onClick={() =>
                       setActiveImageIndex((prev) => (prev + 1) % project.gallery.length)
                     }
-                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-none bg-black/80 hover:bg-[#FF4D15] text-white border border-white/20 transition-colors duration-150 cursor-pointer"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-none bg-black/80 hover:bg-accent hover:text-accent-foreground text-white border border-white/20 transition-colors duration-150 cursor-pointer"
                     aria-label="Siguiente imagen"
                   >
                     <ChevronRight className="w-5 h-5" />
@@ -267,7 +267,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
                       onClick={() => setActiveImageIndex(idx)}
                       className={`relative w-24 sm:w-28 aspect-16/10 rounded-none overflow-hidden shrink-0 cursor-pointer border transition-opacity duration-150 ${
                         isSelected
-                          ? "border-[#FF4D15] ring-2 ring-[#FF4D15] opacity-100"
+                          ? "border-accent ring-2 ring-accent opacity-100"
                           : "border-border-subtle opacity-55 hover:opacity-90"
                       }`}
                     >
@@ -287,7 +287,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
         {/* Functional Case Study: Problem vs Solution Dossier Blocks */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 border border-border-subtle divide-y md:divide-y-0 md:divide-x divide-border-subtle bg-surface">
           <div className="p-8 sm:p-10">
-            <span className="font-mono text-[11px] font-bold text-[#FF4D15] uppercase tracking-widest block mb-3">
+            <span className="font-mono text-[11px] font-bold text-accent-text dark:text-accent uppercase tracking-widest block mb-3">
               [EL PROBLEMA / NECESIDAD]
             </span>
             <h2 className="font-sans text-2xl font-bold tracking-tight text-foreground mb-4">
@@ -299,7 +299,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
           </div>
 
           <div className="p-8 sm:p-10 bg-background">
-            <span className="font-mono text-[11px] font-bold text-[#FF4D15] uppercase tracking-widest block mb-3">
+            <span className="font-mono text-[11px] font-bold text-accent-text dark:text-accent uppercase tracking-widest block mb-3">
               [LA SOLUCIÓN IMPLEMENTADA]
             </span>
             <h2 className="font-sans text-2xl font-bold tracking-tight text-foreground mb-4">
@@ -313,7 +313,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
 
         {/* Key Functional Features Cells */}
         <div className="mt-16">
-          <span className="font-mono text-[11px] font-bold text-[#FF4D15] uppercase tracking-widest block mb-2">
+          <span className="font-mono text-[11px] font-bold text-accent-text dark:text-accent uppercase tracking-widest block mb-2">
             [FUNCIONALIDADES CLAVE]
           </span>
           <h2 className="font-sans text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-8">
@@ -327,13 +327,13 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
                 className="p-6 sm:p-7 border border-border-subtle bg-surface"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-[#FF4D15] text-white font-mono text-xs font-bold flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 bg-accent text-accent-foreground font-mono text-xs font-bold flex items-center justify-center shrink-0">
                     0{idx + 1}
                   </div>
                   <div>
                     <h3 className="font-sans text-lg font-bold tracking-tight text-foreground flex items-center gap-2">
                       <span>{feat.title}</span>
-                      <CheckCircle2 className="w-4 h-4 text-[#FF4D15] shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-accent-text dark:text-accent shrink-0" />
                     </h3>
                     <p className="mt-2 font-sans text-sm text-brand-muted leading-relaxed">
                       {feat.description}
@@ -349,8 +349,8 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
         {project.videoEmbed ? (
           <div className="mt-16">
             <div className="flex items-center gap-2 mb-3">
-              <Play className="w-4 h-4 text-[#FF4D15] fill-current" />
-              <span className="font-mono text-[11px] font-bold text-[#FF4D15] uppercase tracking-widest">
+              <Play className="w-4 h-4 text-accent fill-current" />
+              <span className="font-mono text-[11px] font-bold text-accent-text dark:text-accent uppercase tracking-widest">
                 [DEMOSTRACIÓN EN VIDEO]
               </span>
             </div>
@@ -375,7 +375,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
         <div className="mt-16 border border-border-subtle bg-surface">
           <div className="p-6 sm:p-8 border-b border-border-subtle bg-background flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <span className="font-mono text-[11px] font-bold text-[#FF4D15] uppercase tracking-widest block mb-1">
+              <span className="font-mono text-[11px] font-bold text-accent-text dark:text-accent uppercase tracking-widest block mb-1">
                 [FICHA TÉCNICA RESUMIDA]
               </span>
               <h2 className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-foreground">
@@ -396,7 +396,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
 
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border-subtle">
             <div className="p-6 sm:p-8 flex items-start gap-3">
-              <Layers className="w-5 h-5 text-[#FF4D15] shrink-0 mt-0.5" />
+              <Layers className="w-5 h-5 text-accent-text dark:text-accent shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-mono text-xs font-bold uppercase text-foreground">
                   Interfaz &amp; Experiencia
@@ -408,7 +408,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
             </div>
 
             <div className="p-6 sm:p-8 flex items-start gap-3">
-              <Cpu className="w-5 h-5 text-[#FF4D15] shrink-0 mt-0.5" />
+              <Cpu className="w-5 h-5 text-accent-text dark:text-accent shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-mono text-xs font-bold uppercase text-foreground">
                   Motor &amp; Lógica
@@ -420,7 +420,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
             </div>
 
             <div className="p-6 sm:p-8 flex items-start gap-3">
-              <Database className="w-5 h-5 text-[#FF4D15] shrink-0 mt-0.5" />
+              <Database className="w-5 h-5 text-accent-text dark:text-accent shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-mono text-xs font-bold uppercase text-foreground">
                   Infraestructura &amp; Datos
@@ -444,7 +444,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
                 <span className="font-mono text-[10px] text-brand-muted uppercase tracking-wider block">
                   Proyecto Anterior
                 </span>
-                <span className="font-sans text-base font-bold text-foreground group-hover:text-[#FF4D15] transition-colors">
+                <span className="font-sans text-base font-bold text-foreground group-hover:text-accent-text dark:group-hover:text-accent transition-colors">
                   {prevProject.title}
                 </span>
               </div>
@@ -460,7 +460,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
                 <span className="font-mono text-[10px] text-brand-muted uppercase tracking-wider block">
                   Siguiente Proyecto
                 </span>
-                <span className="font-sans text-base font-bold text-foreground group-hover:text-[#FF4D15] transition-colors">
+                <span className="font-sans text-base font-bold text-foreground group-hover:text-accent-text dark:group-hover:text-accent transition-colors">
                   {nextProject.title}
                 </span>
               </div>
@@ -478,7 +478,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
             </div>
             <Link
               href="/#contacto"
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-none font-mono text-xs font-bold uppercase tracking-wider bg-[#FF4D15] text-white hover:bg-[#E03E0B] transition-colors duration-150 shrink-0"
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-none font-mono text-xs font-bold uppercase tracking-wider bg-accent text-accent-foreground hover:bg-accent-hover transition-colors duration-150 shrink-0"
             >
               Iniciar Consulta
               <ArrowRight className="w-4 h-4" />
@@ -501,7 +501,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
             <button
               type="button"
               onClick={() => setLightboxOpen(false)}
-              className="absolute top-6 right-6 p-3 rounded-none bg-[#FF4D15] hover:bg-[#E03E0B] text-white transition-colors duration-150 cursor-pointer"
+              className="absolute top-6 right-6 p-3 rounded-none bg-accent text-accent-foreground hover:bg-accent-hover transition-colors duration-150 cursor-pointer"
               aria-label="Cerrar vista ampliada"
             >
               <X className="w-6 h-6" />
@@ -525,7 +525,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
               <p className="font-mono text-sm text-white font-medium">
                 {currentImage.caption}
               </p>
-              <span className="font-mono text-xs text-[#FF4D15]">
+              <span className="font-mono text-xs text-accent">
                 {activeImageIndex + 1} / {project.gallery.length}
               </span>
             </div>

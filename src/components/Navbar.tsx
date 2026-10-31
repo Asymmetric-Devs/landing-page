@@ -86,7 +86,7 @@ export default function Navbar() {
             <span className="font-sans font-bold tracking-[-0.04em] text-lg sm:text-xl text-foreground">
               ASYMMETRIC
             </span>
-            <span className="font-mono text-[10px] font-bold px-1.5 py-0.5 rounded-none bg-[#FF4D15] text-white tracking-wider uppercase">
+            <span className="font-mono text-[10px] font-bold px-1.5 py-0.5 rounded-none bg-accent text-accent-foreground tracking-wider uppercase">
               [DEVS]
             </span>
           </Link>
@@ -102,7 +102,7 @@ export default function Navbar() {
                 href={link.href}
                 className="group flex-1 px-4 border-r border-border-subtle flex items-center justify-center gap-1.5 font-mono text-xs font-medium uppercase tracking-wider text-brand-muted hover:text-foreground hover:bg-surface transition-colors duration-150 relative"
               >
-                <span className="text-[10px] text-[#FF4D15] opacity-75 group-hover:opacity-100">
+                <span className="text-[10px] text-accent-text dark:text-accent font-semibold opacity-75 group-hover:opacity-100">
                   {link.idx}
                 </span>
                 <span>{link.name}</span>
@@ -110,14 +110,8 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Right Cells: Status + Theme Switcher + Flush Orange CTA */}
+          {/* Right Cells: Theme Switcher + Flush CTA */}
           <div className="hidden lg:flex items-stretch shrink-0">
-            {/* Location / Status Cell */}
-            <div className="px-4 border-r border-border-subtle flex items-center gap-2 font-mono text-[11px] font-semibold text-brand-muted uppercase tracking-wider bg-surface/50">
-              <span className="w-2 h-2 bg-[#FF4D15] inline-block" />
-              <span>NEA · AR</span>
-            </div>
-
             {/* Theme Toggle Cell */}
             <button
               onClick={toggleTheme}
@@ -143,7 +137,7 @@ export default function Navbar() {
                     exit={{ scale: 0.6, opacity: 0 }}
                     transition={{ duration: 0.15 }}
                   >
-                    <Sun className="w-4 h-4 text-[#FF5B26]" />
+                    <Sun className="w-4 h-4 text-accent" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -152,7 +146,7 @@ export default function Navbar() {
             {/* Flush CTA Cell */}
             <Link
               href="/#contacto"
-              className="px-6 flex items-center justify-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider bg-[#FF4D15] hover:bg-[#E03E0B] text-white transition-colors duration-150"
+              className="px-6 flex items-center justify-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider bg-accent hover:bg-accent-hover text-accent-foreground transition-colors duration-150"
             >
               <span>HABLEMOS</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -169,13 +163,13 @@ export default function Navbar() {
               {theme === "light" ? (
                 <Moon className="w-4 h-4" />
               ) : (
-                <Sun className="w-4 h-4 text-[#FF5B26]" />
+                <Sun className="w-4 h-4 text-accent" />
               )}
             </button>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="w-14 border-l border-border-subtle flex items-center justify-center text-foreground bg-surface hover:bg-[#FF4D15] hover:text-white transition-colors duration-150"
+              className="w-14 border-l border-border-subtle flex items-center justify-center text-foreground bg-surface hover:bg-accent hover:text-accent-foreground transition-colors duration-150"
               aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
             >
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -212,7 +206,7 @@ export default function Navbar() {
                     className="flex items-center justify-between px-6 py-4 font-sans text-lg font-bold tracking-tight text-foreground hover:bg-surface transition-colors duration-150"
                   >
                     <span>{link.name}</span>
-                    <span className="font-mono text-xs text-[#FF4D15]">[{link.idx}]</span>
+                    <span className="font-mono text-xs text-accent-text dark:text-accent font-semibold">[{link.idx}]</span>
                   </Link>
                 ))}
               </div>
@@ -224,7 +218,7 @@ export default function Navbar() {
                 <Link
                   href="/#contacto"
                   onClick={() => setIsOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-none text-xs font-mono font-bold uppercase tracking-wider bg-[#FF4D15] text-white hover:bg-[#E03E0B] transition-colors duration-150"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-none text-xs font-mono font-bold uppercase tracking-wider bg-accent text-accent-foreground hover:bg-accent-hover transition-colors duration-150"
                 >
                   Iniciar Proyecto
                   <ArrowUpRight className="w-4 h-4" />

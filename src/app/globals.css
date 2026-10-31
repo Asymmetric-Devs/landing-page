@@ -3,43 +3,51 @@
 @variant dark (.dark &);
 
 :root {
-  --background: #F3F1EC;
-  --surface: #FAF9F6;
-  --surface-contrast: #121211;
-  --foreground: #121211;
-  --accent: #FF4D15;
-  --accent-secondary: #0B4F3F;
-  --border-subtle: #D4D0C8;
+  --background: #F4F3EC;
+  --surface: #FAF9F5;
+  --surface-contrast: #0D1712;
+  --foreground: #0D1712;
+  --accent: #C4F82A;
+  --accent-foreground: #0D1712;
+  --accent-hover: #B2E61D;
+  --accent-text: #0F5238;
+  --accent-border: #84CC16;
+  --accent-secondary: #0F5238;
+  --border-subtle: #D5D2C8;
 
-  --color-brand-primary: #121211;
-  --color-brand-secondary: #52514E;
-  --color-border-subtle: #D4D0C8;
+  --color-brand-primary: #0D1712;
+  --color-brand-secondary: #4E5450;
+  --color-border-subtle: #D5D2C8;
 
-  --grid-color: rgba(18, 18, 17, 0.045);
-  --scrollbar-track: #F3F1EC;
-  --scrollbar-thumb: #BDB8AE;
-  --scrollbar-thumb-hover: #8C877E;
+  --grid-color: rgba(13, 23, 18, 0.05);
+  --scrollbar-track: #F4F3EC;
+  --scrollbar-thumb: #BDBAB0;
+  --scrollbar-thumb-hover: #858279;
 
   --ease-out-expo: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .dark {
-  --background: #0B0B0A;
-  --surface: #131311;
-  --surface-contrast: #F3F1EC;
-  --foreground: #F3F1EC;
-  --accent: #FF5B26;
+  --background: #090C0A;
+  --surface: #111613;
+  --surface-contrast: #F4F3EC;
+  --foreground: #F4F3EC;
+  --accent: #C4F82A;
+  --accent-foreground: #090C0A;
+  --accent-hover: #D3FF4E;
+  --accent-text: #C4F82A;
+  --accent-border: #C4F82A;
   --accent-secondary: #34D399;
-  --border-subtle: #262623;
+  --border-subtle: #212924;
 
-  --color-brand-primary: #F3F1EC;
-  --color-brand-secondary: #9E9C96;
-  --color-border-subtle: #262623;
+  --color-brand-primary: #F4F3EC;
+  --color-brand-secondary: #9CA39E;
+  --color-border-subtle: #212924;
 
-  --grid-color: rgba(243, 241, 236, 0.035);
-  --scrollbar-track: #0B0B0A;
-  --scrollbar-thumb: #262623;
-  --scrollbar-thumb-hover: #3D3D38;
+  --grid-color: rgba(196, 248, 42, 0.04);
+  --scrollbar-track: #090C0A;
+  --scrollbar-thumb: #212924;
+  --scrollbar-thumb-hover: #35423A;
 }
 
 @theme {
@@ -48,6 +56,10 @@
   --color-surface-contrast: var(--surface-contrast);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-text: var(--accent-text);
+  --color-accent-border: var(--accent-border);
   --color-accent-secondary: var(--accent-secondary);
   --color-border-subtle: var(--border-subtle);
 
@@ -135,6 +147,21 @@
   }
 }
 
+/* High-tech Marker Highlight Block (Dosel inspired) */
+@utility marker-highlight {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  padding: 0.06em 0.32em;
+  margin-top: 0.06em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  border-radius: 0px;
+  line-height: 1.05;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -151,3 +178,4 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover);
 }
+

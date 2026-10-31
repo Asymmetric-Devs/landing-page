@@ -35,7 +35,7 @@ export default function Footer() {
               <span className="font-sans font-bold tracking-[-0.04em] text-lg text-foreground">
                 ASYMMETRIC
               </span>
-              <span className="font-mono text-[10px] font-bold px-1.5 py-0.5 rounded-none bg-[#FF4D15] text-white uppercase">
+              <span className="font-mono text-[10px] font-bold px-1.5 py-0.5 rounded-none bg-accent text-accent-foreground uppercase">
                 [DEVS]
               </span>
             </Link>
@@ -47,14 +47,14 @@ export default function Footer() {
                 href="https://wa.me/5493794797572"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs font-bold text-[#FF4D15] hover:underline transition-colors duration-150"
+                className="font-mono text-xs font-bold text-accent-text dark:text-accent hover:underline transition-colors duration-150"
               >
                 WhatsApp: +54 9 379 479-7572
               </a>
               <span className="text-border-subtle">|</span>
               <a
                 href="mailto:asymmetricdevs@gmail.com"
-                className="font-mono text-xs font-semibold text-foreground hover:text-[#FF4D15] transition-colors duration-150"
+                className="font-mono text-xs font-semibold text-foreground hover:text-accent-text dark:hover:text-accent transition-colors duration-150"
               >
                 asymmetricdevs@gmail.com
               </a>
@@ -63,7 +63,7 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className="md:col-span-3 p-8 sm:p-10 bg-background">
-            <h4 className="font-mono text-[10px] font-bold text-[#FF4D15] uppercase tracking-widest mb-4">
+            <h4 className="font-mono text-[10px] font-bold text-accent-text dark:text-accent uppercase tracking-widest mb-4">
               [SECCIONES]
             </h4>
             <ul className="flex flex-col gap-2.5">
@@ -120,7 +120,7 @@ export default function Footer() {
 
           {/* Direct Case Study Links */}
           <div className="md:col-span-4 p-8 sm:p-10 bg-background">
-            <h4 className="font-mono text-[10px] font-bold text-[#FF4D15] uppercase tracking-widest mb-4">
+            <h4 className="font-mono text-[10px] font-bold text-accent-text dark:text-accent uppercase tracking-widest mb-4">
               [DESARROLLOS DESTACADOS]
             </h4>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -128,7 +128,7 @@ export default function Footer() {
                 <li key={proj.slug}>
                   <Link
                     href={`/proyectos/${proj.slug}`}
-                    className="font-mono text-xs text-brand-muted hover:text-[#FF4D15] transition-colors duration-150 inline-flex items-center gap-1"
+                    className="font-mono text-xs text-brand-muted hover:text-accent-text dark:hover:text-accent transition-colors duration-150 inline-flex items-center gap-1"
                   >
                     {proj.title}
                   </Link>

@@ -129,7 +129,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className="selection:bg-[#FF4D15] selection:text-white min-h-full flex flex-col font-sans bg-background text-foreground"
+        className="selection:bg-accent selection:text-accent-foreground min-h-full flex flex-col font-sans bg-background text-foreground"
       >
         {children}
       </body>

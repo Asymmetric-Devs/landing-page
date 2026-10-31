@@ -37,12 +37,12 @@ export default function About() {
           {/* Left Column: Studio Manifesto & Ruled Principles */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
-              <span className="font-mono text-[11px] font-bold text-[#FF4D15] uppercase tracking-widest block mb-3">
+              <span className="font-mono text-[11px] font-bold text-accent-text dark:text-accent uppercase tracking-widest block mb-3">
                 [04 // EQUIPO]
               </span>
-              <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.04em] text-foreground leading-[0.98]">
+              <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.04em] text-foreground leading-[1.08] sm:leading-[1.02]">
                 Cuatro Ingenieros en Sistemas trabajando en{" "}
-                <span className="font-serif italic font-normal text-[#FF4D15]">
+                <span className="marker-highlight inline-block bg-accent text-accent-foreground px-3 py-0.5 font-bold">
                   equipo.
                 </span>
               </h2>
@@ -61,7 +61,7 @@ export default function About() {
               <div className="mt-8 border border-border-subtle divide-y divide-border-subtle bg-surface">
                 {coreStrengths.map((strength, i) => (
                   <div key={strength} className="p-4 flex items-start gap-3.5">
-                    <span className="font-mono text-xs font-bold px-2 py-0.5 bg-[#FF4D15] text-white shrink-0">
+                    <span className="font-mono text-xs font-bold px-2 py-0.5 bg-accent text-accent-foreground shrink-0">
                       0{i + 1}
                     </span>
                     <span className="font-sans text-sm font-medium text-foreground leading-snug">
@@ -90,7 +90,7 @@ export default function About() {
                     <span className="font-mono text-[10px] font-bold text-brand-muted uppercase tracking-wider">
                       {`ING. 0${idx + 1} // UTN-FRRe`}
                     </span>
-                    <span className="font-mono text-[10px] font-bold text-[#FF4D15] uppercase tracking-wider">
+                    <span className="font-mono text-[10px] font-bold text-accent-text dark:text-accent uppercase tracking-wider">
                       {member.specialtyTag}
                     </span>
                   </div>
@@ -161,7 +161,7 @@ export default function About() {
                       href={member.portfolio}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-[#FF4D15] hover:underline uppercase"
+                      className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-accent-text dark:text-accent hover:underline uppercase"
                     >
                       <Globe className="w-3.5 h-3.5" />
                       Portfolio

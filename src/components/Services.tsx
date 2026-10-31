@@ -8,7 +8,7 @@ export default function Services() {
   const services = [
     {
       id: "01",
-      icon: <Globe className="w-5 h-5 text-white" />,
+      icon: <Globe className="w-5 h-5 text-accent-foreground" />,
       title: "Sitios Web & Sistemas de Gestión",
       description:
         "Plataformas web comerciales, catálogos interactivos y paneles autogestionables para operar tu negocio sin fricción.",
@@ -19,7 +19,7 @@ export default function Services() {
     },
     {
       id: "02",
-      icon: <Smartphone className="w-5 h-5 text-white" />,
+      icon: <Smartphone className="w-5 h-5 text-accent-foreground" />,
       title: "Aplicaciones Móviles (iOS y Android)",
       description:
         "Desarrollo integral en React Native y Expo, desde el diseño de interfaz hasta la publicación en App Store y Google Play.",
@@ -30,7 +30,7 @@ export default function Services() {
     },
     {
       id: "03",
-      icon: <Cpu className="w-5 h-5 text-white" />,
+      icon: <Cpu className="w-5 h-5 text-accent-foreground" />,
       title: "Automatización & Inteligencia Artificial",
       description:
         "Herramientas de IA e integraciones aplicadas donde generan impacto operativo real y medible para tu empresa.",
@@ -49,12 +49,12 @@ export default function Services() {
       <div className="max-w-7xl mx-auto border-x border-border-subtle px-6 md:px-12 py-20 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl pb-12 border-b border-border-subtle mb-12">
-          <span className="font-mono text-[11px] font-bold text-[#FF4D15] uppercase tracking-widest block mb-3">
+          <span className="font-mono text-[11px] font-bold text-accent-text dark:text-accent uppercase tracking-widest block mb-3">
             [01 // SERVICIOS]
           </span>
-          <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.04em] text-foreground leading-[0.98]">
+          <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.04em] text-foreground leading-[1.08] sm:leading-[1.02]">
             Qué podemos construir para tu{" "}
-            <span className="font-serif italic font-normal text-[#FF4D15]">
+            <span className="marker-highlight inline-block bg-accent text-accent-foreground px-3 py-0.5 font-bold">
               empresa o proyecto.
             </span>
           </h2>
@@ -80,7 +80,7 @@ export default function Services() {
                   <span className="font-sans text-3xl sm:text-4xl font-bold tracking-tighter text-foreground">
                     {service.id}
                   </span>
-                  <div className="w-10 h-10 bg-[#FF4D15] flex items-center justify-center rounded-none">
+                  <div className="w-10 h-10 bg-accent text-accent-foreground flex items-center justify-center rounded-none font-bold">
                     {service.icon}
                   </div>
                 </div>
@@ -101,7 +101,7 @@ export default function Services() {
                         key={bullet}
                         className="flex items-start gap-3 font-sans text-xs text-foreground leading-relaxed"
                       >
-                        <span className="w-2 h-2 bg-[#FF4D15] shrink-0 mt-1.5" />
+                        <span className="w-2 h-2 bg-accent shrink-0 mt-1.5" />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -113,7 +113,7 @@ export default function Services() {
               <div className="p-7 border-t border-border-subtle bg-background">
                 <Link
                   href="#contacto"
-                  className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#FF4D15] hover:text-[#E03E0B] group transition-colors duration-150"
+                  className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-accent-text dark:text-accent hover:underline group transition-colors duration-150"
                 >
                   Consultar por este servicio
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-150" />

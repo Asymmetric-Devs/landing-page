@@ -1,30 +1,65 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, useMotionValue, useTransform, useSpring } from "motion/react";
-import { ArrowRight, Trophy } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  ArrowRight,
+  Globe,
+  Smartphone,
+  Sparkles,
+  Lightbulb,
+} from "lucide-react";
+
+const studioOutputs = [
+  {
+    id: 0,
+    num: "01",
+    label: "Sitios & Sistemas Web",
+    sublabel: "Presencia profesional y gestión",
+    description:
+      "Páginas comerciales rápidas, catálogos interactivos y paneles propios para administrar tus clientes, ventas o inventario desde cualquier dispositivo.",
+    icon: Globe,
+    yPos: 56,
+    path: "M 272 160 C 302 160, 304 56, 334 56",
+  },
+  {
+    id: 1,
+    num: "02",
+    label: "Apps para Celulares",
+    sublabel: "iPhone y Android listas para usar",
+    description:
+      "Aplicaciones móviles pensadas para que tus clientes reserven, compren o interactúen con tu negocio desde su teléfono todos los días.",
+    icon: Smartphone,
+    yPos: 160,
+    path: "M 272 160 L 334 160",
+  },
+  {
+    id: 2,
+    num: "03",
+    label: "Automatización con IA",
+    sublabel: "Atención y tareas sin fricción",
+    description:
+      "Asistentes inteligentes conectados a tu WhatsApp o sistema que responden consultas, agendan turnos y ahorran horas de trabajo manual.",
+    icon: Sparkles,
+    yPos: 264,
+    path: "M 272 160 C 302 160, 304 264, 334 264",
+  },
+] as const;
 
 export default function Hero() {
-  // 3D Perspective Tilt for the Hero Monolith
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const [activeIdx, setActiveIdx] = useState<0 | 1 | 2>(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const springConfig = { damping: 25, stiffness: 120 };
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [10, -10]), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-12, 12]), springConfig);
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setActiveIdx((prev) => ((prev + 1) % 3) as 0 | 1 | 2);
+    }, 4800);
+    return () => clearInterval(timer);
+  }, [isPaused]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    mouseX.set(x);
-    mouseY.set(y);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
+  const activeItem = studioOutputs[activeIdx];
 
   return (
     <section
@@ -32,152 +67,307 @@ export default function Hero() {
       className="relative pt-16 bg-background bg-grid-pattern"
     >
       <div className="max-w-7xl mx-auto border-x border-b border-border-subtle bg-background">
-        {/* Top Architectural Index Bar */}
-        <div className="border-b border-border-subtle px-6 sm:px-10 py-2.5 flex items-center justify-between gap-4 bg-surface text-[11px] font-mono text-brand-muted uppercase tracking-wider">
-          <div className="flex items-center gap-3">
-            <span className="font-bold text-foreground">[ESTUDIO DE INGENIERÍA]</span>
-            <span className="hidden sm:inline text-border-subtle">|</span>
-            <span className="hidden sm:inline">SISTEMAS WEB · APPS MÓVILES · IA</span>
-          </div>
-        </div>
-
         {/* Main 12-Col Swiss Architectural Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:divide-x lg:divide-border-subtle items-stretch">
           {/* Left Column: Editorial Manifesto & CTAs */}
-          <div className="lg:col-span-6 p-6 sm:p-10 lg:p-12 flex flex-col justify-center">
-            {/* Live Milestone Editorial Ticker */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35 }}
-              className="mb-8"
-            >
-              <Link
-                href="#noticias"
-                className="group inline-flex items-center gap-2.5 px-3 py-2 rounded-none bg-surface border border-border-subtle hover:border-[#FF4D15] transition-colors duration-150"
+          <div className="lg:col-span-6 p-6 sm:p-10 lg:p-12 flex flex-col justify-between">
+            <div>
+              {/* Headline with Dosel Signature Highlighter Block */}
+              <motion.h1
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.06 }}
+                className="font-sans text-4xl sm:text-5xl xl:text-[3.5rem] font-bold tracking-[-0.04em] text-foreground leading-[1.06] sm:leading-[1.03]"
               >
-                <span className="inline-flex items-center justify-center w-5 h-5 bg-[#FF4D15] text-white shrink-0">
-                  <Trophy className="w-3 h-3" />
+                Ingeniería de software que convierte ideas en{" "}
+                <span className="marker-highlight inline-block bg-accent text-accent-foreground px-3 py-0.5 font-bold">
+                  productos reales.
                 </span>
-                <span className="font-mono text-[11px] font-medium text-foreground">
-                  <strong className="font-bold uppercase tracking-wider text-[#FF4D15]">Nuevo logro:</strong>{" "}
-                  1° Puesto Track Stellar (NEATECH 2026) &amp; 3° Puesto Rally Latam
-                </span>
-                <ArrowRight className="w-3.5 h-3.5 text-brand-muted group-hover:text-[#FF4D15] group-hover:translate-x-0.5 transition-[color,transform] duration-150 shrink-0" />
-              </Link>
-            </motion.div>
+              </motion.h1>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.06 }}
-              className="font-sans text-4xl sm:text-5xl xl:text-[3.65rem] font-bold tracking-[-0.04em] text-foreground leading-[0.98]"
-            >
-              Ingeniería de software que convierte ideas en{" "}
-              <span className="font-serif italic font-normal text-[#FF4D15]">
-                productos reales.
-              </span>
-            </motion.h1>
+              {/* Subheading for Everyday Clients */}
+              <motion.p
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.12 }}
+                className="mt-6 font-sans text-base sm:text-lg text-brand-muted leading-relaxed max-w-xl"
+              >
+                Somos un equipo de cuatro Ingenieros en Sistemas. Diseñamos y construimos{" "}
+                <strong className="font-semibold text-foreground">páginas y sistemas web</strong>,{" "}
+                <strong className="font-semibold text-foreground">aplicaciones para celulares</strong> y{" "}
+                <strong className="font-semibold text-foreground">herramientas con IA</strong> trabajando en contacto directo con vos de principio a fin.
+              </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.12 }}
-              className="mt-6 font-sans text-base sm:text-lg text-brand-muted leading-relaxed max-w-xl"
-            >
-              Somos un equipo de cuatro Ingenieros en Sistemas. Desarrollamos{" "}
-              <strong className="font-semibold text-foreground">sitios y plataformas web</strong>,{" "}
-              <strong className="font-semibold text-foreground">aplicaciones móviles (iOS y Android)</strong> y{" "}
-              <strong className="font-semibold text-foreground">herramientas con IA</strong> trabajando en contacto directo con vos durante todo el proyecto.
-            </motion.p>
+              {/* Primary & Secondary CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.18 }}
+                className="mt-8 flex flex-col sm:flex-row gap-3 w-full sm:w-auto"
+              >
+                <Link
+                  href="#contacto"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-none text-xs font-mono font-bold uppercase tracking-wider bg-accent hover:bg-accent-hover text-accent-foreground transition-colors duration-150"
+                >
+                  Contanos tu idea
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="#servicios"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-none text-xs font-mono font-bold uppercase tracking-wider bg-surface hover:bg-foreground hover:text-background text-foreground border border-foreground transition-colors duration-150"
+                >
+                  Ver qué hacemos
+                </Link>
+              </motion.div>
+            </div>
 
-            {/* Primary & Secondary CTAs */}
+            {/* Bottom Human-Friendly Pillars */}
             <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.18 }}
-              className="mt-8 flex flex-col sm:flex-row gap-3 w-full sm:w-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="mt-10 pt-6 border-t border-border-subtle grid grid-cols-3 gap-3 text-left"
             >
-              <Link
-                href="#servicios"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-none text-xs font-mono font-bold uppercase tracking-wider bg-[#FF4D15] hover:bg-[#E03E0B] text-white transition-colors duration-150"
-              >
-                Ver Servicios
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="#contacto"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-none text-xs font-mono font-bold uppercase tracking-wider bg-surface hover:bg-foreground hover:text-background text-foreground border border-foreground transition-colors duration-150"
-              >
-                Consultar Proyecto
-              </Link>
+              <div>
+                <span className="block font-mono text-[10px] text-accent-text dark:text-accent font-bold uppercase tracking-wider">
+                  01 &middot; Trato directo
+                </span>
+                <span className="font-sans font-bold text-xs sm:text-sm text-foreground mt-0.5 block">
+                  Sin intermediarios
+                </span>
+              </div>
+              <div className="border-l border-border-subtle pl-3">
+                <span className="block font-mono text-[10px] text-accent-text dark:text-accent font-bold uppercase tracking-wider">
+                  02 &middot; Paso a paso
+                </span>
+                <span className="font-sans font-bold text-xs sm:text-sm text-foreground mt-0.5 block">
+                  Avances cada semana
+                </span>
+              </div>
+              <div className="border-l border-border-subtle pl-3">
+                <span className="block font-mono text-[10px] text-accent-text dark:text-accent font-bold uppercase tracking-wider">
+                  03 &middot; Entrega
+                </span>
+                <span className="font-sans font-bold text-xs sm:text-sm text-foreground mt-0.5 block">
+                  Listo para usar
+                </span>
+              </div>
             </motion.div>
           </div>
 
-          {/* Right Column: 3D Asymmetric Centerpiece */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.55, delay: 0.1 }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            className="lg:col-span-6 relative p-6 sm:p-10 lg:p-12 min-h-[440px] sm:min-h-[500px] lg:min-h-[560px] flex flex-col justify-center items-center bg-surface/50 border-t lg:border-t-0 border-border-subtle overflow-hidden select-none"
-            style={{ perspective: 1000 }}
+          {/* Right Column: Minimalist Architectural Node Graph (Propuesta D + C) */}
+          <div
+            className="lg:col-span-6 p-6 sm:p-10 lg:p-12 flex flex-col justify-between bg-surface/40 border-t lg:border-t-0 border-border-subtle relative overflow-hidden select-none"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
-            {/* Top Clean Brand Label */}
-            <div className="absolute top-6 left-6 sm:top-8 sm:left-8 z-20">
-              <span className="font-mono text-xs font-bold text-foreground uppercase tracking-wider">
-                [ASYMMETRIC]
+            {/* Subtle top bar */}
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-[11px] font-bold text-brand-muted uppercase tracking-wider flex items-center gap-2">
+                <span className="w-2 h-2 bg-accent inline-block" />
+                DE LA IDEA AL PRODUCTO FUNCIONANDO
+              </span>
+              <span className="font-mono text-xs font-bold text-foreground">
+                0{activeIdx + 1} / 03
               </span>
             </div>
 
-            {/* Ambient Radial Glow */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-              <div className="w-72 h-72 sm:w-88 sm:h-88 rounded-full bg-[#FF4D15]/10 dark:bg-[#FF4D15]/15 blur-3xl" />
+            {/* Interactive Node Architecture Diagram */}
+            <div className="relative my-6 py-4 flex items-center justify-center">
+              {/* Desktop / Tablet Connected Graph */}
+              <div className="w-full relative">
+                {/* SVG Connection Lines Behind Nodes (visible on sm+) */}
+                <svg
+                  viewBox="0 0 560 320"
+                  className="hidden sm:block w-full h-[300px] overflow-visible pointer-events-none"
+                  fill="none"
+                >
+                  {/* Base line from Origin (Tu Idea) to Central Hub (Asymmetric) */}
+                  <line
+                    x1="108"
+                    y1="160"
+                    x2="164"
+                    y2="160"
+                    stroke="currentColor"
+                    className="text-border-subtle"
+                    strokeWidth="1.5"
+                    strokeDasharray="4 4"
+                  />
+                  <motion.line
+                    x1="108"
+                    y1="160"
+                    x2="164"
+                    y2="160"
+                    stroke="var(--accent)"
+                    strokeWidth="2.5"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: [0, 1, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  />
+
+                  {/* 3 Branch Curves from Central Hub (x=292) to Output Nodes (x=358) */}
+                  {studioOutputs.map((item) => {
+                    const isActive = activeIdx === item.id;
+                    const curve = `M 272 160 C 302 160, 304 ${item.yPos}, 334 ${item.yPos}`;
+                    return (
+                      <g key={item.id}>
+                        <path
+                          d={curve}
+                          stroke="currentColor"
+                          className="text-border-subtle"
+                          strokeWidth="1.5"
+                        />
+                        {isActive && (
+                          <>
+                            <motion.path
+                              d={curve}
+                              stroke="var(--accent)"
+                              strokeWidth="2.5"
+                              initial={{ pathLength: 0 }}
+                              animate={{ pathLength: 1 }}
+                              transition={{ duration: 0.45, ease: "easeOut" }}
+                            />
+                            <motion.circle
+                              r="4"
+                              fill="var(--accent)"
+                              initial={{ offsetDistance: "0%" }}
+                              animate={{ offsetDistance: "100%" }}
+                              transition={{
+                                duration: 1.6,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                              }}
+                              style={{ offsetPath: `path('${curve}')` }}
+                            />
+                          </>
+                        )}
+                      </g>
+                    );
+                  })}
+                </svg>
+
+                {/* Positioned Nodes Overlay on sm+, Stacked cleanly on mobile */}
+                <div className="sm:absolute sm:inset-0 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                  {/* Node 1: Tu Idea (Origin) */}
+                  <div className="sm:w-[108px] shrink-0 bg-background border border-border-subtle p-3 flex sm:flex-col items-center sm:items-start gap-2.5 shadow-2xs">
+                    <div className="w-7 h-7 bg-accent/20 border border-accent flex items-center justify-center shrink-0">
+                      <Lightbulb className="w-3.5 h-3.5 text-foreground" />
+                    </div>
+                    <div>
+                      <span className="font-mono text-[9px] text-brand-muted uppercase tracking-wider block">
+                        INICIO
+                      </span>
+                      <span className="font-sans text-xs font-bold text-foreground leading-tight block">
+                        Tu Idea o Negocio
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Node 2: ASYMMETRIC (Center Hub) */}
+                  <div className="sm:w-[110px] shrink-0 bg-surface-contrast text-background p-3.5 border border-foreground flex sm:flex-col items-center sm:items-center justify-center text-center gap-1.5 relative">
+                    <span className="w-2 h-2 bg-accent inline-block" />
+                    <span className="font-sans text-xs font-bold tracking-tight uppercase block">
+                      ASYMMETRIC
+                    </span>
+                    <span className="font-mono text-[9px] opacity-75 uppercase tracking-wider block">
+                      Diseño &amp; Código
+                    </span>
+                  </div>
+
+                  {/* Node 3: 3 Interactive Output Destinations */}
+                  <div className="sm:w-[228px] shrink-0 flex flex-col justify-between sm:h-[268px] gap-2.5">
+                    {studioOutputs.map((item) => {
+                      const Icon = item.icon;
+                      const isActive = activeIdx === item.id;
+                      return (
+                        <button
+                          key={item.id}
+                          type="button"
+                          onClick={() => setActiveIdx(item.id)}
+                          onMouseEnter={() => setActiveIdx(item.id)}
+                          className={`w-full p-3 text-left border transition-all duration-150 cursor-pointer flex items-center gap-3 ${
+                            isActive
+                              ? "bg-accent text-accent-foreground border-foreground shadow-xs translate-x-0 sm:-translate-x-0.5"
+                              : "bg-background text-foreground border-border-subtle hover:border-foreground"
+                          }`}
+                        >
+                          <div
+                            className={`w-8 h-8 flex items-center justify-center shrink-0 border ${
+                              isActive
+                                ? "bg-foreground text-background border-foreground"
+                                : "bg-surface text-foreground border-border-subtle"
+                            }`}
+                          >
+                            <Icon className="w-4 h-4" />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <span
+                              className={`font-sans text-xs sm:text-[13px] font-bold leading-snug block ${
+                                isActive ? "text-accent-foreground" : "text-foreground"
+                              }`}
+                            >
+                              {item.label}
+                            </span>
+                            <span
+                              className={`font-sans text-[11px] leading-tight block mt-0.5 ${
+                                isActive
+                                  ? "text-accent-foreground/80 font-medium"
+                                  : "text-brand-muted"
+                              }`}
+                            >
+                              {item.sublabel}
+                            </span>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Floating 3D Monolith Centerpiece */}
-            <div className="relative flex flex-col items-center justify-center py-4 z-10">
-              <motion.div
-                style={{
-                  rotateX,
-                  rotateY,
-                  transformStyle: "preserve-3d",
-                }}
-                animate={{
-                  y: [-12, 12, -12],
-                  rotateZ: [-1, 1, -1],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="relative cursor-grab active:cursor-grabbing will-change-transform"
-              >
-                <img
-                  src="/assets/hero-centerpiece.png"
-                  alt="Asymmetric"
-                  className="w-64 sm:w-80 md:w-92 lg:w-[380px] max-w-full h-auto select-none pointer-events-none drop-shadow-[0_20px_35px_rgba(0,0,0,0.18)] dark:drop-shadow-[0_20px_45px_rgba(255,77,21,0.15)]"
-                  draggable={false}
-                />
-              </motion.div>
+            {/* Bottom Minimalist Editorial Caption (MetaLab / Instrument Style) */}
+            <div className="pt-5 border-t border-border-subtle">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeItem.id}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex flex-col sm:flex-row sm:items-end justify-between gap-4"
+                >
+                  <div className="max-w-md">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="px-2 py-0.5 bg-accent text-accent-foreground font-mono text-[10px] font-bold uppercase">
+                        {activeItem.num} &middot; {activeItem.label}
+                      </span>
+                    </div>
+                    <p className="font-sans text-sm text-brand-muted leading-relaxed">
+                      {activeItem.description}
+                    </p>
+                  </div>
 
-              {/* Dynamic Breathing Floor Shadow */}
-              <motion.div
-                animate={{
-                  scale: [1, 0.85, 1],
-                  opacity: [0.35, 0.2, 0.35],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="w-48 sm:w-60 md:w-72 h-6 sm:h-7 rounded-[100%] bg-neutral-950/40 dark:bg-black/75 blur-xl mt-2 pointer-events-none"
-              />
+                  {/* Stepper Indicators */}
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    {studioOutputs.map((item) => (
+                      <button
+                        key={item.id}
+                        type="button"
+                        onClick={() => setActiveIdx(item.id)}
+                        aria-label={`Ver ${item.label}`}
+                        className={`h-2 transition-all duration-200 cursor-pointer ${
+                          activeIdx === item.id
+                            ? "w-7 bg-accent border border-foreground/30"
+                            : "w-2 bg-border-subtle hover:bg-foreground/40"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

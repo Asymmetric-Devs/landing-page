@@ -68,13 +68,13 @@ export default function Contact() {
           {/* Left Column: Direct Channels & Info */}
           <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between bg-background">
             <div>
-              <span className="font-mono text-[11px] font-bold text-[#FF4D15] uppercase tracking-widest block mb-3">
+              <span className="font-mono text-[11px] font-bold text-accent-text dark:text-accent uppercase tracking-widest block mb-3">
                 [05 // CONTACTO]
               </span>
 
-              <h2 className="font-sans text-3xl sm:text-4xl font-bold tracking-[-0.04em] text-foreground leading-[0.98]">
+              <h2 className="font-sans text-3xl sm:text-4xl font-bold tracking-[-0.04em] text-foreground leading-[1.08] sm:leading-[1.02]">
                 Contanos qué estás buscando{" "}
-                <span className="font-serif italic font-normal text-[#FF4D15]">
+                <span className="marker-highlight inline-block bg-accent text-accent-foreground px-3 py-0.5 font-bold">
                   desarrollar.
                 </span>
               </h2>
@@ -88,7 +88,7 @@ export default function Contact() {
                 {/* WhatsApp Direct Cell */}
                 <div className="p-4 flex items-center justify-between gap-4">
                   <div className="flex items-center gap-3.5 min-w-0">
-                    <div className="w-10 h-10 bg-[#FF4D15] text-white flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 bg-accent text-accent-foreground flex items-center justify-center shrink-0">
                       <MessageCircle className="w-5 h-5" />
                     </div>
                     <div className="min-w-0">
@@ -105,7 +105,7 @@ export default function Contact() {
                     href={`https://wa.me/${whatsappNumber}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 px-3.5 py-2 rounded-none bg-foreground text-background hover:bg-[#FF4D15] hover:text-white font-mono text-xs font-bold uppercase transition-colors duration-150 shrink-0"
+                    className="inline-flex items-center gap-1 px-3.5 py-2 rounded-none bg-foreground text-background hover:bg-accent hover:text-accent-foreground font-mono text-xs font-bold uppercase transition-colors duration-150 shrink-0"
                   >
                     Chatear
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -142,7 +142,7 @@ export default function Contact() {
                           animate={{ scale: 1, opacity: 1 }}
                           exit={{ scale: 0.8, opacity: 0 }}
                           transition={{ duration: 0.15 }}
-                          className="inline-flex items-center gap-1 text-[#FF4D15]"
+                          className="inline-flex items-center gap-1 text-accent-text dark:text-accent font-bold"
                         >
                           <Check className="w-3.5 h-3.5" />
                           Copiado
@@ -169,11 +169,11 @@ export default function Contact() {
             {/* Location & Availability */}
             <div className="mt-8 pt-6 border-t border-border-subtle flex flex-col gap-2.5 font-mono text-xs text-brand-muted">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#FF4D15] shrink-0" />
+                <MapPin className="w-4 h-4 text-accent-text dark:text-accent shrink-0" />
                 <span>Corrientes y Chaco, Argentina · Trabajo remoto</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#FF4D15] shrink-0" />
+                <Clock className="w-4 h-4 text-accent-text dark:text-accent shrink-0" />
                 <span>Respuesta dentro de las 24 horas hábiles</span>
               </div>
             </div>
@@ -202,7 +202,7 @@ export default function Contact() {
                   value={senderName}
                   onChange={(e) => setSenderName(e.target.value)}
                   placeholder="Ej: Juan Pérez / Mi Empresa"
-                  className="w-full rounded-none px-4 py-3.5 font-sans text-sm bg-background text-foreground placeholder:text-brand-muted/60 border border-border-subtle focus:border-[#FF4D15] focus:outline-hidden transition-colors duration-150"
+                  className="w-full rounded-none px-4 py-3.5 font-sans text-sm bg-background text-foreground placeholder:text-brand-muted/60 border border-border-subtle focus:border-accent focus:outline-hidden transition-colors duration-150"
                 />
               </div>
 
@@ -221,7 +221,7 @@ export default function Contact() {
                         onClick={() => setSelectedType(type)}
                         className={`px-4 py-3.5 rounded-none text-left font-mono text-xs font-bold border transition-colors duration-150 cursor-pointer ${
                           isSelected
-                            ? "bg-[#FF4D15] text-white border-[#FF4D15]"
+                            ? "bg-accent text-accent-foreground border-accent font-bold"
                             : "bg-background text-foreground border-border-subtle hover:border-foreground"
                         }`}
                       >
@@ -246,7 +246,7 @@ export default function Contact() {
                   value={customNote}
                   onChange={(e) => setCustomNote(e.target.value)}
                   placeholder="Ej: Necesitamos renovar nuestro sitio con un catálogo administrable o desarrollar una aplicación para nuestros clientes..."
-                  className="w-full rounded-none px-4 py-3.5 font-sans text-sm bg-background text-foreground placeholder:text-brand-muted/60 border border-border-subtle focus:border-[#FF4D15] focus:outline-hidden transition-colors duration-150 resize-none"
+                  className="w-full rounded-none px-4 py-3.5 font-sans text-sm bg-background text-foreground placeholder:text-brand-muted/60 border border-border-subtle focus:border-accent focus:outline-hidden transition-colors duration-150 resize-none"
                 />
               </div>
 
@@ -256,7 +256,7 @@ export default function Contact() {
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-none text-xs font-mono font-bold uppercase tracking-wider bg-[#FF4D15] hover:bg-[#E03E0B] text-white transition-colors duration-150"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-none text-xs font-mono font-bold uppercase tracking-wider bg-accent hover:bg-accent-hover text-accent-foreground transition-colors duration-150"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Enviar por WhatsApp
