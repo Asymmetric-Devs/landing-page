@@ -170,44 +170,49 @@ export default function Hero() {
                   />
 
                   {/* 3 Branch Curves from Central Hub (x=272) to Output Nodes (x=334) */}
+                  {/* Layer 1: Base inactive paths rendered first */}
                   {studioOutputs.map((item) => {
-                    const isActive = activeIdx === item.id;
                     const curve = `M 272 135 C 302 135, 304 ${item.yPos}, 334 ${item.yPos}`;
                     return (
-                      <g key={item.id}>
-                        <path
-                          d={curve}
-                          stroke="currentColor"
-                          className="text-border-subtle"
-                          strokeWidth="1.5"
-                        />
-                        {isActive && (
-                          <>
-                            <motion.path
-                              d={curve}
-                              stroke="var(--accent)"
-                              strokeWidth="2.5"
-                              initial={{ pathLength: 0 }}
-                              animate={{ pathLength: 1 }}
-                              transition={{ duration: 0.45, ease: "easeOut" }}
-                            />
-                            <motion.circle
-                              r="4"
-                              fill="var(--accent)"
-                              initial={{ offsetDistance: "0%" }}
-                              animate={{ offsetDistance: "100%" }}
-                              transition={{
-                                duration: 1.6,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                              }}
-                              style={{ offsetPath: `path('${curve}')` }}
-                            />
-                          </>
-                        )}
-                      </g>
+                      <path
+                        key={`desktop-base-${item.id}`}
+                        d={curve}
+                        stroke="currentColor"
+                        className="text-border-subtle"
+                        strokeWidth="1.5"
+                      />
                     );
                   })}
+
+                  {/* Layer 2: Active highlighted path and particle rendered on top of ALL base lines */}
+                  {(() => {
+                    const activeItem = studioOutputs[activeIdx];
+                    const activeCurve = `M 272 135 C 302 135, 304 ${activeItem.yPos}, 334 ${activeItem.yPos}`;
+                    return (
+                      <g key={`desktop-active-${activeItem.id}`}>
+                        <motion.path
+                          d={activeCurve}
+                          stroke="var(--accent)"
+                          strokeWidth="2.5"
+                          initial={{ pathLength: 0 }}
+                          animate={{ pathLength: 1 }}
+                          transition={{ duration: 0.45, ease: "easeOut" }}
+                        />
+                        <motion.circle
+                          r="4"
+                          fill="var(--accent)"
+                          initial={{ offsetDistance: "0%" }}
+                          animate={{ offsetDistance: "100%" }}
+                          transition={{
+                            duration: 1.6,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                          style={{ offsetPath: `path('${activeCurve}')` }}
+                        />
+                      </g>
+                    );
+                  })()}
                 </svg>
 
                 {/* Positioned Nodes Overlay on sm+ */}
@@ -389,47 +394,54 @@ export default function Hero() {
                     className="absolute left-0 top-0 w-11 h-[160px] overflow-visible pointer-events-none"
                     fill="none"
                   >
+                    {/* Layer 1: All base inactive paths rendered first */}
                     {studioOutputs.map((item) => {
-                      const isActive = activeIdx === item.id;
                       const yTargets = [24, 80, 136];
                       const yTarget = yTargets[item.id];
                       const curve = `M 26 0 L 26 ${yTarget - 12} C 26 ${yTarget - 4}, 34 ${yTarget}, 44 ${yTarget}`;
 
                       return (
-                        <g key={item.id}>
-                          <path
-                            d={curve}
-                            stroke="currentColor"
-                            className="text-border-subtle"
-                            strokeWidth="1.5"
-                          />
-                          {isActive && (
-                            <>
-                              <motion.path
-                                d={curve}
-                                stroke="var(--accent)"
-                                strokeWidth="2.5"
-                                initial={{ pathLength: 0 }}
-                                animate={{ pathLength: 1 }}
-                                transition={{ duration: 0.35, ease: "easeOut" }}
-                              />
-                              <motion.circle
-                                r="3.5"
-                                fill="var(--accent)"
-                                initial={{ offsetDistance: "0%" }}
-                                animate={{ offsetDistance: "100%" }}
-                                transition={{
-                                  duration: 1.5,
-                                  repeat: Infinity,
-                                  ease: "easeInOut",
-                                }}
-                                style={{ offsetPath: `path('${curve}')` }}
-                              />
-                            </>
-                          )}
-                        </g>
+                        <path
+                          key={`mobile-base-${item.id}`}
+                          d={curve}
+                          stroke="currentColor"
+                          className="text-border-subtle"
+                          strokeWidth="1.5"
+                        />
                       );
                     })}
+
+                    {/* Layer 2: Active highlighted path and particle ALWAYS rendered on top */}
+                    {(() => {
+                      const yTargets = [24, 80, 136];
+                      const yTarget = yTargets[activeIdx];
+                      const activeCurve = `M 26 0 L 26 ${yTarget - 12} C 26 ${yTarget - 4}, 34 ${yTarget}, 44 ${yTarget}`;
+
+                      return (
+                        <g key={`mobile-active-${activeIdx}`}>
+                          <motion.path
+                            d={activeCurve}
+                            stroke="var(--accent)"
+                            strokeWidth="2.5"
+                            initial={{ pathLength: 0 }}
+                            animate={{ pathLength: 1 }}
+                            transition={{ duration: 0.35, ease: "easeOut" }}
+                          />
+                          <motion.circle
+                            r="3.5"
+                            fill="var(--accent)"
+                            initial={{ offsetDistance: "0%" }}
+                            animate={{ offsetDistance: "100%" }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                            }}
+                            style={{ offsetPath: `path('${activeCurve}')` }}
+                          />
+                        </g>
+                      );
+                    })()}
                   </svg>
 
                   {/* 3 Output Destination Buttons */}
@@ -444,7 +456,7 @@ export default function Hero() {
                         onClick={() => setActiveIdx(item.id)}
                         className={`w-full h-12 px-3 text-left border transition-all duration-150 cursor-pointer flex items-center gap-2.5 relative ${
                           isActive
-                            ? "bg-accent text-accent-foreground border-foreground shadow-xs font-bold"
+                            ? "bg-accent text-accent-foreground border-foreground shadow-xs font-bold z-10"
                             : "bg-background text-foreground border-border-subtle hover:border-foreground"
                         }`}
                       >
@@ -452,7 +464,7 @@ export default function Hero() {
                         <span
                           className={`absolute -left-[4px] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full border transition-colors duration-150 ${
                             isActive
-                              ? "bg-accent border-foreground"
+                              ? "bg-accent border-foreground z-20"
                               : "bg-surface border-border-subtle"
                           }`}
                         />
