@@ -29,44 +29,43 @@ export default function Footer() {
           </span>
         </div>
 
-        {/* Essential Navigation & Back to Top */}
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-          <nav className="flex items-center gap-4 sm:gap-5">
-            <Link
-              href="/#servicios"
-              className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150"
-            >
-              Servicios
-            </Link>
-            <Link
-              href="/proyectos"
-              className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150"
-            >
-              Proyectos
-            </Link>
-            <Link
-              href="/noticias"
-              className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150"
-            >
-              Noticias
-            </Link>
-            <Link
-              href="/#contacto"
-              className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150"
-            >
-              Contacto
-            </Link>
-          </nav>
-
-          <button
-            onClick={scrollToTop}
-            className="group flex items-center gap-1.5 px-2.5 py-1.5 border border-border-subtle bg-background hover:bg-foreground hover:text-background font-mono text-[10px] font-bold uppercase tracking-wider text-foreground transition-colors duration-150 cursor-pointer"
-            aria-label="Volver arriba"
+        {/* Mobile Navigation Links */}
+        <nav className="flex md:hidden flex-wrap items-center justify-center gap-4 py-1">
+          <Link
+            href="/#servicios"
+            className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150 py-1"
           >
-            <span>Arriba</span>
-            <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform duration-150" />
-          </button>
-        </div>
+            Servicios
+          </Link>
+          <Link
+            href="/proyectos"
+            className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150 py-1"
+          >
+            Proyectos
+          </Link>
+          <Link
+            href="/noticias"
+            className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150 py-1"
+          >
+            Noticias
+          </Link>
+          <Link
+            href="/#contacto"
+            className="font-mono text-xs text-brand-muted hover:text-foreground transition-colors duration-150 py-1"
+          >
+            Contacto
+          </Link>
+        </nav>
+
+        {/* Back to Top */}
+        <button
+          onClick={scrollToTop}
+          className="group flex items-center gap-1.5 px-2.5 py-1.5 border border-border-subtle bg-background hover:bg-foreground hover:text-background font-mono text-[10px] font-bold uppercase tracking-wider text-foreground transition-colors duration-150 cursor-pointer"
+          aria-label="Volver arriba"
+        >
+          <span>Arriba</span>
+          <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform duration-150" />
+        </button>
       </div>
     </footer>
   );
