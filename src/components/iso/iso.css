@@ -1,0 +1,378 @@
+/* Anatomy Isometric Kit Base Styles */
+
+/* Default / Light theme (when not inside .dark) */
+:root .iso,
+.iso[data-theme="light"] {
+  --anatomy-page: var(--background, #F4F3EC);
+  --anatomy-card: var(--surface, #FAF9F5);
+  --anatomy-text: var(--foreground, #0D1712);
+  --anatomy-strong: var(--foreground, #0D1712);
+  --anatomy-muted: var(--color-brand-secondary, #4E5450);
+  --anatomy-paper: var(--surface, #FAF9F5);
+  --anatomy-face: #FFFFFF;
+  --anatomy-top: #FFFFFF;
+  --anatomy-shade-0: #D8D6CE;
+  --anatomy-shade-1: #E4E2DA;
+  --anatomy-shade-2: #EEEDE6;
+  --anatomy-shade-3: #F6F5F0;
+  --anatomy-lit-top: #FFFFFF;
+  --anatomy-lit-shade: #EFEFEA;
+  --anatomy-hi: #181A19;
+  --anatomy-mid: #686B69;
+  --anatomy-lo: #A8ABA9;
+  --anatomy-faint: #D5D2C8;
+  --anatomy-lit: #0D1712;
+  --anatomy-accent: var(--accent, #C4F82A);
+  --anatomy-halo: #8A8A80;
+  --anatomy-halo-opacity: 0.32;
+  --anatomy-dot: #3A3A3E;
+  --anatomy-red: #E5484D;
+  --anatomy-green: #30A46C;
+  --anatomy-blue: #3E63DD;
+  --anatomy-weight: 0.65px;
+  --anatomy-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --anatomy-mono: var(--font-mono, ui-monospace, "SF Mono", monospace);
+}
+
+/* Dark mode theme */
+.dark .iso,
+.iso[data-theme="dark"] {
+  --anatomy-page: var(--background, #090C0A);
+  --anatomy-card: var(--surface, #111613);
+  --anatomy-text: var(--foreground, #F4F3EC);
+  --anatomy-strong: var(--foreground, #F4F3EC);
+  --anatomy-muted: var(--color-brand-secondary, #9CA39E);
+  --anatomy-paper: var(--surface, #111613);
+  --anatomy-face: #18201B;
+  --anatomy-top: #1D2620;
+  --anatomy-shade-0: #0B0F0C;
+  --anatomy-shade-1: #0F1410;
+  --anatomy-shade-2: #141A16;
+  --anatomy-shade-3: #19201B;
+  --anatomy-lit-top: #2A362E;
+  --anatomy-lit-shade: #1E2721;
+  --anatomy-hi: #E2E8E4;
+  --anatomy-mid: #7A8780;
+  --anatomy-lo: #3B453F;
+  --anatomy-faint: #212924;
+  --anatomy-lit: #FFFFFF;
+  --anatomy-accent: var(--accent, #C4F82A);
+  --anatomy-halo: #050505;
+  --anatomy-halo-opacity: 0.85;
+  --anatomy-dot: #E2E8E4;
+  --anatomy-red: #FF6B6B;
+  --anatomy-green: #6BE0A0;
+  --anatomy-blue: #6B9BFF;
+}
+
+.iso-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.iso-svg path,
+.iso-svg circle {
+  vector-effect: non-scaling-stroke;
+}
+
+.iso-fill {
+  fill: var(--anatomy-paper);
+  stroke: none;
+}
+
+.iso-solid[data-lit] > .iso-fill {
+  fill: var(--anatomy-face);
+}
+
+.iso-shade,
+.iso-top {
+  stroke: none;
+}
+
+.iso-shade[data-shade="0"] {
+  fill: var(--anatomy-shade-0);
+}
+.iso-shade[data-shade="1"] {
+  fill: var(--anatomy-shade-1);
+}
+.iso-shade[data-shade="2"] {
+  fill: var(--anatomy-shade-2);
+}
+.iso-shade[data-shade="3"] {
+  fill: var(--anatomy-shade-3);
+}
+.iso-top {
+  fill: var(--anatomy-top);
+}
+
+.iso-solid[data-lit] > .iso-top {
+  fill: var(--anatomy-lit-top);
+}
+.iso-solid[data-lit] > .iso-shade {
+  fill: var(--anatomy-lit-shade);
+}
+
+.iso-solid[data-seamless] > .iso-shade,
+.iso-solid[data-seamless] > .iso-top {
+  stroke-width: 0.4;
+  stroke-linejoin: round;
+}
+
+.iso-solid[data-seamless] > .iso-shade[data-shade="0"] {
+  stroke: var(--anatomy-shade-0);
+}
+.iso-solid[data-seamless] > .iso-shade[data-shade="1"] {
+  stroke: var(--anatomy-shade-1);
+}
+.iso-solid[data-seamless] > .iso-shade[data-shade="2"] {
+  stroke: var(--anatomy-shade-2);
+}
+.iso-solid[data-seamless] > .iso-shade[data-shade="3"] {
+  stroke: var(--anatomy-shade-3);
+}
+.iso-solid[data-seamless] > .iso-top {
+  stroke: var(--anatomy-top);
+}
+.iso-solid[data-seamless][data-lit] > .iso-top {
+  stroke: var(--anatomy-lit-top);
+}
+.iso-solid[data-seamless][data-lit] > .iso-shade {
+  stroke: var(--anatomy-lit-shade);
+}
+
+.iso-solid[data-lit] > .iso-edge {
+  stroke: var(--anatomy-lit);
+}
+
+/* Accent Highlight State (Asymmetric signature) */
+.iso-solid[data-accent] > .iso-top {
+  fill: var(--anatomy-accent);
+}
+.iso-solid[data-accent] > .iso-shade {
+  fill: color-mix(in srgb, var(--anatomy-accent) 60%, var(--anatomy-shade-0));
+}
+.iso-solid[data-accent] > .iso-edge {
+  stroke: var(--anatomy-strong);
+}
+
+.iso-halo {
+  fill: var(--anatomy-halo);
+  stroke: none;
+  filter: blur(8px);
+  opacity: var(--anatomy-halo-opacity);
+  transform: translateY(3px);
+}
+
+.iso-line {
+  fill: none;
+  stroke: var(--anatomy-lo);
+  stroke-width: var(--anatomy-weight);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.iso-line[data-tone="hi"] {
+  stroke: var(--anatomy-hi);
+}
+.iso-line[data-tone="mid"] {
+  stroke: var(--anatomy-mid);
+}
+.iso-line[data-tone="lo"] {
+  stroke: var(--anatomy-lo);
+}
+.iso-line[data-tone="faint"] {
+  stroke: var(--anatomy-faint);
+}
+.iso-line[data-tone="lit"] {
+  stroke: var(--anatomy-lit);
+}
+.iso-line[data-tone="accent"] {
+  stroke: var(--anatomy-accent);
+  stroke-width: 1.6px;
+}
+.iso-line[data-tone="red"] {
+  stroke: var(--anatomy-red);
+}
+.iso-line[data-tone="green"] {
+  stroke: var(--anatomy-green);
+}
+.iso-line[data-tone="blue"] {
+  stroke: var(--anatomy-blue);
+}
+
+.iso-line[data-dotted] {
+  stroke-dasharray: 0.01 3.5;
+  stroke-width: 1;
+}
+.iso-line[data-dashed] {
+  stroke-dasharray: 3 3;
+}
+.iso-line[data-flow] {
+  stroke-dasharray: 2 6;
+}
+
+.iso-wire-end {
+  fill: var(--anatomy-paper);
+  stroke: var(--anatomy-lo);
+  stroke-width: var(--anatomy-weight);
+}
+.iso-wire[data-tone="hi"] .iso-wire-end {
+  stroke: var(--anatomy-hi);
+}
+.iso-wire[data-tone="mid"] .iso-wire-end {
+  stroke: var(--anatomy-mid);
+}
+.iso-wire[data-tone="faint"] .iso-wire-end {
+  stroke: var(--anatomy-faint);
+}
+.iso-wire[data-tone="lit"] .iso-wire-end {
+  stroke: var(--anatomy-lit);
+}
+.iso-wire[data-tone="accent"] .iso-wire-end {
+  stroke: var(--anatomy-accent);
+  fill: var(--anatomy-accent);
+}
+
+.iso-dots circle {
+  fill: var(--anatomy-dot);
+  stroke: none;
+  opacity: 0.32;
+}
+.iso-dots[data-tone="hi"] circle {
+  opacity: 0.85;
+}
+.iso-dots[data-tone="mid"] circle {
+  opacity: 0.45;
+}
+.iso-dots[data-tone="lo"] circle {
+  opacity: 0.22;
+}
+.iso-dots[data-tone="faint"] circle {
+  opacity: 0.12;
+}
+
+.iso-face-text {
+  fill: var(--anatomy-mid);
+  font-family: var(--anatomy-mono);
+  letter-spacing: 0.04em;
+}
+.iso-face-text[data-tone="hi"] {
+  fill: var(--anatomy-hi);
+}
+.iso-face-text[data-tone="lo"] {
+  fill: var(--anatomy-lo);
+}
+.iso-face-text[data-tone="faint"] {
+  fill: var(--anatomy-faint);
+}
+
+@keyframes iso-flow {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+@keyframes iso-pulse {
+  0%,
+  100% {
+    opacity: 0.18;
+  }
+  12% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.18;
+  }
+}
+
+.iso-line[data-flow] {
+  animation: iso-flow 1600ms linear infinite;
+}
+
+@keyframes iso-flow-accent {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.iso-line-flow-accent {
+  stroke: var(--anatomy-accent);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-dasharray: 4 6;
+  animation: iso-flow-accent 1000ms linear infinite;
+}
+
+.iso-dots circle[data-pulse] {
+  animation: iso-pulse 1600ms steps(1, end) infinite;
+  animation-delay: var(--pulse-at, 0ms);
+}
+
+/* Framed Plate Card */
+.iso-plate {
+  position: relative;
+  background: var(--anatomy-card);
+  border: 1px solid var(--border-subtle, var(--anatomy-faint));
+}
+
+.iso-plate-corners {
+  position: absolute;
+  inset: 12px 14px;
+  pointer-events: none;
+}
+
+.iso-plate-corner {
+  position: absolute;
+  color: var(--anatomy-muted);
+  font-family: var(--anatomy-mono);
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.iso-plate-corner[data-corner="fig"] {
+  top: 0;
+  left: 0;
+  color: var(--anatomy-text);
+  font-weight: 700;
+}
+.iso-plate-corner[data-corner="title"] {
+  top: 0;
+  right: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.iso-plate-corner[data-corner="hint"] {
+  bottom: 0;
+  left: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 9.5px;
+}
+.iso-plate-corner[data-corner="readout"] {
+  right: 0;
+  bottom: 0;
+  color: var(--anatomy-text);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+@media (max-width: 560px) {
+  .iso-plate-corners {
+    inset: 8px 10px;
+  }
+  .iso-plate-corner {
+    font-size: 8.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iso-line[data-flow],
+  .iso-line-flow-accent,
+  .iso-dots circle[data-pulse] {
+    animation: none;
+  }
+}

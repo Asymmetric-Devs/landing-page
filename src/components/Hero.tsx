@@ -8,8 +8,8 @@ import {
   Globe,
   Smartphone,
   Settings,
-  Lightbulb,
 } from "lucide-react";
+import { IsoHeroApparatus } from "./hero-isometric/IsoHeroApparatus";
 
 const studioOutputs = [
   {
@@ -20,7 +20,6 @@ const studioOutputs = [
     description:
       "Páginas comerciales rápidas, catálogos interactivos y paneles propios para administrar tus clientes, ventas o inventario desde cualquier dispositivo.",
     icon: Globe,
-    yPos: 44,
   },
   {
     id: 1,
@@ -30,7 +29,6 @@ const studioOutputs = [
     description:
       "Aplicaciones móviles pensadas para que tus clientes reserven, compren o interactúen con tu negocio desde su teléfono todos los días.",
     icon: Smartphone,
-    yPos: 135,
   },
   {
     id: 2,
@@ -40,7 +38,6 @@ const studioOutputs = [
     description:
       "Asistentes inteligentes conectados a tu WhatsApp o sistema que responden consultas, agendan turnos y ahorran horas de trabajo manual.",
     icon: Settings,
-    yPos: 226,
   },
 ] as const;
 
@@ -119,7 +116,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Minimalist Architectural Node Graph */}
+          {/* Right Column: Interactive Isometric Architecture Flow */}
           <div
             className="lg:col-span-6 p-6 sm:p-8 lg:p-8 xl:p-10 flex flex-col justify-between bg-surface/40 border-t lg:border-t-0 border-border-subtle relative overflow-hidden select-none"
             onMouseEnter={() => setIsPaused(true)}
@@ -136,334 +133,13 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Interactive Node Architecture Diagram */}
-            <div className="relative my-3 lg:my-4 py-2 flex items-center justify-center">
-              {/* Desktop / Tablet Connected Graph (untouched) */}
-              <div className="hidden sm:block w-full relative">
-                {/* SVG Connection Lines Behind Nodes (visible on sm+) */}
-                <svg
-                  viewBox="0 0 560 270"
-                  className="w-full h-[250px] overflow-visible pointer-events-none"
-                  fill="none"
-                >
-                  {/* Base line from Origin (Tu Idea) to Central Hub (Asymmetric) */}
-                  <line
-                    x1="108"
-                    y1="135"
-                    x2="164"
-                    y2="135"
-                    stroke="currentColor"
-                    className="text-border-subtle"
-                    strokeWidth="1.5"
-                    strokeDasharray="4 4"
-                  />
-                  <motion.line
-                    x1="108"
-                    y1="135"
-                    x2="164"
-                    y2="135"
-                    stroke="var(--accent)"
-                    strokeWidth="2.5"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: [0, 1, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  />
-
-                  {/* 3 Branch Curves from Central Hub (x=272) to Output Nodes (x=334) */}
-                  {/* Layer 1: Base inactive paths rendered first */}
-                  {studioOutputs.map((item) => {
-                    const curve = `M 272 135 C 302 135, 304 ${item.yPos}, 334 ${item.yPos}`;
-                    return (
-                      <path
-                        key={`desktop-base-${item.id}`}
-                        d={curve}
-                        stroke="currentColor"
-                        className="text-border-subtle"
-                        strokeWidth="1.5"
-                      />
-                    );
-                  })}
-
-                  {/* Layer 2: Active highlighted path and particle rendered on top of ALL base lines */}
-                  {(() => {
-                    const activeItem = studioOutputs[activeIdx];
-                    const activeCurve = `M 272 135 C 302 135, 304 ${activeItem.yPos}, 334 ${activeItem.yPos}`;
-                    return (
-                      <g key={`desktop-active-${activeItem.id}`}>
-                        <motion.path
-                          d={activeCurve}
-                          stroke="var(--accent)"
-                          strokeWidth="2.5"
-                          initial={{ pathLength: 0 }}
-                          animate={{ pathLength: 1 }}
-                          transition={{ duration: 0.45, ease: "easeOut" }}
-                        />
-                        <motion.circle
-                          r="4"
-                          fill="var(--accent)"
-                          initial={{ offsetDistance: "0%" }}
-                          animate={{ offsetDistance: "100%" }}
-                          transition={{
-                            duration: 1.6,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                          }}
-                          style={{ offsetPath: `path('${activeCurve}')` }}
-                        />
-                      </g>
-                    );
-                  })()}
-                </svg>
-
-                {/* Positioned Nodes Overlay on sm+ */}
-                <div className="absolute inset-0 flex flex-row items-center justify-between gap-4">
-                  {/* Node 1: Tu Idea (Origin) */}
-                  <div className="w-[108px] shrink-0 bg-background border border-border-subtle p-3 flex flex-col items-start gap-2.5 shadow-2xs">
-                    <div className="w-7 h-7 bg-accent/20 border border-accent flex items-center justify-center shrink-0">
-                      <Lightbulb className="w-3.5 h-3.5 text-foreground" />
-                    </div>
-                    <div>
-                      <span className="font-mono text-[9px] text-brand-muted uppercase tracking-wider block">
-                        INICIO
-                      </span>
-                      <span className="font-sans text-xs font-bold text-foreground leading-tight block">
-                        Tu Idea o Negocio
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Node 2: ASYMMETRIC (Center Hub) */}
-                  <div className="w-[110px] shrink-0 bg-surface-contrast text-background p-3.5 border border-foreground flex flex-col items-center justify-center text-center gap-1.5 relative">
-                    <span className="w-2 h-2 bg-accent inline-block" />
-                    <span className="font-sans text-xs font-bold tracking-tight uppercase block">
-                      ASYMMETRIC
-                    </span>
-                    <span className="font-mono text-[9px] opacity-75 uppercase tracking-wider block">
-                      Diseño &amp; Desarrollo
-                    </span>
-                  </div>
-
-                  {/* Node 3: 3 Interactive Output Destinations */}
-                  <div className="w-[228px] shrink-0 flex flex-col justify-between h-[240px] gap-2">
-                    {studioOutputs.map((item) => {
-                      const Icon = item.icon;
-                      const isActive = activeIdx === item.id;
-                      return (
-                        <button
-                          key={item.id}
-                          type="button"
-                          onClick={() => setActiveIdx(item.id)}
-                          onMouseEnter={() => setActiveIdx(item.id)}
-                          className={`w-full p-2.5 text-left border transition-all duration-150 cursor-pointer flex items-center gap-3 ${
-                            isActive
-                              ? "bg-accent text-accent-foreground border-foreground shadow-xs -translate-x-0.5"
-                              : "bg-background text-foreground border-border-subtle hover:border-foreground"
-                          }`}
-                        >
-                          <div
-                            className={`w-7 h-7 flex items-center justify-center shrink-0 border ${
-                              isActive
-                                ? "bg-foreground text-background border-foreground"
-                                : "bg-surface text-foreground border-border-subtle"
-                            }`}
-                          >
-                            <Icon className="w-3.5 h-3.5" />
-                          </div>
-                          <div className="min-w-0 flex-1">
-                            <span
-                              className={`font-sans text-[13px] font-bold leading-snug block ${
-                                isActive ? "text-accent-foreground" : "text-foreground"
-                              }`}
-                            >
-                              {item.label}
-                            </span>
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-
-              {/* Mobile Vertical Flowchart Diagram (< sm) */}
-              <div className="block sm:hidden w-full">
-                {/* Node 1: Tu Idea (Origin) */}
-                <div className="w-full bg-background border border-border-subtle p-3 flex items-center justify-between shadow-2xs">
-                  <div className="flex items-center gap-3">
-                    <div className="w-7 h-7 bg-accent/20 border border-accent flex items-center justify-center shrink-0">
-                      <Lightbulb className="w-3.5 h-3.5 text-foreground" />
-                    </div>
-                    <div>
-                      <span className="font-mono text-[9px] text-brand-muted uppercase tracking-wider block">
-                        INICIO
-                      </span>
-                      <span className="font-sans text-xs font-bold text-foreground leading-tight block">
-                        Tu Idea o Negocio
-                      </span>
-                    </div>
-                  </div>
-                  <span className="font-mono text-[9px] text-brand-muted px-2 py-0.5 border border-border-subtle uppercase">
-                    ENTRADA
-                  </span>
-                </div>
-
-                {/* Connector 1: Node 1 -> Node 2 */}
-                <div className="relative h-6 flex items-center">
-                  <svg
-                    className="absolute left-0 top-0 w-12 h-6 overflow-visible pointer-events-none"
-                    fill="none"
-                  >
-                    <line
-                      x1="26"
-                      y1="0"
-                      x2="26"
-                      y2="24"
-                      stroke="currentColor"
-                      className="text-border-subtle"
-                      strokeWidth="1.5"
-                      strokeDasharray="3 3"
-                    />
-                    <motion.line
-                      x1="26"
-                      y1="0"
-                      x2="26"
-                      y2="24"
-                      stroke="var(--accent)"
-                      strokeWidth="2.5"
-                      initial={{ pathLength: 0 }}
-                      animate={{ pathLength: [0, 1, 1] }}
-                      transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                    <polygon points="23,19 29,19 26,24" fill="var(--accent)" />
-                  </svg>
-                </div>
-
-                {/* Node 2: ASYMMETRIC Hub */}
-                <div className="w-full bg-surface-contrast text-background p-3 border border-foreground flex items-center justify-between shadow-xs">
-                  <div className="flex items-center gap-3">
-                    <div className="w-7 flex items-center justify-center shrink-0">
-                      <span className="w-2.5 h-2.5 bg-accent inline-block" />
-                    </div>
-                    <div>
-                      <span className="font-sans text-xs font-bold tracking-tight uppercase block leading-none">
-                        ASYMMETRIC
-                      </span>
-                      <span className="font-mono text-[9px] text-background/70 uppercase tracking-wider block mt-1">
-                        Diseño &amp; Desarrollo
-                      </span>
-                    </div>
-                  </div>
-                  <span className="font-mono text-[9px] bg-accent text-accent-foreground font-bold px-2 py-0.5 uppercase tracking-wider">
-                    HUB
-                  </span>
-                </div>
-
-                {/* Branching Tree Container with 3 Output Destinations */}
-                <div className="relative pl-11 pt-4 flex flex-col gap-2">
-                  {/* SVG Tree Spine on the left: starts right at the bottom edge of ASYMMETRIC (y=0) */}
-                  <svg
-                    className="absolute left-0 top-0 w-11 h-[176px] overflow-visible pointer-events-none"
-                    fill="none"
-                  >
-                    {/* Layer 1: All base inactive paths rendered first */}
-                    {studioOutputs.map((item) => {
-                      const yTargets = [40, 96, 152];
-                      const yTarget = yTargets[item.id];
-                      const curve = `M 26 0 L 26 ${yTarget - 12} C 26 ${yTarget - 4}, 34 ${yTarget}, 44 ${yTarget}`;
-
-                      return (
-                        <path
-                          key={`mobile-base-${item.id}`}
-                          d={curve}
-                          stroke="currentColor"
-                          className="text-border-subtle"
-                          strokeWidth="1.5"
-                        />
-                      );
-                    })}
-
-                    {/* Layer 2: Active highlighted path and particle ALWAYS rendered on top */}
-                    {(() => {
-                      const yTargets = [40, 96, 152];
-                      const yTarget = yTargets[activeIdx];
-                      const activeCurve = `M 26 0 L 26 ${yTarget - 12} C 26 ${yTarget - 4}, 34 ${yTarget}, 44 ${yTarget}`;
-
-                      return (
-                        <g key={`mobile-active-${activeIdx}`}>
-                          {/* Entire path stays solidly painted in lime — identical to PC */}
-                          <motion.path
-                            d={activeCurve}
-                            stroke="var(--accent)"
-                            strokeWidth="2.5"
-                            initial={{ pathLength: 0 }}
-                            animate={{ pathLength: 1 }}
-                            transition={{ duration: 0.3, ease: "easeOut" }}
-                          />
-                          {/* The only recurring animation is the green traveling photon/particle */}
-                          <motion.circle
-                            r="3.5"
-                            fill="var(--accent)"
-                            initial={{ offsetDistance: "0%" }}
-                            animate={{ offsetDistance: "100%" }}
-                            transition={{
-                              duration: 1.5,
-                              repeat: Infinity,
-                              ease: "easeInOut",
-                            }}
-                            style={{ offsetPath: `path('${activeCurve}')` }}
-                          />
-                        </g>
-                      );
-                    })()}
-                  </svg>
-
-                  {/* 3 Output Destination Buttons */}
-                  {studioOutputs.map((item) => {
-                    const Icon = item.icon;
-                    const isActive = activeIdx === item.id;
-
-                    return (
-                      <button
-                        key={item.id}
-                        type="button"
-                        onClick={() => setActiveIdx(item.id)}
-                        className={`w-full h-12 px-3 text-left border transition-all duration-150 cursor-pointer flex items-center gap-2.5 relative ${
-                          isActive
-                            ? "bg-accent text-accent-foreground border-foreground shadow-xs font-bold z-10"
-                            : "bg-background text-foreground border-border-subtle hover:border-foreground"
-                        }`}
-                      >
-                        {/* Terminal connection node dot */}
-                        <span
-                          className={`absolute -left-[4px] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full border transition-colors duration-150 ${
-                            isActive
-                              ? "bg-accent border-foreground z-20"
-                              : "bg-surface border-border-subtle"
-                          }`}
-                        />
-                        <div
-                          className={`w-6 h-6 flex items-center justify-center shrink-0 border ${
-                            isActive
-                              ? "bg-foreground text-background border-foreground"
-                              : "bg-surface text-foreground border-border-subtle"
-                          }`}
-                        >
-                          <Icon className="w-3.5 h-3.5" />
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <span
-                            className={`font-sans text-xs font-bold leading-snug truncate block ${
-                              isActive ? "text-accent-foreground" : "text-foreground"
-                            }`}
-                          >
-                            {item.label}
-                          </span>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
+            {/* Interactive Isometric Diagram (Directly Clickable) */}
+            <div className="relative my-2 lg:my-3 flex-1 flex items-center justify-center">
+              <IsoHeroApparatus
+                activeIdx={activeIdx}
+                onSelect={setActiveIdx}
+                onHoverChange={setIsPaused}
+              />
             </div>
 
             {/* Bottom Minimalist Editorial Caption */}
